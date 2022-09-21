@@ -17,7 +17,7 @@ class CoinListViewController: UITableViewController {
     }
     
     func getCoinData() {
-        guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/KLAY_KRW") else { return }
+        guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
         session.dataTask(with: coinURL) { data, response, error in
             if error != nil {
@@ -25,8 +25,13 @@ class CoinListViewController: UITableViewController {
                 return
             }
             guard let data = data else { return }
+            
             let dataString = String(data: data, encoding: .utf8)
-            print(dataString!)
+            //print(dataString!)
+            
+            let decoder = JSONDecoder()
+            let coinData = try? decoder.decode(Coin.self, from: data)
+            debugPrint(coinData)
         }.resume()
     }
 }
