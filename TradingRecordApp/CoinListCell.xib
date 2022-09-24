@@ -10,20 +10,69 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CoinListCell" customModule="TradingRecordApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-Ip-4rK">
-                        <rect key="frame" x="5" y="5" width="50" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-Ip-4rK">
+                        <rect key="frame" x="5" y="5.5" width="40" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="F30-E2-BSY"/>
+                            <constraint firstAttribute="height" constant="40" id="qTd-sw-4CL"/>
+                        </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코인이름" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-nA-vyR">
+                        <rect key="frame" x="50" y="5" width="80" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="deT-Tx-Xdm"/>
+                            <constraint firstAttribute="width" constant="80" id="wGE-qc-noe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-11.22%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3q-fC-Htp">
+                        <rect key="frame" x="245" y="16" width="70" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="LH8-7J-it3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26,728,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M1-Rd-GFP">
+                        <rect key="frame" x="146" y="16" width="79" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="H3q-fC-Htp" firstAttribute="leading" secondItem="4M1-Rd-GFP" secondAttribute="trailing" constant="20" id="3kW-6C-3OZ"/>
+                    <constraint firstItem="hpt-nA-vyR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9U1-fA-yu2"/>
+                    <constraint firstItem="hpt-nA-vyR" firstAttribute="leading" secondItem="A7i-Ip-4rK" secondAttribute="trailing" constant="5" id="CT1-cU-5I3"/>
+                    <constraint firstItem="A7i-Ip-4rK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="TcO-aK-HUG"/>
+                    <constraint firstItem="H3q-fC-Htp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XJQ-wG-L0J"/>
+                    <constraint firstItem="A7i-Ip-4rK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fmf-yy-d9J"/>
+                    <constraint firstAttribute="trailing" secondItem="H3q-fC-Htp" secondAttribute="trailing" constant="5" id="jvB-tH-twb"/>
+                    <constraint firstAttribute="bottom" secondItem="A7i-Ip-4rK" secondAttribute="bottom" constant="5" id="ulR-lz-CSj"/>
+                    <constraint firstItem="A7i-Ip-4rK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="wZr-Qf-o2w"/>
+                    <constraint firstItem="4M1-Rd-GFP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yfL-7n-Nad"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="changeRateLabel" destination="H3q-fC-Htp" id="ThG-92-JqZ"/>
+                <outlet property="coinImageView" destination="A7i-Ip-4rK" id="RiP-DC-857"/>
+                <outlet property="coinNameLabel" destination="hpt-nA-vyR" id="8wb-lP-kgv"/>
+                <outlet property="coinPriceLabel" destination="4M1-Rd-GFP" id="eyC-kW-RuL"/>
+            </connections>
             <point key="canvasLocation" x="132" y="83"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

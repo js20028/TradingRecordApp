@@ -20,12 +20,12 @@ struct Data: Codable {
 }
 
 struct CoinInfo: Codable {
-    let closingPrice: String
-    let fluctateRate: String
+    let coinPrice: String
+    let changeRate: String
     
     enum CodingKeys: String, CodingKey {
-        case closingPrice = "closing_price"
-        case fluctateRate = "fluctate_rate_24H"
+        case coinPrice = "closing_price"
+        case changeRate = "fluctate_rate_24H"
     }
 }
 
