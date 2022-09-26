@@ -29,9 +29,6 @@ class CoinListViewController: UITableViewController {
             }
             guard let data = data else { return }
             
-            //let dataString = String(data: data, encoding: .utf8)
-            //print(dataString!)
-            
             let decoder = JSONDecoder()
             let coinData = try? decoder.decode(Coin.self, from: data)
             
@@ -46,13 +43,20 @@ class CoinListViewController: UITableViewController {
     }
     
     func makeCoinList(coin: Coin) -> [CoinInfo] {
-        return [
+        var coinList = [
             coin.data.BTC,
             coin.data.ETH,
             coin.data.KLAY,
             coin.data.MATIC,
             coin.data.SOL
         ]
+        coinList[0].coinName = "비트코인"
+        coinList[1].coinName = "이더리움"
+        coinList[2].coinName = "클레이튼"
+        coinList[3].coinName = "폴리곤"
+        coinList[4].coinName = "솔라나"
+        
+        return coinList
     }
 }
 
@@ -64,6 +68,7 @@ extension CoinListViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinListCell", for: indexPath) as? CoinListCell else { return UITableViewCell() }
+        cell.coinNameLabel.text = self.coinList[indexPath.row].coinName
         cell.coinPriceLabel.text = self.coinList[indexPath.row].coinPrice
         cell.changeRateLabel.text = self.coinList[indexPath.row].changeRate
         
