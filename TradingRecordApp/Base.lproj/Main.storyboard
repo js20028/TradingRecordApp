@@ -8,7 +8,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Coin List View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="XNW-GN-eaD">
+            <objects>
+                <navigationController id="8y9-A5-kuq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="XlI-D3-xmU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wI1-xt-4Cc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gug-Ht-b40" kind="relationship" relationship="rootViewController" id="WYL-5C-SGU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWU-xd-8a5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301" y="723"/>
+        </scene>
+        <!--차트-->
         <scene sceneID="H7N-jG-ZpO">
             <objects>
                 <tableViewController id="gug-Ht-b40" customClass="CoinListViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,10 +49,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="vNa-Lb-3VX"/>
+                    <navigationItem key="navigationItem" title="차트" id="c3S-Jn-w2N"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4b-W4-Qyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354" y="471"/>
+            <point key="canvasLocation" x="432" y="723"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rSO-hG-wZi">
@@ -65,7 +83,24 @@
             </objects>
             <point key="canvasLocation" x="354" y="-759"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="8yO-JN-T0P">
+            <objects>
+                <navigationController id="nud-MT-2Fi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Cy3-0i-KAg"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tUA-iu-3US">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tlS-hn-j8V" kind="relationship" relationship="rootViewController" id="txb-kR-IEq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKZ-GT-XHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="-500"/>
+        </scene>
+        <!--내 자산-->
         <scene sceneID="Hpq-Ue-czI">
             <objects>
                 <viewController id="tlS-hn-j8V" sceneMemberID="viewController">
@@ -74,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXy-fU-gNQ">
-                                <rect key="frame" x="181" y="410.5" width="52" height="36"/>
+                                <rect key="frame" x="181" y="432.5" width="52" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,10 +123,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="pencil" catalog="system" systemItem="favorites" id="7lj-Yd-3An"/>
+                    <navigationItem key="navigationItem" title="내 자산" id="CLM-N1-zFG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iR-uN-DDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="-501"/>
+            <point key="canvasLocation" x="1835" y="-500"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1Vz-0U-L0y">
@@ -132,9 +168,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="qdG-H8-IsN" kind="relationship" relationship="viewControllers" id="LvV-LD-5nC"/>
-                        <segue destination="gug-Ht-b40" kind="relationship" relationship="viewControllers" id="zCV-44-4eT"/>
-                        <segue destination="tlS-hn-j8V" kind="relationship" relationship="viewControllers" id="CL6-9j-VTE"/>
                         <segue destination="j3t-Cp-Ebl" kind="relationship" relationship="viewControllers" id="huA-hs-4N8"/>
+                        <segue destination="8y9-A5-kuq" kind="relationship" relationship="viewControllers" id="Teu-me-1Lf"/>
+                        <segue destination="nud-MT-2Fi" kind="relationship" relationship="viewControllers" id="Y0Y-to-tOo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DST-JO-5lg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
