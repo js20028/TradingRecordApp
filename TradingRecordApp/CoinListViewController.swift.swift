@@ -69,7 +69,7 @@ extension CoinListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinListCell", for: indexPath) as? CoinListCell else { return UITableViewCell() }
         cell.coinNameLabel.text = self.coinList[indexPath.row].coinName
-        cell.coinPriceLabel.text = self.coinList[indexPath.row].coinPrice
+        cell.coinPriceLabel.text = self.coinList[indexPath.row].coinPriceDollar
         cell.changeRateLabel.text = self.coinList[indexPath.row].changeRate
         
         return cell

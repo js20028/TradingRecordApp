@@ -108,22 +108,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXy-fU-gNQ">
-                                <rect key="frame" x="181" y="432.5" width="52" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r63-WE-5Re">
+                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 보유자산" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H43-VZ-elj">
+                                        <rect key="frame" x="50" y="5" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-94-Pg6">
+                                        <rect key="frame" x="8" y="47" width="301.5" height="80"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-6v-slI">
+                                                <rect key="frame" x="0.0" y="0.0" width="36.5" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="원화" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFW-3X-ah2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36.5" height="34.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="달러" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-Mi-fOs">
+                                                        <rect key="frame" x="0.0" y="54.5" width="36.5" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QLQ-J0-DRb">
+                                                <rect key="frame" x="147.5" y="0.0" width="154" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhw-TV-gAm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="154" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12345.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-SM-pGB">
+                                                        <rect key="frame" x="16.5" y="50" width="121.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="H43-VZ-elj" secondAttribute="trailing" constant="50" id="DzJ-na-JFh"/>
+                                    <constraint firstAttribute="height" constant="150" id="Pop-T7-9uP"/>
+                                    <constraint firstItem="H43-VZ-elj" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="top" constant="5" id="aj2-m4-S2X"/>
+                                    <constraint firstItem="H43-VZ-elj" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="50" id="mKp-2m-bra"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aXX-jq-RPI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LXy-fU-gNQ" firstAttribute="centerY" secondItem="aXX-jq-RPI" secondAttribute="centerY" id="Tcw-Uy-iWR"/>
-                            <constraint firstItem="LXy-fU-gNQ" firstAttribute="centerX" secondItem="aXX-jq-RPI" secondAttribute="centerX" id="hza-Gg-nrL"/>
+                            <constraint firstItem="r63-WE-5Re" firstAttribute="top" secondItem="aXX-jq-RPI" secondAttribute="top" id="dvO-6J-HdF"/>
+                            <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="r63-WE-5Re" secondAttribute="trailing" id="mxp-3C-H7P"/>
+                            <constraint firstItem="r63-WE-5Re" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="x9A-lr-y0A"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="pencil" catalog="system" systemItem="favorites" id="7lj-Yd-3An"/>
-                    <navigationItem key="navigationItem" title="내 자산" id="CLM-N1-zFG"/>
+                    <navigationItem key="navigationItem" title="내 자산" id="CLM-N1-zFG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyf-g7-fRi"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iR-uN-DDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,6 +237,12 @@
         <image name="triangle" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

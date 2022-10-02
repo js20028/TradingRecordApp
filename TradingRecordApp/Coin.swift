@@ -24,6 +24,12 @@ struct CoinInfo: Codable {
     let coinPrice: String
     let changeRate: String
     
+    var coinPriceDollar: String {
+        var won = (Double(coinPrice) ?? 0)
+        won = round(won / 1440 * 1000) / 1000
+        return String(won)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case coinPrice = "closing_price"
         case changeRate = "fluctate_rate_24H"
