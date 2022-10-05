@@ -103,7 +103,7 @@
         <!--내 자산-->
         <scene sceneID="Hpq-Ue-czI">
             <objects>
-                <viewController id="tlS-hn-j8V" sceneMemberID="viewController">
+                <viewController id="tlS-hn-j8V" customClass="AssetViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TTz-f4-SBk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,19 +117,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-94-Pg6">
-                                        <rect key="frame" x="8" y="47" width="301.5" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-94-Pg6">
+                                        <rect key="frame" x="10" y="47" width="301.5" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-6v-slI">
                                                 <rect key="frame" x="0.0" y="0.0" width="36.5" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="원화" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFW-3X-ah2">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="원화" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFW-3X-ah2">
                                                         <rect key="frame" x="0.0" y="0.0" width="36.5" height="34.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <color key="textColor" systemColor="systemGrayColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="달러" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-Mi-fOs">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달러" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-Mi-fOs">
                                                         <rect key="frame" x="0.0" y="54.5" width="36.5" height="25.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <color key="textColor" systemColor="systemGrayColor"/>
@@ -137,7 +137,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QLQ-J0-DRb">
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QLQ-J0-DRb">
                                                 <rect key="frame" x="147.5" y="0.0" width="154" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhw-TV-gAm">
@@ -160,17 +160,27 @@
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="H43-VZ-elj" secondAttribute="trailing" constant="50" id="DzJ-na-JFh"/>
+                                    <constraint firstItem="ecH-94-Pg6" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="10" id="GhY-Ar-f49"/>
                                     <constraint firstAttribute="height" constant="150" id="Pop-T7-9uP"/>
+                                    <constraint firstItem="QLQ-J0-DRb" firstAttribute="top" secondItem="H43-VZ-elj" secondAttribute="bottom" constant="21.5" id="ZMT-nW-6o8"/>
                                     <constraint firstItem="H43-VZ-elj" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="top" constant="5" id="aj2-m4-S2X"/>
                                     <constraint firstItem="H43-VZ-elj" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="50" id="mKp-2m-bra"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
+                                <rect key="frame" x="0.0" y="238" width="414" height="575"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aXX-jq-RPI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5V1-cH-I6k" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="YKM-Eb-lqB"/>
+                            <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="5V1-cH-I6k" secondAttribute="trailing" id="bVC-5d-MA4"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="top" secondItem="aXX-jq-RPI" secondAttribute="top" id="dvO-6J-HdF"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="r63-WE-5Re" secondAttribute="trailing" id="mxp-3C-H7P"/>
+                            <constraint firstItem="5V1-cH-I6k" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" id="oYK-Xm-Uhc"/>
+                            <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="5V1-cH-I6k" secondAttribute="bottom" id="pY5-DY-cV4"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="x9A-lr-y0A"/>
                         </constraints>
                     </view>
@@ -178,6 +188,9 @@
                     <navigationItem key="navigationItem" title="내 자산" id="CLM-N1-zFG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyf-g7-fRi"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="5V1-cH-I6k" id="vbB-M2-Flc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iR-uN-DDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
