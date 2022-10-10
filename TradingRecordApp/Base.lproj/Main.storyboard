@@ -219,7 +219,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="pencil" catalog="system" systemItem="favorites" id="7lj-Yd-3An"/>
                     <navigationItem key="navigationItem" title="내 자산" id="CLM-N1-zFG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyf-g7-fRi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyf-g7-fRi">
+                            <connections>
+                                <segue destination="p4u-1c-TkU" kind="show" id="fCV-FC-VjB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5V1-cH-I6k" id="vbB-M2-Flc"/>
@@ -230,6 +234,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iR-uN-DDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1834.7826086956522" y="-500.22321428571428"/>
+        </scene>
+        <!--자산 추가-->
+        <scene sceneID="twW-5D-6Gj">
+            <objects>
+                <viewController id="p4u-1c-TkU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hcQ-K9-tHW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="S1B-8R-Phf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="자산 추가" id="b0X-Tu-UPm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6L-Il-drg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2745" y="-812"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="srK-F4-hg3">
+            <objects>
+                <viewController id="hfq-ly-uCl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c9E-Ns-dl3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="blk-LF-rXc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wYI-Mg-rVX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2745" y="-102"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1Vz-0U-L0y">
