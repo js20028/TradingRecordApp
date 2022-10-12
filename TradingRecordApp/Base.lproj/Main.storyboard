@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWU-xd-8a5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-301" y="723"/>
+            <point key="canvasLocation" x="-1109" y="735"/>
         </scene>
         <!--차트-->
         <scene sceneID="H7N-jG-ZpO">
@@ -53,7 +53,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4b-W4-Qyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432" y="723"/>
+            <point key="canvasLocation" x="-286" y="735"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rSO-hG-wZi">
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYI-Mg-rVX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="-102"/>
+            <point key="canvasLocation" x="2761" y="-101"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1Vz-0U-L0y">
@@ -275,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9Z-MB-VaY">
-                                <rect key="frame" x="181" y="410.5" width="52" height="36"/>
+                                <rect key="frame" x="181" y="432.5" width="52" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -289,10 +289,28 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="fKx-Pa-QXI"/>
+                    <navigationItem key="navigationItem" id="nUe-Cc-P9z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLa-XT-2Kw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="160"/>
+            <point key="canvasLocation" x="1403" y="417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oG5-hS-QXU">
+            <objects>
+                <navigationController id="k7S-Ed-4kO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="wxM-vx-KbF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pI3-Hl-c7W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j3t-Cp-Ebl" kind="relationship" relationship="rootViewController" id="jER-V3-ekN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8Y-nr-Leg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661" y="417"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ewR-3G-A5x">
@@ -305,9 +323,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="qdG-H8-IsN" kind="relationship" relationship="viewControllers" id="LvV-LD-5nC"/>
-                        <segue destination="j3t-Cp-Ebl" kind="relationship" relationship="viewControllers" id="huA-hs-4N8"/>
                         <segue destination="8y9-A5-kuq" kind="relationship" relationship="viewControllers" id="Teu-me-1Lf"/>
                         <segue destination="nud-MT-2Fi" kind="relationship" relationship="viewControllers" id="Y0Y-to-tOo"/>
+                        <segue destination="k7S-Ed-4kO" kind="relationship" relationship="viewControllers" id="CPK-k5-naT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DST-JO-5lg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
