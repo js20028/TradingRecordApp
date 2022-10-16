@@ -8,5 +8,7 @@
 import UIKit
 
 class MemoCell: UICollectionViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentsLabel: UILabel!
     
 }

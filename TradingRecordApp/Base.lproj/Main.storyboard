@@ -270,7 +270,7 @@
         <!--메모-->
         <scene sceneID="1Vz-0U-L0y">
             <objects>
-                <viewController id="j3t-Cp-Ebl" sceneMemberID="viewController">
+                <viewController id="j3t-Cp-Ebl" customClass="MemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xpo-Wy-Ohp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,7 +294,10 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp5-M7-kVD">
                                                     <rect key="frame" x="12" y="12" width="156" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="156" id="vvw-PD-idr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -316,6 +319,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="200"/>
+                                        <connections>
+                                            <outlet property="contentsLabel" destination="Ijk-y1-bd3" id="q2w-Fz-Gxv"/>
+                                            <outlet property="titleLabel" destination="sp5-M7-kVD" id="wu5-09-amz"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -337,6 +344,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="sYM-bm-sKd" id="ENp-KG-fDs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLa-XT-2Kw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,7 +355,7 @@
         <!--메모 작성-->
         <scene sceneID="uvI-b2-faI">
             <objects>
-                <viewController id="2A2-an-QGd" sceneMemberID="viewController">
+                <viewController id="2A2-an-QGd" customClass="WriteMemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A7Z-7W-80I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,7 +387,18 @@
                             <constraint firstItem="psi-yV-qw8" firstAttribute="leading" secondItem="hnw-H4-o3h" secondAttribute="leading" constant="24" id="pAW-KC-Gsq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="메모 작성" id="CT4-1e-Tim"/>
+                    <navigationItem key="navigationItem" title="메모 작성" id="CT4-1e-Tim">
+                        <barButtonItem key="rightBarButtonItem" title="등록" id="JyS-Wy-vlQ">
+                            <connections>
+                                <action selector="tapConfirmButton:" destination="2A2-an-QGd" id="eD9-4j-QmO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmButton" destination="JyS-Wy-vlQ" id="wdX-jV-pJY"/>
+                        <outlet property="contentsTextView" destination="XOq-pY-kVj" id="akz-mE-Xwz"/>
+                        <outlet property="titleTextField" destination="psi-yV-qw8" id="l3d-2x-V65"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vR7-mP-aVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,6 +18,7 @@
 		0F35B66028DAF423005C42ED /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35B65F28DAF423005C42ED /* Coin.swift */; };
 		0F35B66228E2DE32005C42ED /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35B66128E2DE32005C42ED /* MemoViewController.swift */; };
 		0F7AC2DF28F80CA1007A4659 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2DE28F80CA1007A4659 /* MemoCell.swift */; };
+		0F7AC2E128FBE6FE007A4659 /* WriteMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		0F35B65F28DAF423005C42ED /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		0F35B66128E2DE32005C42ED /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		0F7AC2DE28F80CA1007A4659 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */,
 				0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */,
 				0F35B66128E2DE32005C42ED /* MemoViewController.swift */,
+				0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */,
 				0F7AC2DE28F80CA1007A4659 /* MemoCell.swift */,
 				0F35B64E28D2F6C6005C42ED /* Assets.xcassets */,
 				0F35B65028D2F6C6005C42ED /* LaunchScreen.storyboard */,
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7AC2E128FBE6FE007A4659 /* WriteMemoViewController.swift in Sources */,
 				0F35B65A28D9668B005C42ED /* CoinListViewController.swift.swift in Sources */,
 				0F35B64628D2F6C4005C42ED /* AppDelegate.swift in Sources */,
 				0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */,
