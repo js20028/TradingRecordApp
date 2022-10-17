@@ -7,16 +7,30 @@
 
 import UIKit
 
+protocol WriteMemoDelegate: AnyObject {
+    func didSelectRegister(memo: Memo)
+}
+
 class WriteMemoViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var confirmButton: UIBarButtonItem!
     
+    private var memoDate: Date?
+    weak var delegate: WriteMemoDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureContentsTextView()
         self.placeHolderSetting()
+        self.confirmButton.isEnabled = false
+        self.configureInputField()
+    }
+    
+    private func configureInputField() {
+        self.contentsTextView.delegate = self
+        self.titleTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
     }
     
     private func configureContentsTextView() {
@@ -26,6 +40,10 @@ class WriteMemoViewController: UIViewController {
         self.contentsTextView.layer.cornerRadius = 5.0
     }
     
+    @objc private func titleTextFieldDidChange(_ textField: UITextField) {
+        self.validateInputField()
+    }
+    
     func placeHolderSetting() {
         self.contentsTextView.delegate = self
         self.contentsTextView.text = "내용을 입력하세요"
@@ -33,7 +51,17 @@ class WriteMemoViewController: UIViewController {
     }
 
     @IBAction func tapConfirmButton(_ sender: UIBarButtonItem) {
+        guard let title = self.titleTextField.text else { return }
+        guard let contents = self.contentsTextView.text else { return }
+        let date = Date()
+        let memo = Memo(title: title, contents: contents, date: date)
+        self.delegate?.didSelectRegister(memo: memo)
+        self.navigationController?.popViewController(animated: true)
         
+    }
+    
+    private func validateInputField() {
+        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true)
     }
 }
 
@@ -51,5 +79,9 @@ extension WriteMemoViewController: UITextViewDelegate {
             self.contentsTextView.text = "내용을 입력하세요"
             self.contentsTextView.textColor = UIColor.lightGray
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
