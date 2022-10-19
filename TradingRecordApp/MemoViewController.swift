@@ -11,11 +11,16 @@ class MemoViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var memoList = [Memo]()
+    private var memoList = [Memo]() {
+        didSet {
+            self.saveMemoList()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCollectionView()
+        self.loadMemoList()
     }
     
     private func configureCollectionView() {
@@ -29,6 +34,32 @@ class MemoViewController: UIViewController {
         if let writeMemoViewController = segue.destination as? WriteMemoViewController {
             writeMemoViewController.delegate = self
         }
+    }
+    
+    private func saveMemoList() {
+        let data = self.memoList.map {
+            [
+                "title": $0.title,
+                "contents": $0.contents,
+                "date": $0.date
+            ]
+        }
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(data, forKey: "memoList")
+    }
+    
+    private func loadMemoList() {
+        let userDefaults = UserDefaults.standard
+        guard let data = userDefaults.object(forKey: "memoList") as? [[String: Any]] else { return }
+        self.memoList = data.compactMap {
+            guard let title = $0["title"] as? String else { return nil }
+            guard let contents = $0["contents"] as? String else { return nil }
+            guard let date = $0["date"] as? Date else { return nil}
+            return Memo(title: title, contents: contents, date: date)
+        }
+        self.memoList = self.memoList.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
     }
 }
 
@@ -57,6 +88,9 @@ extension MemoViewController: UICollectionViewDelegateFlowLayout {
 extension MemoViewController: WriteMemoDelegate {
     func didSelectRegister(memo: Memo) {
         self.memoList.append(memo)
+        self.memoList = self.memoList.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
         self.collectionView.reloadData()
     }
 }
