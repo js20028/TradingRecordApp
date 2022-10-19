@@ -79,6 +79,17 @@ extension MemoViewController: UICollectionViewDataSource {
     }
 }
 
+extension MemoViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MemoDetailViewController") as? MemoDetailViewController else { return }
+        let memo = self.memoList[indexPath.row]
+        viewController.memo = memo
+        viewController.indexPath = indexPath
+        viewController.delegate = self
+        self.navigationController?.pushViewController(viewController, animated: true)
+     }
+}
+
 extension MemoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (UIScreen.main.bounds.width / 2) - 20, height: 200)
@@ -92,5 +103,12 @@ extension MemoViewController: WriteMemoDelegate {
             $0.date.compare($1.date) == .orderedDescending
         })
         self.collectionView.reloadData()
+    }
+}
+
+extension MemoViewController: MemoDetailViewDelegate {
+    func didSelectDelete(indexPath: IndexPath) {
+        self.memoList.remove(at: indexPath.row)
+        self.collectionView.deleteItems(at: [indexPath])
     }
 }

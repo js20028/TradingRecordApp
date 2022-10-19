@@ -352,6 +352,77 @@
             </objects>
             <point key="canvasLocation" x="1402.8985507246377" y="416.51785714285711"/>
         </scene>
+        <!--Memo Detail View Controller-->
+        <scene sceneID="1bg-2H-pPE">
+            <objects>
+                <viewController storyboardIdentifier="MemoDetailViewController" id="MyV-NS-8W5" customClass="MemoDetailViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qcs-W1-Lpr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-Um-QoC">
+                                <rect key="frame" x="24" y="68" width="366" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-14-TYP">
+                                <rect key="frame" x="20" y="122" width="374" height="500"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="g9l-cm-G2J"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-Ma-jRd">
+                                <rect key="frame" x="133.5" y="646" width="147" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-0z-9iK">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="수정"/>
+                                        <connections>
+                                            <action selector="tapEditButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="2ko-zn-wUc"/>
+                                            <action selector="updateButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="4XH-fm-nFJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-Ng-VNK">
+                                        <rect key="frame" x="98.5" y="0.0" width="48.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="삭제">
+                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapDeleteButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="QNa-lC-kEP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nDo-2o-kp7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RBl-14-TYP" firstAttribute="top" secondItem="YJv-Um-QoC" secondAttribute="bottom" constant="24" id="1au-nI-vKK"/>
+                            <constraint firstItem="YJv-Um-QoC" firstAttribute="top" secondItem="nDo-2o-kp7" secondAttribute="top" constant="24" id="5V9-mf-GWI"/>
+                            <constraint firstItem="YJv-Um-QoC" firstAttribute="leading" secondItem="nDo-2o-kp7" secondAttribute="leading" constant="24" id="ETe-oC-NGU"/>
+                            <constraint firstItem="7Bm-Ma-jRd" firstAttribute="top" secondItem="RBl-14-TYP" secondAttribute="bottom" constant="24" id="N5t-Uk-q0C"/>
+                            <constraint firstItem="RBl-14-TYP" firstAttribute="leading" secondItem="nDo-2o-kp7" secondAttribute="leading" constant="20" id="ijA-qT-bI5"/>
+                            <constraint firstItem="nDo-2o-kp7" firstAttribute="trailing" secondItem="YJv-Um-QoC" secondAttribute="trailing" constant="24" id="jez-aL-AVP"/>
+                            <constraint firstItem="7Bm-Ma-jRd" firstAttribute="centerX" secondItem="RBl-14-TYP" secondAttribute="centerX" id="oOU-li-9p9"/>
+                            <constraint firstItem="nDo-2o-kp7" firstAttribute="trailing" secondItem="RBl-14-TYP" secondAttribute="trailing" constant="20" id="tHj-ed-b9g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentsTextView" destination="RBl-14-TYP" id="pSD-CK-oMd"/>
+                        <outlet property="titleLabel" destination="YJv-Um-QoC" id="Qex-OB-JKn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgk-a8-Pnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1403" y="1065"/>
+        </scene>
         <!--메모 작성-->
         <scene sceneID="uvI-b2-faI">
             <objects>
@@ -361,12 +432,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psi-yV-qw8">
-                                <rect key="frame" x="24" y="112" width="366" height="34"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <rect key="frame" x="24" y="112" width="366" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOq-pY-kVj">
-                                <rect key="frame" x="24" y="170" width="366" height="500"/>
+                                <rect key="frame" x="24" y="175.5" width="366" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="Nzo-1T-8OW"/>
@@ -456,6 +527,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
