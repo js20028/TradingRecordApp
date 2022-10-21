@@ -385,7 +385,6 @@
                                         <buttonConfiguration key="configuration" style="plain" title="수정"/>
                                         <connections>
                                             <action selector="tapEditButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="2ko-zn-wUc"/>
-                                            <action selector="updateButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="4XH-fm-nFJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-Ng-VNK">
@@ -426,7 +425,7 @@
         <!--메모 작성-->
         <scene sceneID="uvI-b2-faI">
             <objects>
-                <viewController id="2A2-an-QGd" customClass="WriteMemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteMemoViewController" id="2A2-an-QGd" customClass="WriteMemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A7Z-7W-80I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

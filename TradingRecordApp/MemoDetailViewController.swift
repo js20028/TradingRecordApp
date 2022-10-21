@@ -33,7 +33,14 @@ class MemoDetailViewController: UIViewController {
     }
     
     @IBAction func tapEditButton(_ sender: UIButton) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WriteMemoViewController") as? WriteMemoViewController else { return }
+        guard let indexPath = self.indexPath else { return }
+        guard let memo = self.memo else { return }
+        viewController.memoEditorMode = .edit(indexPath, memo)
+        self.navigationController?.pushViewController(viewController, animated: true)
+                
     }
+    
     @IBAction func tapDeleteButton(_ sender: UIButton) {
         guard let indexPath = self.indexPath else { return }
         self.delegate?.didSelectDelete(indexPath: indexPath)

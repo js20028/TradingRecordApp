@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum MemoEditorMode {
+    case new
+    case edit(IndexPath, Memo)
+}
+
 protocol WriteMemoDelegate: AnyObject {
     func didSelectRegister(memo: Memo)
 }
@@ -19,18 +24,32 @@ class WriteMemoViewController: UIViewController {
     
     private var memoDate: Date?
     weak var delegate: WriteMemoDelegate?
+    var memoEditorMode: MemoEditorMode = .new
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureContentsTextView()
         self.placeHolderSetting()
         self.confirmButton.isEnabled = false
+        self.configureEditMode()
         self.configureInputField()
     }
     
     private func configureInputField() {
         self.contentsTextView.delegate = self
         self.titleTextField.addTarget(self, action: #selector(titleTextFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    private func configureEditMode() {
+        switch self.memoEditorMode {
+        case let .edit(_, memo):
+            self.titleTextField.text = memo.title
+            self.contentsTextView.text = memo.contents
+            self.confirmButton.title = "수정"
+            
+        default:
+            break
+        }
     }
     
     private func configureContentsTextView() {
