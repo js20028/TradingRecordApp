@@ -74,7 +74,22 @@ class WriteMemoViewController: UIViewController {
         guard let contents = self.contentsTextView.text else { return }
         let date = Date()
         let memo = Memo(title: title, contents: contents, date: date)
-        self.delegate?.didSelectRegister(memo: memo)
+        
+        switch self.memoEditorMode {
+        case .new:
+            self.delegate?.didSelectRegister(memo: memo)
+            
+        case let .edit(indexPath, _):
+            NotificationCenter.default.post(
+                name: NSNotification.Name("editMemo"),
+                object: memo,
+                userInfo: [
+                    "indexPath.row": indexPath.row
+                ]
+            )
+        }
+        
+        
         self.navigationController?.popViewController(animated: true)
         
     }

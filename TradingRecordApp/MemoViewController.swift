@@ -21,6 +21,13 @@ class MemoViewController: UIViewController {
         super.viewDidLoad()
         self.configureCollectionView()
         self.loadMemoList()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(editMemoNotification(_:)),
+            name: NSNotification.Name("editMemo"),
+            object: nil
+        )
     }
     
     private func configureCollectionView() {
@@ -28,6 +35,16 @@ class MemoViewController: UIViewController {
         self.collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+    }
+    
+    @objc func editMemoNotification(_ notification: Notification) {
+        guard let memo = notification.object as? Memo else { return }
+        guard let row = notification.userInfo?["indexPath.row"] as? Int else { return }
+        self.memoList[row] = memo
+        self.memoList = self.memoList.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
+        self.collectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,6 +114,10 @@ extension MemoViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MemoViewController: WriteMemoDelegate {
+    func didSelectEdit(indexPath: IndexPath, memo: Memo) {
+        
+    }
+    
     func didSelectRegister(memo: Memo) {
         self.memoList.append(memo)
         self.memoList = self.memoList.sorted(by: {
