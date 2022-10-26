@@ -8,7 +8,7 @@
 import Foundation
 
 struct Asset {
-    let category: String
+    let categoryValue: Int
     let categoryName: String
     let coinName: String
     var coinAmount: Double

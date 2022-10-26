@@ -239,7 +239,7 @@
         <!--자산 추가-->
         <scene sceneID="twW-5D-6Gj">
             <objects>
-                <viewController id="p4u-1c-TkU" sceneMemberID="viewController">
+                <viewController id="p4u-1c-TkU" customClass="AddAssetViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hcQ-K9-tHW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,18 +249,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="거래소"/>
+                                <connections>
+                                    <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="7nM-6D-A5F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-ah-TOT">
                                 <rect key="frame" x="180" y="141" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="지갑"/>
+                                <connections>
+                                    <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="Z47-zf-3oU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4K-NK-aBr">
                                 <rect key="frame" x="288" y="141" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="기타"/>
+                                <connections>
+                                    <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="HLj-LQ-xCc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거래소, 지갑, 기타 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-TV-rSJ">
                                 <rect key="frame" x="71" y="209" width="155" height="21"/>
@@ -299,15 +308,27 @@
                                 <rect key="frame" x="71" y="447" width="266" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S1B-8R-Phf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="자산 추가" id="b0X-Tu-UPm">
-                        <barButtonItem key="rightBarButtonItem" title="등록" id="Y6J-ks-31X"/>
+                        <barButtonItem key="rightBarButtonItem" title="추가" id="Y6J-ks-31X">
+                            <connections>
+                                <action selector="tapAddButton:" destination="p4u-1c-TkU" id="n2s-ud-dXQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryNameTextField" destination="1h9-yF-PKh" id="Nhj-fv-zBh"/>
+                        <outlet property="coinAmountTextField" destination="Tib-3z-gh3" id="C56-y3-GJz"/>
+                        <outlet property="coinNameTextField" destination="Fjw-Hk-Nta" id="x7b-X6-GMg"/>
+                        <outlet property="exchangeButton" destination="q7R-GU-h7I" id="GEt-QR-jmj"/>
+                        <outlet property="otherButton" destination="a4K-NK-aBr" id="0kD-uS-PEC"/>
+                        <outlet property="walletButton" destination="vTk-ah-TOT" id="NOP-Ws-RLd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6L-Il-drg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

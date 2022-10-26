@@ -114,9 +114,6 @@ extension MemoViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MemoViewController: WriteMemoDelegate {
-    func didSelectEdit(indexPath: IndexPath, memo: Memo) {
-        
-    }
     
     func didSelectRegister(memo: Memo) {
         self.memoList.append(memo)
