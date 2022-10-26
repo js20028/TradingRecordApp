@@ -21,6 +21,7 @@
 		0F7AC2E128FBE6FE007A4659 /* WriteMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */; };
 		0F7AC2E328FC1193007A4659 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E228FC1193007A4659 /* Memo.swift */; };
 		0F7AC2E528FFF51F007A4659 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E428FFF51F007A4659 /* MemoDetailViewController.swift */; };
+		0F7AC2E7290909B7007A4659 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E6290909B7007A4659 /* Asset.swift */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoViewController.swift; sourceTree = "<group>"; };
 		0F7AC2E228FC1193007A4659 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		0F7AC2E428FFF51F007A4659 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
+		0F7AC2E6290909B7007A4659 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				0F35B64B28D2F6C4005C42ED /* Main.storyboard */,
 				0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */,
 				0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */,
+				0F7AC2E6290909B7007A4659 /* Asset.swift */,
 				0F35B66128E2DE32005C42ED /* MemoViewController.swift */,
 				0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */,
 				0F7AC2E428FFF51F007A4659 /* MemoDetailViewController.swift */,
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F7AC2E128FBE6FE007A4659 /* WriteMemoViewController.swift in Sources */,
+				0F7AC2E7290909B7007A4659 /* Asset.swift in Sources */,
 				0F7AC2E528FFF51F007A4659 /* MemoDetailViewController.swift in Sources */,
 				0F35B65A28D9668B005C42ED /* CoinListViewController.swift.swift in Sources */,
 				0F35B64628D2F6C4005C42ED /* AppDelegate.swift in Sources */,
