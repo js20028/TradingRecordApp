@@ -13,6 +13,7 @@ protocol AddAssetDelegate: AnyObject {
 
 class AddAssetViewController: UIViewController {
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var exchangeButton: UIButton!
     @IBOutlet weak var walletButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
@@ -26,11 +27,27 @@ class AddAssetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addButton.isEnabled = false
         self.configureView()
+        self.configureInputField()
     }
     
-    func configureView() {
+    private func configureView() {
         self.changeCategoryButton(value: self.categoryButtonValue)
+    }
+    
+    private func configureInputField() {
+        self.categoryNameTextField.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
+        self.coinNameTextField.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
+        self.coinAmountTextField.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
+    }
+    
+    @objc private func textFieldDidChanged(_ textField: UITextField) {
+        self.validateInputField()
+    }
+    
+    private func validateInputField() {
+        self.addButton.isEnabled = !(self.categoryNameTextField.text?.isEmpty ?? true) && !(self.coinNameTextField.text?.isEmpty ?? true) && !(self.coinAmountTextField.text?.isEmpty ?? true)
     }
     
     @IBAction func tapAddButton(_ sender: UIBarButtonItem) {
@@ -60,9 +77,14 @@ class AddAssetViewController: UIViewController {
         }
     }
     
-    func changeCategoryButton(value: Int) {
+    private func changeCategoryButton(value: Int) {
         self.exchangeButton.alpha = value == 0 ? 1 : 0.2
         self.walletButton.alpha = value == 1 ? 1 : 0.2
         self.otherButton.alpha = value == 2 ? 1 : 0.2
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
 }

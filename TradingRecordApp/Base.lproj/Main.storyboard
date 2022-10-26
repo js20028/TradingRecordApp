@@ -322,6 +322,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="Y6J-ks-31X" id="Qkh-Xe-OJ8"/>
                         <outlet property="categoryNameTextField" destination="1h9-yF-PKh" id="Nhj-fv-zBh"/>
                         <outlet property="coinAmountTextField" destination="Tib-3z-gh3" id="C56-y3-GJz"/>
                         <outlet property="coinNameTextField" destination="Fjw-Hk-Nta" id="x7b-X6-GMg"/>
