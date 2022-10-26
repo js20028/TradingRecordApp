@@ -14,10 +14,13 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var exchanges: [String] = ["빗썸","바이낸스","업비트"]
-    var wallets: [String] = ["메타마스크", "카이카스"]
-    var others: [String] = ["기타1", "기타2", "기타3", "기타4", "기타5"]
+    var exchanges: [Asset] = []
+    var wallets: [Asset] = []
+    var others: [Asset] = []
     var sections: [String] = ["거래소", "지갑", "기타"]
+//    var wallets: [String] = ["메타마스크", "카이카스"]
+//    var others: [String] = ["기타1", "기타2", "기타3", "기타4", "기타5"]
+//    var sections: [String] = ["거래소", "지갑", "기타"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,11 @@ class AssetViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let addAssetViewController = segue.destination as? AddAssetViewController else { return }
+        addAssetViewController.delegate = self
     }
 }
 
@@ -42,11 +50,11 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            cell.assetNameLabel.text = self.exchanges[indexPath.row]
+            cell.assetNameLabel.text = self.exchanges[indexPath.row].categoryName
         case 1:
-            cell.assetNameLabel.text = self.wallets[indexPath.row]
+            cell.assetNameLabel.text = self.wallets[indexPath.row].categoryName
         case 2:
-            cell.assetNameLabel.text = self.others[indexPath.row]
+            cell.assetNameLabel.text = self.others[indexPath.row].categoryName
         default:
             cell.assetNameLabel.text = "없음"
             cell.holdingAssetLabel.text = "10000"
@@ -70,5 +78,22 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sections[section]
+    }
+}
+
+extension AssetViewController: AddAssetDelegate {
+    func didSelectAdd(asset: Asset) {
+        switch asset.categoryValue {
+        case 0:
+            self.exchanges.append(asset)
+        case 1:
+            self.wallets.append(asset)
+        case 2:
+            self.others.append(asset)
+        default:
+            break
+        }
+        
+        self.tableView.reloadData()
     }
 }

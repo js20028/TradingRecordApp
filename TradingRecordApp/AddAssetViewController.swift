@@ -21,6 +21,7 @@ class AddAssetViewController: UIViewController {
     @IBOutlet weak var coinNameTextField: UITextField!
     @IBOutlet weak var coinAmountTextField: UITextField!
     
+    weak var delegate: AddAssetDelegate?
     var categoryButtonValue: Int = 0
     
     override func viewDidLoad() {
@@ -33,17 +34,27 @@ class AddAssetViewController: UIViewController {
     }
     
     @IBAction func tapAddButton(_ sender: UIBarButtonItem) {
+        guard let categoryName = self.categoryNameTextField.text else { return }
+        guard let coinName = self.coinNameTextField.text else { return }
+        guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         
+        let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, coinName: coinName, coinAmount: coinAmount)
+        
+        self.delegate?.didSelectAdd(asset: asset)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func tapCategoryButton(_ sender: UIButton) {
         switch sender {
         case exchangeButton:
             self.changeCategoryButton(value: 0)
+            self.categoryButtonValue = 0
         case walletButton:
             self.changeCategoryButton(value: 1)
+            self.categoryButtonValue = 1
         case otherButton:
             self.changeCategoryButton(value: 2)
+            self.categoryButtonValue = 2
         default:
             break
         }
