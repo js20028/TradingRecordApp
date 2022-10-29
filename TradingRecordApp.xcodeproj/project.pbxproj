@@ -23,6 +23,9 @@
 		0F7AC2E528FFF51F007A4659 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E428FFF51F007A4659 /* MemoDetailViewController.swift */; };
 		0F7AC2E7290909B7007A4659 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E6290909B7007A4659 /* Asset.swift */; };
 		0F7AC2E929091895007A4659 /* AddAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2E829091895007A4659 /* AddAssetViewController.swift */; };
+		0F7AC2EB290B9E45007A4659 /* AssetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2EA290B9E45007A4659 /* AssetDetailViewController.swift */; };
+		0F7AC2F2290CF6F6007A4659 /* AssetDetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2F0290CF6F6007A4659 /* AssetDetailListCell.swift */; };
+		0F7AC2F3290CF6F6007A4659 /* AssetDetailListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7AC2F1290CF6F6007A4659 /* AssetDetailListCell.xib */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,9 @@
 		0F7AC2E428FFF51F007A4659 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
 		0F7AC2E6290909B7007A4659 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		0F7AC2E829091895007A4659 /* AddAssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssetViewController.swift; sourceTree = "<group>"; };
+		0F7AC2EA290B9E45007A4659 /* AssetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewController.swift; sourceTree = "<group>"; };
+		0F7AC2F0290CF6F6007A4659 /* AssetDetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailListCell.swift; sourceTree = "<group>"; };
+		0F7AC2F1290CF6F6007A4659 /* AssetDetailListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetDetailListCell.xib; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,25 +88,52 @@
 			children = (
 				0F35B64528D2F6C4005C42ED /* AppDelegate.swift */,
 				0F35B64728D2F6C4005C42ED /* SceneDelegate.swift */,
-				0F35B65928D9668B005C42ED /* CoinListViewController.swift.swift */,
-				0F35B65B28D9A1BE005C42ED /* CoinListCell.swift */,
-				0F35B65C28D9A1BE005C42ED /* CoinListCell.xib */,
-				0F35B65F28DAF423005C42ED /* Coin.swift */,
 				0F35B64B28D2F6C4005C42ED /* Main.storyboard */,
-				0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */,
-				0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */,
-				0F7AC2E829091895007A4659 /* AddAssetViewController.swift */,
-				0F7AC2E6290909B7007A4659 /* Asset.swift */,
-				0F35B66128E2DE32005C42ED /* MemoViewController.swift */,
-				0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */,
-				0F7AC2E428FFF51F007A4659 /* MemoDetailViewController.swift */,
-				0F7AC2E228FC1193007A4659 /* Memo.swift */,
-				0F7AC2DE28F80CA1007A4659 /* MemoCell.swift */,
+				0F7AC2F5290D64AA007A4659 /* Coin */,
+				0F7AC2F4290D649B007A4659 /* Asset */,
+				0F7AC2F6290D64B4007A4659 /* Memo */,
 				0F35B64E28D2F6C6005C42ED /* Assets.xcassets */,
 				0F35B65028D2F6C6005C42ED /* LaunchScreen.storyboard */,
 				0F35B65328D2F6C6005C42ED /* Info.plist */,
 			);
 			path = TradingRecordApp;
+			sourceTree = "<group>";
+		};
+		0F7AC2F4290D649B007A4659 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */,
+				0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */,
+				0F7AC2EA290B9E45007A4659 /* AssetDetailViewController.swift */,
+				0F7AC2F0290CF6F6007A4659 /* AssetDetailListCell.swift */,
+				0F7AC2F1290CF6F6007A4659 /* AssetDetailListCell.xib */,
+				0F7AC2E829091895007A4659 /* AddAssetViewController.swift */,
+				0F7AC2E6290909B7007A4659 /* Asset.swift */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		0F7AC2F5290D64AA007A4659 /* Coin */ = {
+			isa = PBXGroup;
+			children = (
+				0F35B65928D9668B005C42ED /* CoinListViewController.swift.swift */,
+				0F35B65B28D9A1BE005C42ED /* CoinListCell.swift */,
+				0F35B65C28D9A1BE005C42ED /* CoinListCell.xib */,
+				0F35B65F28DAF423005C42ED /* Coin.swift */,
+			);
+			path = Coin;
+			sourceTree = "<group>";
+		};
+		0F7AC2F6290D64B4007A4659 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				0F35B66128E2DE32005C42ED /* MemoViewController.swift */,
+				0F7AC2E028FBE6FE007A4659 /* WriteMemoViewController.swift */,
+				0F7AC2E428FFF51F007A4659 /* MemoDetailViewController.swift */,
+				0F7AC2E228FC1193007A4659 /* Memo.swift */,
+				0F7AC2DE28F80CA1007A4659 /* MemoCell.swift */,
+			);
+			path = Memo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +197,7 @@
 				0F35B65228D2F6C6005C42ED /* LaunchScreen.storyboard in Resources */,
 				0F35B64F28D2F6C6005C42ED /* Assets.xcassets in Resources */,
 				0F35B65E28D9A1BE005C42ED /* CoinListCell.xib in Resources */,
+				0F7AC2F3290CF6F6007A4659 /* AssetDetailListCell.xib in Resources */,
 				0F35B64D28D2F6C4005C42ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,11 +212,13 @@
 				0F7AC2E128FBE6FE007A4659 /* WriteMemoViewController.swift in Sources */,
 				0F7AC2E7290909B7007A4659 /* Asset.swift in Sources */,
 				0F7AC2E528FFF51F007A4659 /* MemoDetailViewController.swift in Sources */,
+				0F7AC2F2290CF6F6007A4659 /* AssetDetailListCell.swift in Sources */,
 				0F35B65A28D9668B005C42ED /* CoinListViewController.swift.swift in Sources */,
 				0F35B64628D2F6C4005C42ED /* AppDelegate.swift in Sources */,
 				0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */,
 				0F35B66228E2DE32005C42ED /* MemoViewController.swift in Sources */,
 				0F35B65D28D9A1BE005C42ED /* CoinListCell.swift in Sources */,
+				0F7AC2EB290B9E45007A4659 /* AssetDetailViewController.swift in Sources */,
 				0F7AC2E328FC1193007A4659 /* Memo.swift in Sources */,
 				0F35B66028DAF423005C42ED /* Coin.swift in Sources */,
 				0F35B64828D2F6C4005C42ED /* SceneDelegate.swift in Sources */,

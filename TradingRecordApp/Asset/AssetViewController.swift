@@ -14,6 +14,7 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
+    
     var exchanges: [Asset] = []
     var wallets: [Asset] = []
     var others: [Asset] = []
@@ -36,6 +37,12 @@ class AssetViewController: UIViewController {
         guard let addAssetViewController = segue.destination as? AddAssetViewController else { return }
         addAssetViewController.delegate = self
     }
+    
+//    func makeSelectedAssetList(selectedList: [Asset], categoryName: String) -> [Asset] {
+//        for asset in selectedList {
+//
+//        }
+//    }
 }
 
 extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
@@ -56,8 +63,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             cell.assetNameLabel.text = self.others[indexPath.row].categoryName
         default:
-            cell.assetNameLabel.text = "없음"
-            cell.holdingAssetLabel.text = "10000"
+            break
         }
         
         return cell
@@ -76,6 +82,26 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AssetDetailViewController") as? AssetDetailViewController else { return }
+        var assetDetailList = [Asset]()
+        
+//        switch indexPath.section {
+//        case 0:
+//            for asset in self.exchanges {
+//                self.exchanges
+//            }
+//        case 1:
+//
+//        case 2:
+//
+//        default:
+//            break
+//        }
+        
+//        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sections[section]
     }
@@ -83,6 +109,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension AssetViewController: AddAssetDelegate {
     func didSelectAdd(asset: Asset) {
+        
         switch asset.categoryValue {
         case 0:
             self.exchanges.append(asset)

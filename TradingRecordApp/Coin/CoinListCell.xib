@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-11.22%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3q-fC-Htp">
-                        <rect key="frame" x="245" y="16" width="70" height="18"/>
+                        <rect key="frame" x="235" y="16" width="70" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="LH8-7J-it3"/>
                         </constraints>
@@ -43,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26,728,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M1-Rd-GFP">
-                        <rect key="frame" x="146" y="16" width="79" height="18"/>
+                        <rect key="frame" x="136" y="16" width="79" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                     <constraint firstItem="A7i-Ip-4rK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="TcO-aK-HUG"/>
                     <constraint firstItem="H3q-fC-Htp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XJQ-wG-L0J"/>
                     <constraint firstItem="A7i-Ip-4rK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fmf-yy-d9J"/>
-                    <constraint firstAttribute="trailing" secondItem="H3q-fC-Htp" secondAttribute="trailing" constant="5" id="jvB-tH-twb"/>
+                    <constraint firstAttribute="trailing" secondItem="H3q-fC-Htp" secondAttribute="trailing" constant="15" id="jvB-tH-twb"/>
                     <constraint firstAttribute="bottom" secondItem="A7i-Ip-4rK" secondAttribute="bottom" constant="5" id="ulR-lz-CSj"/>
                     <constraint firstItem="A7i-Ip-4rK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="wZr-Qf-o2w"/>
                     <constraint firstItem="4M1-Rd-GFP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yfL-7n-Nad"/>
