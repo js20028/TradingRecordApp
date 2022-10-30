@@ -10,6 +10,10 @@ import Foundation
 struct Asset {
     let categoryValue: Int
     let categoryName: String
+    let assets: [AssetDetail]
+}
+
+struct AssetDetail {
     let coinName: String
     var coinAmount: Double
 }

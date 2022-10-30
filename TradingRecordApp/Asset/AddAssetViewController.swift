@@ -55,7 +55,9 @@ class AddAssetViewController: UIViewController {
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         
-        let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, coinName: coinName, coinAmount: coinAmount)
+        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount)
+        
+        let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assets: [assetDetail])
         
         self.delegate?.didSelectAdd(asset: asset)
         self.navigationController?.popViewController(animated: true)

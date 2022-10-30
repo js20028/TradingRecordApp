@@ -18,6 +18,7 @@ class AssetDetailViewController: UIViewController {
         self.title = "보유 자산 상세"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        
 //        self.tableView.delegate = self
 //        self.tableView.dataSource = self
         
