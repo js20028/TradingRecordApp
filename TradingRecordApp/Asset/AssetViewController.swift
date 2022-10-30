@@ -84,21 +84,19 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AssetDetailViewController") as? AssetDetailViewController else { return }
-        var assetDetailList = [Asset]()
         
-//        switch indexPath.section {
-//        case 0:
-//            for asset in self.exchanges {
-//                self.exchanges
-//            }
-//        case 1:
-//
-//        case 2:
-//
-//        default:
-//            break
-//        }
+        switch indexPath.section {
+        case 0:
+            viewController.assetDetailList = self.exchanges[indexPath.row].assets
+        case 1:
+            viewController.assetDetailList = self.wallets[indexPath.row].assets
+        case 2:
+            viewController.assetDetailList = self.others[indexPath.row].assets
+        default:
+            break
+        }
         
+        self.performSegue(withIdentifier: "showAssetDetail", sender: nil)
 //        self.navigationController?.pushViewController(viewController, animated: true)
     }
     

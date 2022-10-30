@@ -201,7 +201,6 @@
                                         <connections>
                                             <outlet property="assetNameLabel" destination="aWr-7Y-6oD" id="YNN-Ml-VRq"/>
                                             <outlet property="holdingAssetLabel" destination="6b8-gS-bCD" id="yCY-ZH-edG"/>
-                                            <segue destination="hfq-ly-uCl" kind="show" id="7UW-5H-Yjx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -345,7 +344,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NIo-DP-cPy">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lkb-A8-eZL" customClass="AssetDetailListCell" customModule="TradingRecordApp" customModuleProvider="target">
