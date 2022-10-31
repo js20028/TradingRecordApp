@@ -230,6 +230,7 @@
                         <outlet property="tableView" destination="5V1-cH-I6k" id="vbB-M2-Flc"/>
                         <outlet property="totalAssetDollar" destination="1A9-SM-pGB" id="uJ8-02-b6c"/>
                         <outlet property="totalAssetWon" destination="xhw-TV-gAm" id="3aV-gh-vi1"/>
+                        <segue destination="hfq-ly-uCl" kind="show" identifier="showAssetDetail" id="1Il-1c-KhV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iR-uN-DDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -344,7 +345,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NIo-DP-cPy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lkb-A8-eZL" customClass="AssetDetailListCell" customModule="TradingRecordApp" customModuleProvider="target">
@@ -368,7 +369,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dE9-Wd-JD8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UBP-FU-6p8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UBP-FU-6p8">
+                            <connections>
+                                <segue destination="cgx-Fp-bHq" kind="show" id="tA0-ZO-vBW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NIo-DP-cPy" id="UgM-Rc-Zna"/>
@@ -388,6 +393,7 @@
                         <viewLayoutGuide key="safeArea" id="5b7-51-DQh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hBa-Zk-aeO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbN-jy-OiZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

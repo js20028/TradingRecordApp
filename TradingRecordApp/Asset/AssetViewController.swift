@@ -37,12 +37,6 @@ class AssetViewController: UIViewController {
         guard let addAssetViewController = segue.destination as? AddAssetViewController else { return }
         addAssetViewController.delegate = self
     }
-    
-//    func makeSelectedAssetList(selectedList: [Asset], categoryName: String) -> [Asset] {
-//        for asset in selectedList {
-//
-//        }
-//    }
 }
 
 extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
@@ -96,8 +90,9 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
             break
         }
         
-        self.performSegue(withIdentifier: "showAssetDetail", sender: nil)
-//        self.navigationController?.pushViewController(viewController, animated: true)
+//        self.show(viewController, sender: nil)
+//        self.performSegue(withIdentifier: "showAssetDetail", sender: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

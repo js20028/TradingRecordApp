@@ -15,8 +15,7 @@ class AssetDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "보유 자산 상세"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         
         let nibName = UINib(nibName: "AssetDetailListCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "AssetDetailListCell")
@@ -27,8 +26,16 @@ class AssetDetailViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.title = "보유 자산 상세"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
 }
@@ -46,5 +53,7 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
 
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
 }
