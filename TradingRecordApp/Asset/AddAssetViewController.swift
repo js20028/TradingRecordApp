@@ -61,6 +61,9 @@ class AddAssetViewController: UIViewController {
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         
+        if self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue) {
+            
+        }
         
         let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount)
         
@@ -90,6 +93,17 @@ class AddAssetViewController: UIViewController {
         self.exchangeButton.alpha = value == 0 ? 1 : 0.2
         self.walletButton.alpha = value == 1 ? 1 : 0.2
         self.otherButton.alpha = value == 2 ? 1 : 0.2
+    }
+    
+    private func findAssetCategory(categoryName: String, categoryValue: Int) -> Bool {
+        guard let totalAsset = self.totalAsset else { return false }
+        
+        for asset in totalAsset[categoryValue] {
+            if asset.categoryName == categoryName {
+                return true
+            }
+        }
+        return false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
