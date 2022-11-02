@@ -25,11 +25,17 @@ class AddAssetViewController: UIViewController {
     weak var delegate: AddAssetDelegate?
     var categoryButtonValue: Int = 0
     
+    var totalAsset: [[Asset]]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addButton.isEnabled = false
         self.configureView()
         self.configureInputField()
+        
+        guard let totalAsset = totalAsset else { return }
+        print(totalAsset)
+
     }
     
     private func configureView() {
@@ -54,6 +60,7 @@ class AddAssetViewController: UIViewController {
         guard let categoryName = self.categoryNameTextField.text else { return }
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
+        
         
         let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount)
         

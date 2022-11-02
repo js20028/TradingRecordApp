@@ -19,9 +19,6 @@ class AssetViewController: UIViewController {
     var wallets: [Asset] = []
     var others: [Asset] = []
     var sections: [String] = ["거래소", "지갑", "기타"]
-//    var wallets: [String] = ["메타마스크", "카이카스"]
-//    var others: [String] = ["기타1", "기타2", "기타3", "기타4", "기타5"]
-//    var sections: [String] = ["거래소", "지갑", "기타"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +33,12 @@ class AssetViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let addAssetViewController = segue.destination as? AddAssetViewController else { return }
         addAssetViewController.delegate = self
+        addAssetViewController.totalAsset = makeTotalAsset()
+    }
+    
+    private func makeTotalAsset() -> [[Asset]]{
+        let totalAsset = [self.exchanges, self.wallets, self.others]
+        return totalAsset
     }
 }
 
