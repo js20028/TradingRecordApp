@@ -10,7 +10,7 @@ import Foundation
 struct Asset {
     let categoryValue: Int
     let categoryName: String
-    let assets: [AssetDetail]
+    var assets: [AssetDetail]
 }
 
 struct AssetDetail {

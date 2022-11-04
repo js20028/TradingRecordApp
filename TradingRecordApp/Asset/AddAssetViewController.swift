@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddAssetDelegate: AnyObject {
-    func didSelectAdd(asset: Asset)
+    func didSelectAdd(asset: Asset, isNew: Bool, index: Int)
 }
 
 class AddAssetViewController: UIViewController {
@@ -60,16 +60,22 @@ class AddAssetViewController: UIViewController {
         guard let categoryName = self.categoryNameTextField.text else { return }
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
-        
-        if self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue) {
-            
-        }
+        guard let totalAsset = totalAsset else { return }
         
         let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount)
         
-        let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assets: [assetDetail])
+        let findValue = self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue)
         
-        self.delegate?.didSelectAdd(asset: asset)
+        if findValue != -1 {
+            var asset = totalAsset[self.categoryButtonValue][findValue]
+            asset.assets.append(assetDetail)
+            self.delegate?.didSelectAdd(asset: asset, isNew: false, index: findValue)
+            
+        } else {
+            let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assets: [assetDetail])
+            self.delegate?.didSelectAdd(asset: asset, isNew: true, index: findValue)
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -95,15 +101,15 @@ class AddAssetViewController: UIViewController {
         self.otherButton.alpha = value == 2 ? 1 : 0.2
     }
     
-    private func findAssetCategory(categoryName: String, categoryValue: Int) -> Bool {
-        guard let totalAsset = self.totalAsset else { return false }
+    private func findAssetCategory(categoryName: String, categoryValue: Int) -> Int {
+        guard let totalAsset = self.totalAsset else { return -1 }
         
-        for asset in totalAsset[categoryValue] {
-            if asset.categoryName == categoryName {
-                return true
+        for index in 0..<totalAsset[categoryValue].count {
+            if totalAsset[categoryValue][index].categoryName == categoryName {
+                return index
             }
         }
-        return false
+        return -1
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
