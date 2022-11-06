@@ -371,7 +371,7 @@
                     <navigationItem key="navigationItem" id="dE9-Wd-JD8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UBP-FU-6p8">
                             <connections>
-                                <segue destination="cgx-Fp-bHq" kind="show" id="tA0-ZO-vBW"/>
+                                <action selector="tapAddAssetButton:" destination="hfq-ly-uCl" id="rvi-tC-XeP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -383,21 +383,129 @@
             </objects>
             <point key="canvasLocation" x="2745" y="-153"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Asset Pop Up View Controller-->
         <scene sceneID="zUe-ts-Z9f">
             <objects>
-                <viewController id="cgx-Fp-bHq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddAssetPopUpViewController" id="cgx-Fp-bHq" customClass="AddAssetPopUpViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vzi-66-zDt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-Iq-tUj">
+                                <rect key="frame" x="67" y="288" width="280" height="330"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV6-LM-SNh">
+                                        <rect key="frame" x="94" y="24" width="92" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="aa0-iH-mZg">
+                                        <rect key="frame" x="20" y="114.5" width="240" height="86"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="dwb-g2-IWV">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종목명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msc-C1-jRF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ac0-LR-E9Z">
+                                                        <rect key="frame" x="66.5" y="0.0" width="173.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C1p-On-ZAf">
+                                                <rect key="frame" x="0.0" y="52" width="240" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95T-G8-6tJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="59" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af4-F6-mcI">
+                                                        <rect key="frame" x="67" y="0.0" width="173" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유중인 자산을 추가하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-6j-GMf">
+                                        <rect key="frame" x="45" y="64" width="190" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-WS-fAV">
+                                        <rect key="frame" x="69" y="250.5" width="142" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb2-V2-Rv3">
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="취소"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="취소">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tapCancelButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="GKr-uX-gL0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9S-E6-Xaq">
+                                                <rect key="frame" x="88.5" y="0.0" width="53.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="저장"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="저장">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tapSaveButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="OHy-eO-qY4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="3I2-zn-Tzb"/>
+                                    <constraint firstAttribute="height" constant="330" id="4rX-c8-e92"/>
+                                    <constraint firstItem="4sl-WS-fAV" firstAttribute="top" secondItem="aa0-iH-mZg" secondAttribute="bottom" constant="50" id="BDN-JY-bUD"/>
+                                    <constraint firstAttribute="trailing" secondItem="aa0-iH-mZg" secondAttribute="trailing" constant="20" id="DFP-9O-c6y"/>
+                                    <constraint firstItem="EV6-LM-SNh" firstAttribute="centerX" secondItem="eeb-Iq-tUj" secondAttribute="centerX" id="E4f-8S-llG"/>
+                                    <constraint firstItem="uRj-6j-GMf" firstAttribute="centerX" secondItem="EV6-LM-SNh" secondAttribute="centerX" id="StO-Hm-psg"/>
+                                    <constraint firstItem="aa0-iH-mZg" firstAttribute="top" secondItem="uRj-6j-GMf" secondAttribute="bottom" constant="30" id="V7i-lx-FJ2"/>
+                                    <constraint firstItem="4sl-WS-fAV" firstAttribute="centerX" secondItem="aa0-iH-mZg" secondAttribute="centerX" id="WWx-By-m2U"/>
+                                    <constraint firstItem="uRj-6j-GMf" firstAttribute="top" secondItem="EV6-LM-SNh" secondAttribute="bottom" constant="10" id="fk7-BM-kod"/>
+                                    <constraint firstItem="EV6-LM-SNh" firstAttribute="top" secondItem="eeb-Iq-tUj" secondAttribute="top" constant="24" id="xxj-ih-shw"/>
+                                    <constraint firstItem="aa0-iH-mZg" firstAttribute="leading" secondItem="eeb-Iq-tUj" secondAttribute="leading" constant="20" id="ywQ-DJ-uCY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5b7-51-DQh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25359581953642385" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eeb-Iq-tUj" firstAttribute="centerY" secondItem="5b7-51-DQh" secondAttribute="centerY" id="VEC-NC-IdE"/>
+                            <constraint firstItem="eeb-Iq-tUj" firstAttribute="centerX" secondItem="5b7-51-DQh" secondAttribute="centerX" id="g55-QZ-3Gw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hBa-Zk-aeO"/>
+                    <connections>
+                        <outlet property="coinAmountTextField" destination="af4-F6-mcI" id="vKU-CG-AvT"/>
+                        <outlet property="coinNameTextField" destination="Ac0-LR-E9Z" id="Fqh-6O-Sur"/>
+                        <outlet property="popupView" destination="eeb-Iq-tUj" id="Zbt-h6-Y9F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbN-jy-OiZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3467" y="-153"/>
+            <point key="canvasLocation" x="3466.666666666667" y="-153.34821428571428"/>
         </scene>
         <!--메모-->
         <scene sceneID="1Vz-0U-L0y">

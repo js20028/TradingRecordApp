@@ -26,6 +26,14 @@ class AssetDetailViewController: UIViewController {
         
     }
     
+    @IBAction func tapAddAssetButton(_ sender: UIBarButtonItem) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let popupViewController = storyBoard.instantiateViewController(withIdentifier: "AddAssetPopUpViewController")
+        popupViewController.modalPresentationStyle = .overFullScreen
+        self.present(popupViewController, animated: false, completion: nil)
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

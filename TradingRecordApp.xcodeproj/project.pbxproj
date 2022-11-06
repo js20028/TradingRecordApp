@@ -26,6 +26,7 @@
 		0F7AC2EB290B9E45007A4659 /* AssetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2EA290B9E45007A4659 /* AssetDetailViewController.swift */; };
 		0F7AC2F2290CF6F6007A4659 /* AssetDetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2F0290CF6F6007A4659 /* AssetDetailListCell.swift */; };
 		0F7AC2F3290CF6F6007A4659 /* AssetDetailListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7AC2F1290CF6F6007A4659 /* AssetDetailListCell.xib */; };
+		0F7AC2F82917AEB8007A4659 /* AddAssetPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2F72917AEB8007A4659 /* AddAssetPopUpViewController.swift */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		0F7AC2EA290B9E45007A4659 /* AssetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewController.swift; sourceTree = "<group>"; };
 		0F7AC2F0290CF6F6007A4659 /* AssetDetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailListCell.swift; sourceTree = "<group>"; };
 		0F7AC2F1290CF6F6007A4659 /* AssetDetailListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetDetailListCell.xib; sourceTree = "<group>"; };
+		0F7AC2F72917AEB8007A4659 /* AddAssetPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssetPopUpViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 				0F7AC2F0290CF6F6007A4659 /* AssetDetailListCell.swift */,
 				0F7AC2F1290CF6F6007A4659 /* AssetDetailListCell.xib */,
 				0F7AC2E829091895007A4659 /* AddAssetViewController.swift */,
+				0F7AC2F72917AEB8007A4659 /* AddAssetPopUpViewController.swift */,
 				0F7AC2E6290909B7007A4659 /* Asset.swift */,
 			);
 			path = Asset;
@@ -225,6 +228,7 @@
 				0F7AC2E929091895007A4659 /* AddAssetViewController.swift in Sources */,
 				0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */,
 				0F7AC2DF28F80CA1007A4659 /* MemoCell.swift in Sources */,
+				0F7AC2F82917AEB8007A4659 /* AddAssetPopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -130,8 +130,6 @@ extension AssetViewController: AddAssetDelegate {
             self.totalAsset[asset.categoryValue][index] = asset
         }
         
-        
-        
 //        switch asset.categoryValue {
 //        case 0:
 //            self.exchanges.append(asset)
