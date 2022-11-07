@@ -27,9 +27,12 @@ class AssetDetailViewController: UIViewController {
     }
     
     @IBAction func tapAddAssetButton(_ sender: UIBarButtonItem) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let popupViewController = storyBoard.instantiateViewController(withIdentifier: "AddAssetPopUpViewController")
+        guard let popupViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddAssetPopUpViewController") as? AddAssetPopUpViewController else { return }
         popupViewController.modalPresentationStyle = .overFullScreen
+        popupViewController.assetDetailList = self.assetDetailList
+        
+        popupViewController.delegate = self
+        
         self.present(popupViewController, animated: false, completion: nil)
     }
     
@@ -63,5 +66,12 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+}
+
+extension AssetDetailViewController: AddAssetDetailPopupDelegate {
+    func didSelectAddPopup(assetList: [AssetDetail]) {
+        self.assetDetailList = assetList
+        self.tableView.reloadData()
     }
 }

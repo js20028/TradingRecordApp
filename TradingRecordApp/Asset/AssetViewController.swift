@@ -37,11 +37,6 @@ class AssetViewController: UIViewController {
         addAssetViewController.totalAsset = self.totalAsset
         
     }
-    
-//    private func makeTotalAsset() -> [[Asset]]{
-//        let totalAsset = [self.exchanges, self.wallets, self.others]
-//        return totalAsset
-//    }
 }
 
 extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
