@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol AssetDetailDelegate: AnyObject {
+    func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath)
+}
+
 class AssetDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     var assetDetailList = [AssetDetail]()
+    var indexPath: IndexPath?
+    weak var delegate: AssetDetailDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +52,9 @@ class AssetDetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        guard let indexPath = self.indexPath else { return }
+
+        self.delegate?.sendAssetDetail(assetDetailList: self.assetDetailList, indexPath: indexPath)
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
 }

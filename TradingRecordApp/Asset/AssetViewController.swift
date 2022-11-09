@@ -94,6 +94,8 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AssetDetailViewController") as? AssetDetailViewController else { return }
         
         viewController.assetDetailList = self.totalAsset[indexPath.section][indexPath.row].assets
+        viewController.indexPath = indexPath
+        viewController.delegate = self
         
 //        switch indexPath.section {
 //        case 0:
@@ -137,5 +139,12 @@ extension AssetViewController: AddAssetDelegate {
 //        }
         
         self.tableView.reloadData()
+    }
+}
+
+extension AssetViewController: AssetDetailDelegate {
+    func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath) {
+        self.totalAsset[indexPath.section][indexPath.row].assets = assetDetailList
+        // self.tableView.reloadData()
     }
 }
