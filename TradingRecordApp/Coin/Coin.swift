@@ -20,7 +20,6 @@ struct Data: Codable {
 }
 
 struct CoinInfo: Codable {
-    var coinName: String = "coin"
     let coinPrice: String
     let changeRate: String
     

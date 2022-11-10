@@ -20,15 +20,39 @@ class AssetViewController: UIViewController {
 //    var wallets: [Asset] = []
 //    var others: [Asset] = []
     var sections: [String] = ["거래소", "지갑", "기타"]
+    var coin: Coin!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
+        self.getCoinData()
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+    }
+    
+    private func getCoinData() {
+        guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: coinURL) { data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            let coinData = try? decoder.decode(Coin.self, from: data)
+            
+            self.coin = coinData!
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }.resume()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

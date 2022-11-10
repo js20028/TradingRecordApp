@@ -16,4 +16,5 @@ struct Asset {
 struct AssetDetail {
     let coinName: String
     var coinAmount: Double
+    //var coinInfo: CoinInfo
 }
