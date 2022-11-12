@@ -55,6 +55,27 @@ class AssetViewController: UIViewController {
         }.resume()
     }
     
+    private func matchCoinInfoTotal(assets: [[Asset]], coin: Coin) {
+        for i in 0..<3 {
+            for asset in assets[i] {
+                for var assetDetail in asset.assets {
+                    switch assetDetail.coinName.uppercased() {
+                    case "이더리움", "ETH":
+                        assetDetail.coinInfo = coin.data.ETH
+                    case "클레이튼", "KLAY":
+                        assetDetail.coinInfo = coin.data.KLAY
+                    case "폴리곤", "MATIC":
+                        assetDetail.coinInfo = coin.data.MATIC
+                    case "솔라나", "SOL":
+                        assetDetail.coinInfo = coin.data.SOL
+                    default:
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let addAssetViewController = segue.destination as? AddAssetViewController else { return }
         addAssetViewController.delegate = self

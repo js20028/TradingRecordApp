@@ -19,13 +19,48 @@ class AddAssetPopUpViewController: UIViewController {
     
     var assetDetailList = [AssetDetail]()
     weak var delegate: AddAssetDetailPopupDelegate?
+    var coin: Coin!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getCoinData()
+        
         self.popupView.layer.cornerRadius = 10
         
         
+    }
+    
+    private func getCoinData() {
+        guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: coinURL) { data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            let coinData = try? decoder.decode(Coin.self, from: data)
+            
+            self.coin = coinData!
+        }.resume()
+    }
+    
+    private func matchCoinInfoDetail(coinName: String, coin: Coin) -> CoinInfo {
+        switch coinName.uppercased() {
+        case "이더리움", "ETH":
+            return coin.data.ETH
+        case "클레이튼", "KLAY":
+            return coin.data.KLAY
+        case "폴리곤", "MATIC":
+            return coin.data.MATIC
+        case "솔라나", "SOL":
+            return coin.data.SOL
+        default:
+            return coin.data.ETH
+        }
     }
     
     @IBAction func tapCancelButton(_ sender: UIButton) {
@@ -36,7 +71,8 @@ class AddAssetPopUpViewController: UIViewController {
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         
-        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount)
+        //--------------------------------------------------------------------------------
+        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
         self.assetDetailList.append(assetDetail)
         
         self.delegate?.didSelectAddPopup(assetList: self.assetDetailList)

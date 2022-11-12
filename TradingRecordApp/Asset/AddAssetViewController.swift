@@ -24,7 +24,7 @@ class AddAssetViewController: UIViewController {
     
     weak var delegate: AddAssetDelegate?
     var categoryButtonValue: Int = 0
-    
+    var coin: Coin!
     var totalAsset: [[Asset]]?
     
     override func viewDidLoad() {
@@ -32,6 +32,8 @@ class AddAssetViewController: UIViewController {
         self.addButton.isEnabled = false
         self.configureView()
         self.configureInputField()
+        
+        self.getCoinData()
         
         guard let totalAsset = totalAsset else { return }
         print(totalAsset)
@@ -56,13 +58,46 @@ class AddAssetViewController: UIViewController {
         self.addButton.isEnabled = !(self.categoryNameTextField.text?.isEmpty ?? true) && !(self.coinNameTextField.text?.isEmpty ?? true) && !(self.coinAmountTextField.text?.isEmpty ?? true)
     }
     
+    private func getCoinData() {
+        guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: coinURL) { data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            let coinData = try? decoder.decode(Coin.self, from: data)
+            
+            self.coin = coinData!
+        }.resume()
+    }
+    
+    private func matchCoinInfoDetail(coinName: String, coin: Coin) -> CoinInfo {
+        switch coinName.uppercased() {
+        case "이더리움", "ETH":
+            return coin.data.ETH
+        case "클레이튼", "KLAY":
+            return coin.data.KLAY
+        case "폴리곤", "MATIC":
+            return coin.data.MATIC
+        case "솔라나", "SOL":
+            return coin.data.SOL
+        default:
+            return coin.data.ETH
+        }
+    }
+    
     @IBAction func tapAddButton(_ sender: UIBarButtonItem) {
         guard let categoryName = self.categoryNameTextField.text else { return }
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         guard let totalAsset = totalAsset else { return }
         
-        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount)
+        //----------------------------------------------------------------------------------
+        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
         
         let findValue = self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue)
         
