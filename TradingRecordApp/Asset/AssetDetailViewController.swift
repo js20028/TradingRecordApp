@@ -26,7 +26,6 @@ class AssetDetailViewController: UIViewController {
         let nibName = UINib(nibName: "AssetDetailListCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "AssetDetailListCell")
         
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -57,6 +56,24 @@ class AssetDetailViewController: UIViewController {
         self.delegate?.sendAssetDetail(assetDetailList: self.assetDetailList, indexPath: indexPath)
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
+    
+    // 문자열 일부분 색상 변경 함수
+    private func changeRatingColor(rating: String) -> NSMutableAttributedString {
+        let ratingString = "전일대비 \(rating)%"
+        let attributedString = NSMutableAttributedString(string: ratingString)
+        attributedString.addAttributes([.foregroundColor: UIColor.red],
+                                       range: NSRange(location: 5, length: attributedString.length - 5))
+        
+        if Double(rating)! >= 0 {
+            attributedString.addAttributes([.foregroundColor: UIColor.red],
+                                           range: NSRange(location: 5, length: attributedString.length - 5))
+        } else {
+            attributedString.addAttributes([.foregroundColor: UIColor.blue],
+                                           range: NSRange(location: 5, length: attributedString.length - 5))
+        }
+        
+        return attributedString
+    }
 }
 
 extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,8 +83,17 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "AssetDetailListCell") as? AssetDetailListCell else { return UITableViewCell() }
+        
+        let coinPriceDouble = Double(self.assetDetailList[indexPath.row].coinInfo.coinPrice)
+        let evalPrice = self.assetDetailList[indexPath.row].coinAmount * coinPriceDouble!
+        
         cell.coinNameDetail.text = self.assetDetailList[indexPath.row].coinName
+        
+        cell.coinPriceDetail.text = "\(self.assetDetailList[indexPath.row].coinInfo.coinPrice) 원"
+        cell.changeRateDetail.attributedText = self.changeRatingColor(rating: self.assetDetailList[indexPath.row].coinInfo.changeRate)
+        
         cell.coinAmountDetail.text = String(self.assetDetailList[indexPath.row].coinAmount)
+        cell.evaluatedPrice.text = "\(evalPrice) 원"
         
         return cell
     }
