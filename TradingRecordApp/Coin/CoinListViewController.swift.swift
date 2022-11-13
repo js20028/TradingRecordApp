@@ -66,7 +66,12 @@ extension CoinListViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinListCell", for: indexPath) as? CoinListCell else { return UITableViewCell() }
         cell.coinNameLabel.text = self.coinNameList[indexPath.row]
         cell.coinPriceLabel.text = self.coinList[indexPath.row].coinPriceDollar
-        cell.changeRateLabel.text = self.coinList[indexPath.row].changeRate
+        cell.changeRateLabel.text = "\(self.coinList[indexPath.row].changeRate)%"
+        if Double(self.coinList[indexPath.row].changeRate)! >= 0 {
+            cell.changeRateLabel.textColor = .red
+        } else {
+            cell.changeRateLabel.textColor = .blue
+        }
         
         return cell
                 
