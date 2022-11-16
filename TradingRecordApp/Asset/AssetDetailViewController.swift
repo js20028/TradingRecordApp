@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AssetDetailDelegate: AnyObject {
-    func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath)
+    func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath, sum: Int)
 }
 
 class AssetDetailViewController: UIViewController {
@@ -52,9 +52,21 @@ class AssetDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let indexPath = self.indexPath else { return }
+        
+        let assetSum = self.makeAssetSum()
+        print(assetSum)
 
-        self.delegate?.sendAssetDetail(assetDetailList: self.assetDetailList, indexPath: indexPath)
+        self.delegate?.sendAssetDetail(assetDetailList: self.assetDetailList, indexPath: indexPath, sum: assetSum)
         self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    private func makeAssetSum() -> Int {
+        var sum: Double = 0
+        for assetDetail in self.assetDetailList {
+            sum += assetDetail.coinAmount * (Double(assetDetail.coinInfo.coinPrice) ?? 0)
+        }
+        
+        return Int(sum)
     }
     
     // 문자열 일부분 색상 변경 함수

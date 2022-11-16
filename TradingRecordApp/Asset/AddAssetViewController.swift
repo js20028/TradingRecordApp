@@ -107,7 +107,7 @@ class AddAssetViewController: UIViewController {
             self.delegate?.didSelectAdd(asset: asset, isNew: false, index: findValue)
             
         } else {
-            let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assets: [assetDetail])
+            let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assetsSum: 0, assets: [assetDetail])
             self.delegate?.didSelectAdd(asset: asset, isNew: true, index: findValue)
         }
         

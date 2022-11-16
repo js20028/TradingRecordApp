@@ -95,6 +95,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "AssetListCell", for: indexPath) as? AssetListCell else { return UITableViewCell() }
         
         cell.assetNameLabel.text = self.totalAsset[indexPath.section][indexPath.row].categoryName
+        cell.holdingAssetLabel.text = String(self.totalAsset[indexPath.section][indexPath.row].assetsSum)
         
 //        switch indexPath.section {
 //        case 0:
@@ -188,8 +189,9 @@ extension AssetViewController: AddAssetDelegate {
 }
 
 extension AssetViewController: AssetDetailDelegate {
-    func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath) {
+    func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath, sum: Int) {
         self.totalAsset[indexPath.section][indexPath.row].assets = assetDetailList
-        // self.tableView.reloadData()
+        self.totalAsset[indexPath.section][indexPath.row].assetsSum = sum
+        self.tableView.reloadData()
     }
 }
