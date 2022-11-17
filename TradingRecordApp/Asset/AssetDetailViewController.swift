@@ -85,6 +85,11 @@ class AssetDetailViewController: UIViewController {
         
         return attributedString
     }
+    
+    private func removeCell(at indexPath: IndexPath, to tableView: UITableView) {
+        self.assetDetailList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
 
 extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -107,6 +112,12 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.evaluatedPrice.text = "\(evalPrice) 원"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.removeCell(at: indexPath, to: tableView)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
