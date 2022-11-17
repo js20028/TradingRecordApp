@@ -96,7 +96,7 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "AssetDetailListCell") as? AssetDetailListCell else { return UITableViewCell() }
         
         let coinPriceDouble = Double(self.assetDetailList[indexPath.row].coinInfo.coinPrice)
-        let evalPrice = self.assetDetailList[indexPath.row].coinAmount * coinPriceDouble!
+        let evalPrice = Int(self.assetDetailList[indexPath.row].coinAmount * coinPriceDouble!)
         
         cell.coinNameDetail.text = self.assetDetailList[indexPath.row].coinName
         

@@ -102,8 +102,10 @@ class AddAssetViewController: UIViewController {
         let findValue = self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue)
         
         if findValue != -1 {
+            let sum = Int(coinAmount * Double(assetDetail.coinInfo.coinPrice)!)
             var asset = totalAsset[self.categoryButtonValue][findValue]
             asset.assets.append(assetDetail)
+            asset.assetsSum += sum
             self.delegate?.didSelectAdd(asset: asset, isNew: false, index: findValue)
             
         } else {

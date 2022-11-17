@@ -95,7 +95,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "AssetListCell", for: indexPath) as? AssetListCell else { return UITableViewCell() }
         
         cell.assetNameLabel.text = self.totalAsset[indexPath.section][indexPath.row].categoryName
-        cell.holdingAssetLabel.text = String(self.totalAsset[indexPath.section][indexPath.row].assetsSum)
+        cell.holdingAssetLabel.text = "\(self.totalAsset[indexPath.section][indexPath.row].assetsSum) 원"
         
 //        switch indexPath.section {
 //        case 0:
