@@ -25,6 +25,7 @@ class AssetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 테이블 뷰 최상단 잘림 해결
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
         self.getCoinData()
@@ -32,6 +33,11 @@ class AssetViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
+        self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
     }
     
     private func getCoinData() {
@@ -53,6 +59,16 @@ class AssetViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }.resume()
+    }
+    
+    private func makeTotalAssetSum() -> Int {
+        var sum = 0
+        for i in 0..<3 {
+            for asset in self.totalAsset[i] {
+                sum += asset.assetsSum
+            }
+        }
+        return sum
     }
     
     private func matchCoinInfoTotal(assets: [[Asset]], coin: Coin) {
@@ -96,6 +112,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.assetNameLabel.text = self.totalAsset[indexPath.section][indexPath.row].categoryName
         cell.holdingAssetLabel.text = "\(self.totalAsset[indexPath.section][indexPath.row].assetsSum) 원"
+        
         
 //        switch indexPath.section {
 //        case 0:
