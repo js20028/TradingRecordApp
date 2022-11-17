@@ -54,7 +54,6 @@ class AssetDetailViewController: UIViewController {
         guard let indexPath = self.indexPath else { return }
         
         let assetSum = self.makeAssetSum()
-        print(assetSum)
 
         self.delegate?.sendAssetDetail(assetDetailList: self.assetDetailList, indexPath: indexPath, sum: assetSum)
         self.navigationController?.navigationBar.prefersLargeTitles = false

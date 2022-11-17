@@ -96,7 +96,7 @@ class AddAssetViewController: UIViewController {
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         guard let totalAsset = totalAsset else { return }
         
-        //----------------------------------------------------------------------------------
+        
         let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
         
         let findValue = self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue)
@@ -107,7 +107,8 @@ class AddAssetViewController: UIViewController {
             self.delegate?.didSelectAdd(asset: asset, isNew: false, index: findValue)
             
         } else {
-            let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assetsSum: 0, assets: [assetDetail])
+            let sum = Int(coinAmount * Double(assetDetail.coinInfo.coinPrice)!)
+            let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assetsSum: sum, assets: [assetDetail])
             self.delegate?.didSelectAdd(asset: asset, isNew: true, index: findValue)
         }
         
