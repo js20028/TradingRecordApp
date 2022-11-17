@@ -209,6 +209,11 @@ extension AssetViewController: AssetDetailDelegate {
     func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath, sum: Int) {
         self.totalAsset[indexPath.section][indexPath.row].assets = assetDetailList
         self.totalAsset[indexPath.section][indexPath.row].assetsSum = sum
+        
+        // 자산상세 페이지에서 모든항목 삭제 시 자산페이지의 전체자산 배열 요소 삭제
+        if sum == 0 {
+            self.totalAsset[indexPath.section].remove(at: indexPath.row)
+        }
         self.tableView.reloadData()
     }
 }
