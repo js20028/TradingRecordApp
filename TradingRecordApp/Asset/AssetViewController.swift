@@ -13,12 +13,15 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var totalAssetDollar: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    var totalAsset = [[Asset](), [Asset](), [Asset]()] {
+        didSet {
+            self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
+            self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
+        }
+    }
     
-    var totalAsset = [[Asset](), [Asset](), [Asset]()]
+    @IBOutlet weak var assetView: UIView!
     
-//    var exchanges: [Asset] = []
-//    var wallets: [Asset] = []
-//    var others: [Asset] = []
     var sections: [String] = ["거래소", "지갑", "기타"]
     var coin: Coin!
     
@@ -90,6 +93,11 @@ class AssetViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func removeCell(at indexPath: IndexPath, to tableView: UITableView) {
+        self.totalAsset[indexPath.section].remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -178,6 +186,12 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sections[section]
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.removeCell(at: indexPath, to: tableView)
+        }
     }
 }
 
