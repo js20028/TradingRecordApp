@@ -29,6 +29,7 @@
 		0F7AC2F82917AEB8007A4659 /* AddAssetPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7AC2F72917AEB8007A4659 /* AddAssetPopUpViewController.swift */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
+		E5736BB83F6098406AD92316 /* Pods_TradingRecordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,9 @@
 		0F7AC2F72917AEB8007A4659 /* AddAssetPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssetPopUpViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
+		48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradingRecordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7683D5B6A1D141B8CC186F /* Pods-TradingRecordApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradingRecordApp.release.xcconfig"; path = "Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp.release.xcconfig"; sourceTree = "<group>"; };
+		EC43EBB4354F80A2A886E8FF /* Pods-TradingRecordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradingRecordApp.debug.xcconfig"; path = "Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5736BB83F6098406AD92316 /* Pods_TradingRecordApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,8 @@
 			children = (
 				0F35B64428D2F6C4005C42ED /* TradingRecordApp */,
 				0F35B64328D2F6C4005C42ED /* Products */,
+				31A9C439E065AA7B73DD76FE /* Pods */,
+				55A18E9A26E6FD07D2B0D4AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +146,24 @@
 			path = Memo;
 			sourceTree = "<group>";
 		};
+		31A9C439E065AA7B73DD76FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC43EBB4354F80A2A886E8FF /* Pods-TradingRecordApp.debug.xcconfig */,
+				DB7683D5B6A1D141B8CC186F /* Pods-TradingRecordApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		55A18E9A26E6FD07D2B0D4AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F35B65628D2F6C6005C42ED /* Build configuration list for PBXNativeTarget "TradingRecordApp" */;
 			buildPhases = (
+				923816BA761B003848769348 /* [CP] Check Pods Manifest.lock */,
 				0F35B63E28D2F6C4005C42ED /* Sources */,
 				0F35B63F28D2F6C4005C42ED /* Frameworks */,
 				0F35B64028D2F6C4005C42ED /* Resources */,
+				0C501236BD48CBD1E421E818 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +233,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C501236BD48CBD1E421E818 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		923816BA761B003848769348 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TradingRecordApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F35B63E28D2F6C4005C42ED /* Sources */ = {
@@ -370,6 +439,7 @@
 		};
 		0F35B65728D2F6C6005C42ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC43EBB4354F80A2A886E8FF /* Pods-TradingRecordApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,6 +468,7 @@
 		};
 		0F35B65828D2F6C6005C42ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB7683D5B6A1D141B8CC186F /* Pods-TradingRecordApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
