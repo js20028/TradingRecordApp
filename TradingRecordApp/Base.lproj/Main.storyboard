@@ -227,7 +227,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="assetView" destination="r63-WE-5Re" id="RpS-eF-Rqp"/>
                         <outlet property="tableView" destination="5V1-cH-I6k" id="vbB-M2-Flc"/>
                         <outlet property="totalAssetDollar" destination="1A9-SM-pGB" id="uJ8-02-b6c"/>
                         <outlet property="totalAssetWon" destination="xhw-TV-gAm" id="3aV-gh-vi1"/>

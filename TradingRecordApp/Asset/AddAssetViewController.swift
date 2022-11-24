@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol AddAssetDelegate: AnyObject {
     func didSelectAdd(asset: Asset, isNew: Bool, index: Int)
@@ -26,6 +27,7 @@ class AddAssetViewController: UIViewController {
     var categoryButtonValue: Int = 0
     var coin: Coin!
     var totalAsset: [[Asset]]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,23 +96,36 @@ class AddAssetViewController: UIViewController {
         guard let categoryName = self.categoryNameTextField.text else { return }
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
+        
         guard let totalAsset = totalAsset else { return }
         
+        let coinInfo = self.matchCoinInfoDetail(coinName: coinName, coin: self.coin)
         
-        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
+//        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
+        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinAmount": coinAmount, "coinPrice": coinInfo.coinPrice, "changeRate": coinInfo.changeRate])
         
         let findValue = self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue)
         
         if findValue != -1 {
-            let sum = Int(coinAmount * Double(assetDetail.coinInfo.coinPrice)!)
-            var asset = totalAsset[self.categoryButtonValue][findValue]
-            asset.assets.append(assetDetail)
-            asset.assetsSum += sum
-            self.delegate?.didSelectAdd(asset: asset, isNew: false, index: findValue)
+//            let sum = Int(coinAmount * Double(assetDetail.coinInfo.coinPrice)!)
+            let sum = Int(coinAmount * Double(assetDetail.coinPrice)!)
+            
+            let realm = try! Realm()
+            try! realm.write {
+                let asset = totalAsset[self.categoryButtonValue][findValue]
+                asset.assets.append(assetDetail)
+                asset.assetsSum += sum
+                self.delegate?.didSelectAdd(asset: asset, isNew: false, index: findValue)
+            }
+            
             
         } else {
-            let sum = Int(coinAmount * Double(assetDetail.coinInfo.coinPrice)!)
-            let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assetsSum: sum, assets: [assetDetail])
+//            let sum = Int(coinAmount * Double(assetDetail.coinInfo.coinPrice)!)
+            let sum = Int(coinAmount * Double(assetDetail.coinPrice)!)
+            
+//            let asset = Asset(categoryValue: self.categoryButtonValue, categoryName: categoryName, assetsSum: sum, assets: [assetDetail])
+            let asset = Asset(value: ["categoryValue": self.categoryButtonValue, "categoryName": categoryName, "assetsSum": sum, "assets": [assetDetail]])
+            
             self.delegate?.didSelectAdd(asset: asset, isNew: true, index: findValue)
         }
         

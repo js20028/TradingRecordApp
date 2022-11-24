@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AssetViewController: UIViewController {
 
@@ -20,10 +21,10 @@ class AssetViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var assetView: UIView!
-    
     var sections: [String] = ["거래소", "지갑", "기타"]
     var coin: Coin!
+    
+//    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,9 @@ class AssetViewController: UIViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
         self.getCoinData()
+        
+        self.makeRealmData()
+        self.loadRealmData()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -43,6 +47,34 @@ class AssetViewController: UIViewController {
         self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
     }
     
+    // Realm DB 데이터 초기화 함수
+    private func makeRealmData() {
+        let realm = try! Realm()
+        let savedAsset = realm.objects(AssetCategory.self)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+
+        while savedAsset.count < 3 {
+            try! realm.write {
+                realm.add(AssetCategory())
+            }
+        }
+    }
+    
+    // Realm DB 데이터 불러와서 배열에 저장하는 함수
+    private func loadRealmData() {
+        let realm = try! Realm()
+        
+        let savedAsset = realm.objects(AssetCategory.self)
+        for i in 0..<3 {
+            for asset in savedAsset[i].assetList {
+                self.totalAsset[i].append(asset)
+            }
+        }
+        
+        print(self.totalAsset)
+    }
+    
+    // 코인정보 가져오는 함수
     private func getCoinData() {
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
@@ -80,13 +112,21 @@ class AssetViewController: UIViewController {
                 for var assetDetail in asset.assets {
                     switch assetDetail.coinName.uppercased() {
                     case "이더리움", "ETH":
-                        assetDetail.coinInfo = coin.data.ETH
+//                        assetDetail.coinInfo = coin.data.ETH
+                        assetDetail.coinPrice = coin.data.ETH.coinPrice
+                        assetDetail.changeRate = coin.data.ETH.changeRate
                     case "클레이튼", "KLAY":
-                        assetDetail.coinInfo = coin.data.KLAY
+//                        assetDetail.coinInfo = coin.data.KLAY
+                        assetDetail.coinPrice = coin.data.KLAY.coinPrice
+                        assetDetail.changeRate = coin.data.KLAY.changeRate
                     case "폴리곤", "MATIC":
-                        assetDetail.coinInfo = coin.data.MATIC
+//                        assetDetail.coinInfo = coin.data.MATIC
+                        assetDetail.coinPrice = coin.data.MATIC.coinPrice
+                        assetDetail.changeRate = coin.data.MATIC.changeRate
                     case "솔라나", "SOL":
-                        assetDetail.coinInfo = coin.data.SOL
+//                        assetDetail.coinInfo = coin.data.SOL
+                        assetDetail.coinPrice = coin.data.SOL.coinPrice
+                        assetDetail.changeRate = coin.data.SOL.changeRate
                     default:
                         break
                     }
@@ -96,7 +136,14 @@ class AssetViewController: UIViewController {
     }
     
     private func removeCell(at indexPath: IndexPath, to tableView: UITableView) {
-        self.totalAsset[indexPath.section].remove(at: indexPath.row)
+        let realm = try! Realm()
+        let savedAsset = realm.objects(AssetCategory.self)
+        
+        try! realm.write {
+            self.totalAsset[indexPath.section].remove(at: indexPath.row)
+            realm.delete(savedAsset[indexPath.section].assetList[indexPath.row])
+        }
+        
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
@@ -121,18 +168,6 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         cell.assetNameLabel.text = self.totalAsset[indexPath.section][indexPath.row].categoryName
         cell.holdingAssetLabel.text = "\(self.totalAsset[indexPath.section][indexPath.row].assetsSum) 원"
         
-        
-//        switch indexPath.section {
-//        case 0:
-//            cell.assetNameLabel.text = self.exchanges[indexPath.row].categoryName
-//        case 1:
-//            cell.assetNameLabel.text = self.wallets[indexPath.row].categoryName
-//        case 2:
-//            cell.assetNameLabel.text = self.others[indexPath.row].categoryName
-//        default:
-//            break
-//        }
-        
         return cell
     }
     
@@ -148,36 +183,19 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return 0
         }
-        
-//        switch section {
-//        case 0:
-//            return self.exchanges.count
-//        case 1:
-//            return self.wallets.count
-//        case 2:
-//            return self.others.count
-//        default:
-//            return 0
-//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AssetDetailViewController") as? AssetDetailViewController else { return }
         
-        viewController.assetDetailList = self.totalAsset[indexPath.section][indexPath.row].assets
+        //viewController.assetDetailList = self.totalAsset[indexPath.section][indexPath.row].assets
+        for assetDetail in self.totalAsset[indexPath.section][indexPath.row].assets {
+            viewController.assetDetailList.append(assetDetail)
+        }
+        
+        
         viewController.indexPath = indexPath
         viewController.delegate = self
-        
-//        switch indexPath.section {
-//        case 0:
-//            viewController.assetDetailList = self.exchanges[indexPath.row].assets
-//        case 1:
-//            viewController.assetDetailList = self.wallets[indexPath.row].assets
-//        case 2:
-//            viewController.assetDetailList = self.others[indexPath.row].assets
-//        default:
-//            break
-//        }
         
 //        self.show(viewController, sender: nil)
 //        self.performSegue(withIdentifier: "showAssetDetail", sender: nil)
@@ -197,23 +215,25 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension AssetViewController: AddAssetDelegate {
     func didSelectAdd(asset: Asset, isNew: Bool, index: Int) {
+        let realm = try! Realm()
+        let savedAsset = realm.objects(AssetCategory.self)
         
         if isNew {
-            self.totalAsset[asset.categoryValue].append(asset)
+            
+
+            try! realm.write {
+                self.totalAsset[asset.categoryValue].append(asset)
+                savedAsset[asset.categoryValue].assetList.append(asset)
+            }
+            
         } else {
-            self.totalAsset[asset.categoryValue][index] = asset
+            print("isNew : FALSE~~~~~~~~~~~~~~~~")
+            
+//            try! realm.write {
+//                self.totalAsset[asset.categoryValue][index] = asset
+//                savedAsset[asset.categoryValue].assetList[index] = asset
+//            }
         }
-        
-//        switch asset.categoryValue {
-//        case 0:
-//            self.exchanges.append(asset)
-//        case 1:
-//            self.wallets.append(asset)
-//        case 2:
-//            self.others.append(asset)
-//        default:
-//            break
-//        }
         
         self.tableView.reloadData()
     }
@@ -221,13 +241,26 @@ extension AssetViewController: AddAssetDelegate {
 
 extension AssetViewController: AssetDetailDelegate {
     func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath, sum: Int) {
-        self.totalAsset[indexPath.section][indexPath.row].assets = assetDetailList
-        self.totalAsset[indexPath.section][indexPath.row].assetsSum = sum
-        
-        // 자산상세 페이지에서 모든항목 삭제 시 자산페이지의 전체자산 배열 요소 삭제
-        if sum == 0 {
-            self.totalAsset[indexPath.section].remove(at: indexPath.row)
+        //self.totalAsset[indexPath.section][indexPath.row].assets = assetDetailList
+        let realm = try! Realm()
+        let savedAsset = realm.objects(AssetCategory.self)
+        try! realm.write {
+            self.totalAsset[indexPath.section][indexPath.row].assets.removeAll()
+            for assetDetail in assetDetailList {
+                self.totalAsset[indexPath.section][indexPath.row].assets.append(assetDetail)
+            }
+
+
+            self.totalAsset[indexPath.section][indexPath.row].assetsSum = sum
+
+            // 자산상세 페이지에서 모든항목 삭제 시 자산페이지의 전체자산 배열 요소 삭제
+            if sum == 0 {
+                realm.delete(savedAsset[indexPath.section].assetList[indexPath.row])
+                
+                self.totalAsset[indexPath.section].remove(at: indexPath.row)
+            }
         }
+        
         self.tableView.reloadData()
     }
 }

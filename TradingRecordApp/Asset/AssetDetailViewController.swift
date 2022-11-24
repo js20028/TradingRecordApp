@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol AssetDetailDelegate: AnyObject {
     func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath, sum: Int)
@@ -62,7 +63,7 @@ class AssetDetailViewController: UIViewController {
     private func makeAssetSum() -> Int {
         var sum: Double = 0
         for assetDetail in self.assetDetailList {
-            sum += assetDetail.coinAmount * (Double(assetDetail.coinInfo.coinPrice) ?? 0)
+            sum += assetDetail.coinAmount * (Double(assetDetail.coinPrice) ?? 0)
         }
         
         return Int(sum)
@@ -87,6 +88,13 @@ class AssetDetailViewController: UIViewController {
     }
     
     private func removeCell(at indexPath: IndexPath, to tableView: UITableView) {
+        guard let indexPathFromVC = self.indexPath else { return }
+        let realm = try! Realm()
+        let savedAsset = realm.objects(AssetCategory.self)
+        try! realm.write {
+            realm.delete(savedAsset[indexPathFromVC.section].assetList[indexPathFromVC.row].assets[indexPath.row])
+        }
+        
         self.assetDetailList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
@@ -100,13 +108,13 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "AssetDetailListCell") as? AssetDetailListCell else { return UITableViewCell() }
         
-        let coinPriceDouble = Double(self.assetDetailList[indexPath.row].coinInfo.coinPrice)
+        let coinPriceDouble = Double(self.assetDetailList[indexPath.row].coinPrice)
         let evalPrice = Int(self.assetDetailList[indexPath.row].coinAmount * coinPriceDouble!)
         
         cell.coinNameDetail.text = self.assetDetailList[indexPath.row].coinName
         
-        cell.coinPriceDetail.text = "\(self.assetDetailList[indexPath.row].coinInfo.coinPrice) 원"
-        cell.changeRateDetail.attributedText = self.changeRatingColor(rating: self.assetDetailList[indexPath.row].coinInfo.changeRate)
+        cell.coinPriceDetail.text = "\(self.assetDetailList[indexPath.row].coinPrice) 원"
+        cell.changeRateDetail.attributedText = self.changeRatingColor(rating: self.assetDetailList[indexPath.row].changeRate)
         
         cell.coinAmountDetail.text = String(self.assetDetailList[indexPath.row].coinAmount)
         cell.evaluatedPrice.text = "\(evalPrice) 원"

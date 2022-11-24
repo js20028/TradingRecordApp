@@ -71,8 +71,12 @@ class AddAssetPopUpViewController: UIViewController {
         guard let coinName = self.coinNameTextField.text else { return }
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         
+        let coinInfo = self.matchCoinInfoDetail(coinName: coinName, coin: self.coin)
+        
         //--------------------------------------------------------------------------------
-        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
+        
+//        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
+        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinAmount": coinAmount, "coinPrice": coinInfo.coinPrice, "changeRate": coinInfo.changeRate])
         self.assetDetailList.append(assetDetail)
         
         self.delegate?.didSelectAddPopup(assetList: self.assetDetailList)
