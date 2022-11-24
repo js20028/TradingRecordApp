@@ -51,7 +51,7 @@ class AssetViewController: UIViewController {
     private func makeRealmData() {
         let realm = try! Realm()
         let savedAsset = realm.objects(AssetCategory.self)
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
 
         while savedAsset.count < 3 {
             try! realm.write {
@@ -141,6 +141,9 @@ class AssetViewController: UIViewController {
         
         try! realm.write {
             self.totalAsset[indexPath.section].remove(at: indexPath.row)
+            for assetDetail in savedAsset[indexPath.section].assetList[indexPath.row].assets {
+                realm.delete(assetDetail)
+            }
             realm.delete(savedAsset[indexPath.section].assetList[indexPath.row])
         }
         
