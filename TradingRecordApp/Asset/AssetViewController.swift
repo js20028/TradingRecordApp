@@ -109,22 +109,18 @@ class AssetViewController: UIViewController {
     private func matchCoinInfoTotal(assets: [[Asset]], coin: Coin) {
         for i in 0..<3 {
             for asset in assets[i] {
-                for var assetDetail in asset.assets {
+                for assetDetail in asset.assets {
                     switch assetDetail.coinName.uppercased() {
                     case "이더리움", "ETH":
-//                        assetDetail.coinInfo = coin.data.ETH
                         assetDetail.coinPrice = coin.data.ETH.coinPrice
                         assetDetail.changeRate = coin.data.ETH.changeRate
                     case "클레이튼", "KLAY":
-//                        assetDetail.coinInfo = coin.data.KLAY
                         assetDetail.coinPrice = coin.data.KLAY.coinPrice
                         assetDetail.changeRate = coin.data.KLAY.changeRate
                     case "폴리곤", "MATIC":
-//                        assetDetail.coinInfo = coin.data.MATIC
                         assetDetail.coinPrice = coin.data.MATIC.coinPrice
                         assetDetail.changeRate = coin.data.MATIC.changeRate
                     case "솔라나", "SOL":
-//                        assetDetail.coinInfo = coin.data.SOL
                         assetDetail.coinPrice = coin.data.SOL.coinPrice
                         assetDetail.changeRate = coin.data.SOL.changeRate
                     default:
@@ -230,7 +226,6 @@ extension AssetViewController: AddAssetDelegate {
             }
             
         } else {
-            print("isNew : FALSE~~~~~~~~~~~~~~~~")
             
 //            try! realm.write {
 //                self.totalAsset[asset.categoryValue][index] = asset

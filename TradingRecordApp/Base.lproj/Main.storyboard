@@ -272,8 +272,8 @@
                                     <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="HLj-LQ-xCc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거래소, 지갑, 기타 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-TV-rSJ">
-                                <rect key="frame" x="71" y="209" width="155" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거래소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-TV-rSJ">
+                                <rect key="frame" x="71" y="209" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -324,6 +324,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="Y6J-ks-31X" id="Qkh-Xe-OJ8"/>
+                        <outlet property="categoryNameLabel" destination="TG5-TV-rSJ" id="cT1-Vz-hfu"/>
                         <outlet property="categoryNameTextField" destination="1h9-yF-PKh" id="Nhj-fv-zBh"/>
                         <outlet property="coinAmountTextField" destination="Tib-3z-gh3" id="C56-y3-GJz"/>
                         <outlet property="coinNameTextField" destination="Fjw-Hk-Nta" id="x7b-X6-GMg"/>

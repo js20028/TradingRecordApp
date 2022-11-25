@@ -135,6 +135,7 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension AssetDetailViewController: AddAssetDetailPopupDelegate {
     func didSelectAddPopup(assetList: [AssetDetail]) {
+        
         self.assetDetailList = assetList
         self.tableView.reloadData()
     }

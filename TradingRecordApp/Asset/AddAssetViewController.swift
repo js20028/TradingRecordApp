@@ -19,12 +19,26 @@ class AddAssetViewController: UIViewController {
     @IBOutlet weak var walletButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
     
+    @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryNameTextField: UITextField!
     @IBOutlet weak var coinNameTextField: UITextField!
     @IBOutlet weak var coinAmountTextField: UITextField!
     
     weak var delegate: AddAssetDelegate?
-    var categoryButtonValue: Int = 0
+    var categoryButtonValue: Int = 0 {
+        didSet {
+            switch categoryButtonValue {
+            case 0:
+                self.categoryNameLabel.text = "거래소 이름"
+            case 1:
+                self.categoryNameLabel.text = "지갑 이름"
+            case 2:
+                self.categoryNameLabel.text = "기타 이름"
+            default:
+                break
+            }
+        }
+    }
     var coin: Coin!
     var totalAsset: [[Asset]]?
     
