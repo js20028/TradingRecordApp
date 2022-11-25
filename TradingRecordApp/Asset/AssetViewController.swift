@@ -207,7 +207,14 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.removeCell(at: indexPath, to: tableView)
+            let alert = UIAlertController(title: "삭제", message: "정말로 삭제하시겠습니까?", preferredStyle: .alert)
+            let registerButton = UIAlertAction(title: "삭제", style: .default, handler: {[weak self] _ in
+                self?.removeCell(at: indexPath, to: tableView)
+            })
+            let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alert.addAction(cancelButton)
+            alert.addAction(registerButton)
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
