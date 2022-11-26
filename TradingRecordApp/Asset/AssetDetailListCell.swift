@@ -10,6 +10,7 @@ import UIKit
 class AssetDetailListCell: UITableViewCell {
 
     @IBOutlet weak var coinNameDetail: UILabel!
+    @IBOutlet weak var coinSymbolDetail: UILabel!
     @IBOutlet weak var coinPriceDetail: UILabel!
     @IBOutlet weak var changeRateDetail: UILabel!
     @IBOutlet weak var coinAmountDetail: UILabel!

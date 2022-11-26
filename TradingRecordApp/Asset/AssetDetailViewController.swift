@@ -112,11 +112,12 @@ extension AssetDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let evalPrice = Int(self.assetDetailList[indexPath.row].coinAmount * coinPriceDouble!)
         
         cell.coinNameDetail.text = self.assetDetailList[indexPath.row].coinName
+        cell.coinSymbolDetail.text = self.assetDetailList[indexPath.row].coinSymbol
         
         cell.coinPriceDetail.text = "\(self.assetDetailList[indexPath.row].coinPrice) 원"
         cell.changeRateDetail.attributedText = self.changeRatingColor(rating: self.assetDetailList[indexPath.row].changeRate)
         
-        cell.coinAmountDetail.text = String(self.assetDetailList[indexPath.row].coinAmount)
+        cell.coinAmountDetail.text = "\(self.assetDetailList[indexPath.row].coinAmount) \(self.assetDetailList[indexPath.row].coinSymbol)"
         cell.evaluatedPrice.text = "\(evalPrice) 원"
         
         return cell

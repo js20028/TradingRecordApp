@@ -106,6 +106,21 @@ class AddAssetViewController: UIViewController {
         }
     }
     
+    private func matchCoinSymbol(coinName: String) -> String {
+        switch coinName.uppercased() {
+        case "이더리움", "ETH":
+            return "ETH"
+        case "클레이튼", "KLAY":
+            return "KLAY"
+        case "폴리곤", "MATIC":
+            return "MATIC"
+        case "솔라나", "SOL":
+            return "SOL"
+        default:
+            return "ETH"
+        }
+    }
+    
     @IBAction func tapAddButton(_ sender: UIBarButtonItem) {
         guard let categoryName = self.categoryNameTextField.text else { return }
         guard let coinName = self.coinNameTextField.text else { return }
@@ -114,9 +129,10 @@ class AddAssetViewController: UIViewController {
         guard let totalAsset = totalAsset else { return }
         
         let coinInfo = self.matchCoinInfoDetail(coinName: coinName, coin: self.coin)
+        let coinSymbol = self.matchCoinSymbol(coinName: coinName)
         
 //        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
-        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinAmount": coinAmount, "coinPrice": coinInfo.coinPrice, "changeRate": coinInfo.changeRate])
+        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinSymbol": coinSymbol, "coinAmount": coinAmount, "coinPrice": coinInfo.coinPrice, "changeRate": coinInfo.changeRate])
         
         let findValue = self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue)
         

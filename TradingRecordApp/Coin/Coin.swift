@@ -23,7 +23,6 @@ struct CoinInfo: Codable {
     let coinPrice: String
     let changeRate: String
     
-    
     var coinPriceDollar: String {
         var won = (Double(coinPrice) ?? 0)
         won = round(won / 1440 * 1000) / 1000

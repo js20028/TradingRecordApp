@@ -63,6 +63,21 @@ class AddAssetPopUpViewController: UIViewController {
         }
     }
     
+    private func matchCoinSymbol(coinName: String) -> String {
+        switch coinName.uppercased() {
+        case "이더리움", "ETH":
+            return "ETH"
+        case "클레이튼", "KLAY":
+            return "KLAY"
+        case "폴리곤", "MATIC":
+            return "MATIC"
+        case "솔라나", "SOL":
+            return "SOL"
+        default:
+            return "ETH"
+        }
+    }
+    
     @IBAction func tapCancelButton(_ sender: UIButton) {
         self.dismiss(animated: false)
     }
@@ -72,11 +87,12 @@ class AddAssetPopUpViewController: UIViewController {
         guard let coinAmount = Double(self.coinAmountTextField.text ?? "0") else { return }
         
         let coinInfo = self.matchCoinInfoDetail(coinName: coinName, coin: self.coin)
+        let coinSymbol = self.matchCoinSymbol(coinName: coinName)
         
         //--------------------------------------------------------------------------------
         
 //        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
-        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinAmount": coinAmount, "coinPrice": coinInfo.coinPrice, "changeRate": coinInfo.changeRate])
+        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinSymbol": coinSymbol, "coinAmount": coinAmount, "coinPrice": coinInfo.coinPrice, "changeRate": coinInfo.changeRate])
         self.assetDetailList.append(assetDetail)
         
         self.delegate?.didSelectAddPopup(assetList: self.assetDetailList)

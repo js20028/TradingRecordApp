@@ -21,6 +21,7 @@ class Asset: Object {
 
 class AssetDetail: Object {
     @objc dynamic var coinName: String = ""
+    @objc dynamic var coinSymbol: String = ""
     @objc dynamic var coinAmount: Double = 0
     @objc dynamic var coinPrice: String = ""
     @objc dynamic var changeRate: String = ""
