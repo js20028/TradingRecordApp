@@ -29,7 +29,6 @@ class WriteMemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureContentsTextView()
-        self.placeHolderSetting()
         self.confirmButton.isEnabled = false
         self.configureEditMode()
         self.configureInputField()
@@ -48,7 +47,7 @@ class WriteMemoViewController: UIViewController {
             self.confirmButton.title = "수정"
             
         default:
-            break
+            self.placeHolderSetting()
         }
     }
     
@@ -95,11 +94,15 @@ class WriteMemoViewController: UIViewController {
     }
     
     private func validateInputField() {
-        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true)
+        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !self.contentsTextView.text.isEmpty
     }
 }
 
 extension WriteMemoViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.validateInputField()
+    }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
