@@ -43,7 +43,7 @@ class CoinListViewController: UITableViewController {
         }.resume()
     }
     
-    func makeCoinList(coin: Coin) -> [CoinInfo] {
+    private func makeCoinList(coin: Coin) -> [CoinInfo] {
         let coinList = [
             coin.data.BTC,
             coin.data.ETH,
@@ -57,6 +57,8 @@ class CoinListViewController: UITableViewController {
 }
 
 
+
+
 extension CoinListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coinList.count
@@ -65,7 +67,7 @@ extension CoinListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinListCell", for: indexPath) as? CoinListCell else { return UITableViewCell() }
         cell.coinNameLabel.text = self.coinNameList[indexPath.row]
-        cell.coinPriceLabel.text = self.coinList[indexPath.row].coinPriceDollar
+        cell.coinPriceLabel.text = self.coinList[indexPath.row].coinPrice
         cell.changeRateLabel.text = "\(self.coinList[indexPath.row].changeRate)%"
         if Double(self.coinList[indexPath.row].changeRate)! >= 0 {
             cell.changeRateLabel.textColor = .red

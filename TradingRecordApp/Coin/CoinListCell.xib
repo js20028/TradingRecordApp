@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,16 +24,23 @@
                             <constraint firstAttribute="height" constant="40" id="qTd-sw-4CL"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코인이름" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-nA-vyR">
-                        <rect key="frame" x="50" y="5" width="80" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="deT-Tx-Xdm"/>
-                            <constraint firstAttribute="width" constant="80" id="wGE-qc-noe"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-DE-bJW">
+                        <rect key="frame" x="55" y="7" width="52" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코인이름" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-nA-vyR">
+                                <rect key="frame" x="0.0" y="0.0" width="52" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpW-Jg-m5U">
+                                <rect key="frame" x="0.0" y="20" width="43.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-11.22%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3q-fC-Htp">
                         <rect key="frame" x="235" y="16" width="70" height="18"/>
                         <constraints>
@@ -51,9 +59,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="H3q-fC-Htp" firstAttribute="leading" secondItem="4M1-Rd-GFP" secondAttribute="trailing" constant="20" id="3kW-6C-3OZ"/>
-                    <constraint firstItem="hpt-nA-vyR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9U1-fA-yu2"/>
-                    <constraint firstItem="hpt-nA-vyR" firstAttribute="leading" secondItem="A7i-Ip-4rK" secondAttribute="trailing" constant="5" id="CT1-cU-5I3"/>
+                    <constraint firstItem="N2Q-DE-bJW" firstAttribute="leading" secondItem="A7i-Ip-4rK" secondAttribute="trailing" constant="10" id="Pbx-vd-d6R"/>
                     <constraint firstItem="A7i-Ip-4rK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="TcO-aK-HUG"/>
+                    <constraint firstItem="N2Q-DE-bJW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Uez-vU-Dwc"/>
                     <constraint firstItem="H3q-fC-Htp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XJQ-wG-L0J"/>
                     <constraint firstItem="A7i-Ip-4rK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fmf-yy-d9J"/>
                     <constraint firstAttribute="trailing" secondItem="H3q-fC-Htp" secondAttribute="trailing" constant="15" id="jvB-tH-twb"/>
@@ -68,11 +76,15 @@
                 <outlet property="coinImageView" destination="A7i-Ip-4rK" id="RiP-DC-857"/>
                 <outlet property="coinNameLabel" destination="hpt-nA-vyR" id="8wb-lP-kgv"/>
                 <outlet property="coinPriceLabel" destination="4M1-Rd-GFP" id="eyC-kW-RuL"/>
+                <outlet property="coinSymbolLabel" destination="MpW-Jg-m5U" id="g5O-aZ-Zdf"/>
             </connections>
-            <point key="canvasLocation" x="132" y="83"/>
+            <point key="canvasLocation" x="131.8840579710145" y="82.366071428571431"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

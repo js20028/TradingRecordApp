@@ -98,4 +98,8 @@ class AddAssetPopUpViewController: UIViewController {
         self.delegate?.didSelectAddPopup(assetList: self.assetDetailList)
         self.dismiss(animated: false)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
