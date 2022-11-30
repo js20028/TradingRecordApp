@@ -119,7 +119,7 @@ class AssetDetailViewController: UIViewController {
             let coinData = try? decoder.decode(Coin.self, from: data)
             
             self.coin = coinData!
-            print(self.coin!)
+            
             
         }.resume()
     }

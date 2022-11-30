@@ -31,10 +31,12 @@ class AssetViewController: UIViewController {
         // 테이블 뷰 최상단 잘림 해결
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
-        self.getCoinData()
+        
         
         self.makeRealmData()
         self.loadRealmData()
+        
+        self.initRefresh()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -42,6 +44,8 @@ class AssetViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.getCoinData()
+        
         self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
         self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
     }
@@ -50,7 +54,7 @@ class AssetViewController: UIViewController {
     private func makeRealmData() {
         let realm = try! Realm()
         let savedAsset = realm.objects(AssetCategory.self)
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
 
         while savedAsset.count < 3 {
             try! realm.write {
@@ -68,6 +72,15 @@ class AssetViewController: UIViewController {
             for asset in savedAsset[i].assetList {
                 self.totalAsset[i].append(asset)
             }
+        }
+        if !savedAsset[0].assetList.isEmpty {
+            self.sections[0] = "거래소"
+        }
+        if !savedAsset[1].assetList.isEmpty {
+            self.sections[1] = "지갑"
+        }
+        if !savedAsset[2].assetList.isEmpty {
+            self.sections[2] = "기타"
         }
         
         print(self.totalAsset)
@@ -89,9 +102,6 @@ class AssetViewController: UIViewController {
             
             self.coin = coinData!
             
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
         }.resume()
     }
     
@@ -105,28 +115,74 @@ class AssetViewController: UIViewController {
         return sum
     }
     
-    private func matchCoinInfoTotal(assets: [[Asset]], coin: Coin) {
-        for i in 0..<3 {
-            for asset in assets[i] {
-                for assetDetail in asset.assets {
-                    switch assetDetail.coinName.uppercased() {
-                    case "이더리움", "ETH":
-                        assetDetail.coinPrice = coin.data.ETH.coinPrice
-                        assetDetail.changeRate = coin.data.ETH.changeRate
-                    case "클레이튼", "KLAY":
-                        assetDetail.coinPrice = coin.data.KLAY.coinPrice
-                        assetDetail.changeRate = coin.data.KLAY.changeRate
-                    case "폴리곤", "MATIC":
-                        assetDetail.coinPrice = coin.data.MATIC.coinPrice
-                        assetDetail.changeRate = coin.data.MATIC.changeRate
-                    case "솔라나", "SOL":
-                        assetDetail.coinPrice = coin.data.SOL.coinPrice
-                        assetDetail.changeRate = coin.data.SOL.changeRate
-                    default:
-                        break
+//    private func matchCoinInfoTotal(assets: [[Asset]], coin: Coin) {
+//        for i in 0..<3 {
+//            for asset in assets[i] {
+//                for assetDetail in asset.assets {
+//                    switch assetDetail.coinName.uppercased() {
+//                    case "이더리움", "ETH":
+//                        assetDetail.coinPrice = coin.data.ETH.coinPrice
+//                        assetDetail.changeRate = coin.data.ETH.changeRate
+//                    case "클레이튼", "KLAY":
+//                        assetDetail.coinPrice = coin.data.KLAY.coinPrice
+//                        assetDetail.changeRate = coin.data.KLAY.changeRate
+//                    case "폴리곤", "MATIC":
+//                        assetDetail.coinPrice = coin.data.MATIC.coinPrice
+//                        assetDetail.changeRate = coin.data.MATIC.changeRate
+//                    case "솔라나", "SOL":
+//                        assetDetail.coinPrice = coin.data.SOL.coinPrice
+//                        assetDetail.changeRate = coin.data.SOL.changeRate
+//                    default:
+//                        break
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    // 당겨서 새로고침 초기화
+    private func initRefresh() {
+        refreshCon.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        refreshCon.attributedTitle = NSAttributedString(string: "새로고침")
+        
+        self.tableView.refreshControl = refreshCon
+    }
+    
+    // 새로고침 시 코인데이터를 다시 받아와 테이블뷰 갱신
+    @objc func refreshTable(refresh: UIRefreshControl) {
+        self.getCoinData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let realm = try! Realm()
+            try! realm.write {
+                for i in 0..<3 {
+                    for asset in self.totalAsset[i] {
+                        var sum = 0
+                        for detail in asset.assets {
+                            switch detail.coinSymbol {
+                            case "ETH":
+                                detail.coinPrice = self.coin.data.ETH.coinPrice
+                            case "KLAY":
+                                detail.coinPrice = self.coin.data.KLAY.coinPrice
+                            case "MATIC":
+                                detail.coinPrice = self.coin.data.MATIC.coinPrice
+                            case "SOL":
+                                detail.coinPrice = self.coin.data.SOL.coinPrice
+                            default:
+                                break
+                            }
+                            sum += Int((Double(detail.coinPrice) ?? 0) * detail.coinAmount)
+                        }
+                        asset.assetsSum = sum
                     }
                 }
             }
+            
+            self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
+            self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
+            
+            self.tableView.reloadData()
+            refresh.endRefreshing()
         }
     }
     
