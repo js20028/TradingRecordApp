@@ -20,28 +20,23 @@ class AssetDetailViewController: UIViewController {
     var indexPath: IndexPath?
     weak var delegate: AssetDetailDelegate?
     
+    let refreshCon = UIRefreshControl()
+    var coin: Coin!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         let nibName = UINib(nibName: "AssetDetailListCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "AssetDetailListCell")
+        self.getCoinData()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-    }
-    
-    @IBAction func tapAddAssetButton(_ sender: UIBarButtonItem) {
-        guard let popupViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddAssetPopUpViewController") as? AddAssetPopUpViewController else { return }
-        popupViewController.modalPresentationStyle = .overFullScreen
-        popupViewController.assetDetailList = self.assetDetailList
+        self.initRefresh()
         
-        popupViewController.delegate = self
-        
-        self.present(popupViewController, animated: false, completion: nil)
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,6 +53,16 @@ class AssetDetailViewController: UIViewController {
 
         self.delegate?.sendAssetDetail(assetDetailList: self.assetDetailList, indexPath: indexPath, sum: assetSum)
         self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    @IBAction func tapAddAssetButton(_ sender: UIBarButtonItem) {
+        guard let popupViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddAssetPopUpViewController") as? AddAssetPopUpViewController else { return }
+        popupViewController.modalPresentationStyle = .overFullScreen
+        popupViewController.assetDetailList = self.assetDetailList
+        
+        popupViewController.delegate = self
+        
+        self.present(popupViewController, animated: false, completion: nil)
     }
     
     private func makeAssetSum() -> Int {
@@ -97,6 +102,64 @@ class AssetDetailViewController: UIViewController {
         
         self.assetDetailList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    // 코인정보 가져오는 함수
+    private func getCoinData() {
+        guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: coinURL) { data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            let coinData = try? decoder.decode(Coin.self, from: data)
+            
+            self.coin = coinData!
+            print(self.coin!)
+            
+        }.resume()
+    }
+    
+    // 당겨서 새로고침 초기화
+    private func initRefresh() {
+        refreshCon.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        refreshCon.attributedTitle = NSAttributedString(string: "새로고침")
+        
+        self.tableView.refreshControl = refreshCon
+    }
+    
+    // 새로고침 시 코인데이터를 다시 받아와 테이블뷰 갱신
+    @objc func refreshTable(refresh: UIRefreshControl) {
+        self.getCoinData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let realm = try! Realm()
+            try! realm.write {
+                for asset in self.assetDetailList {
+                    switch asset.coinSymbol {
+                    case "ETH":
+                        asset.coinPrice = self.coin.data.ETH.coinPrice
+                        asset.changeRate = self.coin.data.ETH.changeRate
+                    case "KLAY":
+                        asset.coinPrice = self.coin.data.KLAY.coinPrice
+                        asset.changeRate = self.coin.data.KLAY.changeRate
+                    case "MATIC":
+                        asset.coinPrice = self.coin.data.MATIC.coinPrice
+                        asset.changeRate = self.coin.data.MATIC.changeRate
+                    case "SOL":
+                        asset.coinPrice = self.coin.data.SOL.coinPrice
+                        asset.changeRate = self.coin.data.SOL.changeRate
+                    default:
+                        break
+                    }
+                }
+            }
+            self.tableView.reloadData()
+            refresh.endRefreshing()
+        }
     }
 }
 

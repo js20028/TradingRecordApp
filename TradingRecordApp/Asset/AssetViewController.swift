@@ -23,6 +23,7 @@ class AssetViewController: UIViewController {
     
     var sections: [String] = ["","",""]
     var coin: Coin!
+    let refreshCon = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()

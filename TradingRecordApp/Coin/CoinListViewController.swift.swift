@@ -13,12 +13,16 @@ class CoinListViewController: UITableViewController {
     var coinSymbolList: [String] = ["BTC", "ETH", "KLAY", "MATIC", "SOL"]
     var coinNameList = ["비트코인", "이더리움", "클레이튼", "폴리곤", "솔라나"]
     
+    let refreshCon = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getCoinData()
         
-        let nibName = UINib(nibName: "CoinListCell", bundle: nil)
-        self.tableView.register(nibName, forCellReuseIdentifier: "CoinListCell")
+        self.initRefresh()
+        
+        self.registerXib()
+        
     }
     
     private func getCoinData() {
@@ -44,6 +48,12 @@ class CoinListViewController: UITableViewController {
         }.resume()
     }
     
+    // xib 등록
+    private func registerXib() {
+        let nibName = UINib(nibName: "CoinListCell", bundle: nil)
+        self.tableView.register(nibName, forCellReuseIdentifier: "CoinListCell")
+    }
+    
     private func makeCoinList(coin: Coin) -> [CoinInfo] {
         let coinList = [
             coin.data.BTC,
@@ -55,10 +65,23 @@ class CoinListViewController: UITableViewController {
         return coinList
     }
     
+    // 당겨서 새로고침 초기화
+    private func initRefresh() {
+        refreshCon.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        refreshCon.attributedTitle = NSAttributedString(string: "새로고침")
+        
+        self.tableView.refreshControl = refreshCon
+    }
+    
+    // 새로고침 시 코인데이터를 다시 받아와 테이블뷰 갱신
+    @objc func refreshTable(refresh: UIRefreshControl) {
+        DispatchQueue.main.async {
+            self.getCoinData()
+            self.tableView.reloadData()
+            refresh.endRefreshing()
+        }
+    }
 }
-
-
-
 
 extension CoinListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
