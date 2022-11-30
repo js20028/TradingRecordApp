@@ -21,10 +21,8 @@ class AssetViewController: UIViewController {
         }
     }
     
-    var sections: [String] = ["거래소", "지갑", "기타"]
+    var sections: [String] = ["","",""]
     var coin: Coin!
-    
-//    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,6 +142,8 @@ class AssetViewController: UIViewController {
         }
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        //self.sections.remove(at: indexPath.section)
+        self.sections[indexPath.section] = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -210,6 +210,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
             let alert = UIAlertController(title: "삭제", message: "정말로 삭제하시겠습니까?", preferredStyle: .alert)
             let registerButton = UIAlertAction(title: "삭제", style: .default, handler: {[weak self] _ in
                 self?.removeCell(at: indexPath, to: tableView)
+                self?.tableView.reloadData()
             })
             let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
             alert.addAction(cancelButton)
@@ -225,12 +226,21 @@ extension AssetViewController: AddAssetDelegate {
         let savedAsset = realm.objects(AssetCategory.self)
         
         if isNew {
-            
-
             try! realm.write {
                 self.totalAsset[asset.categoryValue].append(asset)
                 savedAsset[asset.categoryValue].assetList.append(asset)
             }
+            switch asset.categoryValue {
+            case 0:
+                self.sections[0] = "거래소"
+            case 1:
+                self.sections[1] = "지갑"
+            case 2:
+                self.sections[2] = "기타"
+            default:
+                break
+            }
+            
             
         } else {
             
@@ -263,6 +273,10 @@ extension AssetViewController: AssetDetailDelegate {
                 realm.delete(savedAsset[indexPath.section].assetList[indexPath.row])
                 
                 self.totalAsset[indexPath.section].remove(at: indexPath.row)
+                if self.totalAsset[indexPath.section].isEmpty {
+                    //self.sections.remove(at: indexPath.section)
+                    self.sections[indexPath.section] = ""
+                }
             }
         }
         

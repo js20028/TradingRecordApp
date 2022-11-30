@@ -10,6 +10,7 @@ import UIKit
 class CoinListViewController: UITableViewController {
     
     var coinList: [CoinInfo] = []
+    var coinSymbolList: [String] = ["BTC", "ETH", "KLAY", "MATIC", "SOL"]
     var coinNameList = ["비트코인", "이더리움", "클레이튼", "폴리곤", "솔라나"]
     
     override func viewDidLoad() {
@@ -51,9 +52,9 @@ class CoinListViewController: UITableViewController {
             coin.data.MATIC,
             coin.data.SOL
         ]
-        
         return coinList
     }
+    
 }
 
 
@@ -67,6 +68,7 @@ extension CoinListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinListCell", for: indexPath) as? CoinListCell else { return UITableViewCell() }
         cell.coinNameLabel.text = self.coinNameList[indexPath.row]
+        cell.coinSymbolLabel.text = self.coinSymbolList[indexPath.row]
         cell.coinPriceLabel.text = self.coinList[indexPath.row].coinPrice
         cell.changeRateLabel.text = "\(self.coinList[indexPath.row].changeRate)%"
         if Double(self.coinList[indexPath.row].changeRate)! >= 0 {
