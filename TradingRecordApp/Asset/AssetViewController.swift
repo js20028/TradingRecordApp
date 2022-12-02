@@ -31,8 +31,6 @@ class AssetViewController: UIViewController {
         // 테이블 뷰 최상단 잘림 해결
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
-        
-        
         self.makeRealmData()
         self.loadRealmData()
         
@@ -41,10 +39,10 @@ class AssetViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.refreshTable(refresh: self.refreshCon)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.getCoinData()
         
         self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
         self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
@@ -153,36 +151,42 @@ class AssetViewController: UIViewController {
         self.getCoinData()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            let realm = try! Realm()
-            try! realm.write {
-                for i in 0..<3 {
-                    for asset in self.totalAsset[i] {
-                        var sum = 0
-                        for detail in asset.assets {
-                            switch detail.coinSymbol {
-                            case "ETH":
-                                detail.coinPrice = self.coin.data.ETH.coinPrice
-                            case "KLAY":
-                                detail.coinPrice = self.coin.data.KLAY.coinPrice
-                            case "MATIC":
-                                detail.coinPrice = self.coin.data.MATIC.coinPrice
-                            case "SOL":
-                                detail.coinPrice = self.coin.data.SOL.coinPrice
-                            default:
-                                break
-                            }
-                            sum += Int((Double(detail.coinPrice) ?? 0) * detail.coinAmount)
-                        }
-                        asset.assetsSum = sum
-                    }
-                }
-            }
+            
+            self.configureTotalView()
             
             self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
             self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
             
             self.tableView.reloadData()
             refresh.endRefreshing()
+        }
+    }
+    
+    // 코인정보 새로받아서 토탈배열 및 테이블 뷰 갱신
+    private func configureTotalView() {
+        let realm = try! Realm()
+        try! realm.write {
+            for i in 0..<3 {
+                for asset in self.totalAsset[i] {
+                    var sum = 0
+                    for detail in asset.assets {
+                        switch detail.coinSymbol {
+                        case "ETH":
+                            detail.coinPrice = self.coin.data.ETH.coinPrice
+                        case "KLAY":
+                            detail.coinPrice = self.coin.data.KLAY.coinPrice
+                        case "MATIC":
+                            detail.coinPrice = self.coin.data.MATIC.coinPrice
+                        case "SOL":
+                            detail.coinPrice = self.coin.data.SOL.coinPrice
+                        default:
+                            break
+                        }
+                        sum += Int((Double(detail.coinPrice) ?? 0) * detail.coinAmount)
+                    }
+                    asset.assetsSum = sum
+                }
+            }
         }
     }
     
@@ -249,7 +253,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
             viewController.assetDetailList.append(assetDetail)
         }
         
-        
+        viewController.title = self.totalAsset[indexPath.section][indexPath.row].categoryName
         viewController.indexPath = indexPath
         viewController.delegate = self
         

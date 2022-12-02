@@ -41,8 +41,8 @@ class AssetDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.title = "보유 자산 상세"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        //self.title = "보유 자산 상세"
+        //self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,7 +52,7 @@ class AssetDetailViewController: UIViewController {
         let assetSum = self.makeAssetSum()
 
         self.delegate?.sendAssetDetail(assetDetailList: self.assetDetailList, indexPath: indexPath, sum: assetSum)
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        //self.navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     @IBAction func tapAddAssetButton(_ sender: UIBarButtonItem) {
