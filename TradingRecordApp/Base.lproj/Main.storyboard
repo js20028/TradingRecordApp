@@ -563,16 +563,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp5-M7-kVD">
-                                                    <rect key="frame" x="12" y="12" width="156" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="40"/>
+                                                    <color key="backgroundColor" red="1" green="0.65989051870748294" blue="0.10772746598639456" alpha="0.9913596854304636" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="156" id="vvw-PD-idr"/>
+                                                        <constraint firstAttribute="height" constant="40" id="AzO-pc-6hE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="내용" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijk-y1-bd3">
-                                                    <rect key="frame" x="12" y="46.5" width="156" height="141.5"/>
+                                                    <rect key="frame" x="12" y="45" width="156" height="143"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -580,12 +581,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ijk-y1-bd3" firstAttribute="leading" secondItem="iG7-qM-lgm" secondAttribute="leading" constant="12" id="Ab1-wt-bdd"/>
-                                                <constraint firstAttribute="trailing" secondItem="sp5-M7-kVD" secondAttribute="trailing" constant="12" id="M3A-t0-OVj"/>
-                                                <constraint firstItem="sp5-M7-kVD" firstAttribute="top" secondItem="iG7-qM-lgm" secondAttribute="top" constant="12" id="W8D-FC-z0J"/>
+                                                <constraint firstItem="Ijk-y1-bd3" firstAttribute="top" secondItem="sp5-M7-kVD" secondAttribute="bottom" constant="5" id="HEV-nk-4pW"/>
+                                                <constraint firstItem="sp5-M7-kVD" firstAttribute="top" secondItem="iG7-qM-lgm" secondAttribute="top" id="WF3-Yk-gjK"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ijk-y1-bd3" secondAttribute="bottom" constant="12" id="X2G-Ac-uBh"/>
-                                                <constraint firstItem="sp5-M7-kVD" firstAttribute="leading" secondItem="iG7-qM-lgm" secondAttribute="leading" constant="12" id="ahR-cU-YBd"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ijk-y1-bd3" secondAttribute="trailing" constant="12" id="fLq-Wa-hVR"/>
-                                                <constraint firstItem="Ijk-y1-bd3" firstAttribute="top" secondItem="sp5-M7-kVD" secondAttribute="bottom" constant="12" id="gNp-rI-p4e"/>
+                                                <constraint firstAttribute="trailing" secondItem="sp5-M7-kVD" secondAttribute="trailing" id="fSf-V0-yA2"/>
+                                                <constraint firstItem="sp5-M7-kVD" firstAttribute="leading" secondItem="iG7-qM-lgm" secondAttribute="leading" id="wJJ-wj-QhK"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="200"/>
@@ -647,20 +648,23 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-Ma-jRd">
-                                <rect key="frame" x="128.5" y="648" width="157" height="34.5"/>
+                                <rect key="frame" x="127" y="648" width="160" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-0z-9iK">
-                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="수정"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="수정">
+                                            <fontDescription key="titleFontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="tapEditButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="2ko-zn-wUc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-Ng-VNK">
-                                        <rect key="frame" x="103.5" y="0.0" width="53.5" height="34.5"/>
+                                        <rect key="frame" x="105" y="0.0" width="55" height="33"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="삭제">
+                                            <fontDescription key="titleFontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
                                         <connections>
