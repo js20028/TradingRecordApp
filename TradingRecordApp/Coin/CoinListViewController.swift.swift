@@ -23,6 +23,14 @@ class CoinListViewController: UITableViewController {
         
         self.registerXib()
         
+        UIFont.familyNames.sorted().forEach { familyName in
+            print("*** \(familyName) ***")
+            UIFont.fontNames(forFamilyName: familyName).forEach { fontName in
+                print("\(fontName)")
+            }
+            print("---------------------")
+        }
+        
     }
     
     private func getCoinData() {
