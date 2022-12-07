@@ -162,7 +162,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="H43-VZ-elj" secondAttribute="trailing" constant="50" id="DzJ-na-JFh"/>
                                     <constraint firstItem="ENG-6v-slI" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="10" id="IsO-Lk-Mmc"/>
@@ -175,9 +174,15 @@
                                     <constraint firstItem="H43-VZ-elj" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="50" id="mKp-2m-bra"/>
                                     <constraint firstItem="xhw-TV-gAm" firstAttribute="top" secondItem="H43-VZ-elj" secondAttribute="bottom" constant="19.5" id="qvh-xE-6cv"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
                                 <rect key="frame" x="0.0" y="222" width="414" height="591"/>
+                                <color key="separatorColor" systemColor="systemOrangeColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AssetListCell" rowHeight="60" id="1f7-8c-QJf" customClass="AssetListCell" customModule="TradingRecordApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.5" width="374" height="60"/>
@@ -517,10 +522,21 @@
                                     <constraint firstItem="EV6-LM-SNh" firstAttribute="top" secondItem="eeb-Iq-tUj" secondAttribute="top" constant="24" id="xxj-ih-shw"/>
                                     <constraint firstItem="aa0-iH-mZg" firstAttribute="leading" secondItem="eeb-Iq-tUj" secondAttribute="leading" constant="20" id="ywQ-DJ-uCY"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5b7-51-DQh"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25359581953642385" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="eeb-Iq-tUj" firstAttribute="centerY" secondItem="5b7-51-DQh" secondAttribute="centerY" id="VEC-NC-IdE"/>
                             <constraint firstItem="eeb-Iq-tUj" firstAttribute="centerX" secondItem="5b7-51-DQh" secondAttribute="centerX" id="g55-QZ-3Gw"/>
@@ -798,11 +814,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

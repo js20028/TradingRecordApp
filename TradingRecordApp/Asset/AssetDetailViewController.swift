@@ -62,7 +62,7 @@ class AssetDetailViewController: UIViewController {
         
         popupViewController.delegate = self
         
-        self.present(popupViewController, animated: false, completion: nil)
+        self.present(popupViewController, animated: true, completion: nil)
     }
     
     private func makeAssetSum() -> Int {

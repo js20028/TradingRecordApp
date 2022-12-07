@@ -23,13 +23,13 @@ class CoinListViewController: UITableViewController {
         
         self.registerXib()
         
-        UIFont.familyNames.sorted().forEach { familyName in
-            print("*** \(familyName) ***")
-            UIFont.fontNames(forFamilyName: familyName).forEach { fontName in
-                print("\(fontName)")
-            }
-            print("---------------------")
-        }
+//        UIFont.familyNames.sorted().forEach { familyName in
+//            print("*** \(familyName) ***")
+//            UIFont.fontNames(forFamilyName: familyName).forEach { fontName in
+//                print("\(fontName)")
+//            }
+//            print("---------------------")
+//        }
         
     }
     
@@ -60,6 +60,9 @@ class CoinListViewController: UITableViewController {
     private func registerXib() {
         let nibName = UINib(nibName: "CoinListCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "CoinListCell")
+        
+        let customHeaderUINib = UINib(nibName: "CoinListHeaderView", bundle: nil)
+        self.tableView.register(customHeaderUINib, forHeaderFooterViewReuseIdentifier: "CoinListHeaderView")
     }
     
     private func makeCoinList(coin: Coin) -> [CoinInfo] {
@@ -110,6 +113,16 @@ extension CoinListViewController {
         
         return cell
                 
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CoinListHeaderView") as? CoinListHeaderView else { return UITableViewHeaderFooterView()}
+        
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
     }
 }
 

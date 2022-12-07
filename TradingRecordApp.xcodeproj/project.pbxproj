@@ -31,6 +31,9 @@
 		0FC49FA9293CD073003251BE /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FC49FA8293CD073003251BE /* NanumSquareRoundL.ttf */; };
 		0FC49FAB293CD07C003251BE /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FC49FAA293CD07C003251BE /* NanumSquareRoundEB.ttf */; };
 		0FC49FAD293CD084003251BE /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FC49FAC293CD084003251BE /* NanumSquareRoundB.ttf */; };
+		0FC49FB0293F29F0003251BE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC49FAF293F29F0003251BE /* UIViewExtension.swift */; };
+		0FC49FB2293F3E45003251BE /* CoinListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC49FB1293F3E45003251BE /* CoinListHeaderView.swift */; };
+		0FC49FB4293F3EA4003251BE /* CoinListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
 		E5736BB83F6098406AD92316 /* Pods_TradingRecordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */; };
@@ -63,6 +66,9 @@
 		0FC49FA8293CD073003251BE /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		0FC49FAA293CD07C003251BE /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		0FC49FAC293CD084003251BE /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		0FC49FAF293F29F0003251BE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		0FC49FB1293F3E45003251BE /* CoinListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListHeaderView.swift; sourceTree = "<group>"; };
+		0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinListHeaderView.xib; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
 		48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradingRecordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +112,7 @@
 				0F35B64528D2F6C4005C42ED /* AppDelegate.swift */,
 				0F35B64728D2F6C4005C42ED /* SceneDelegate.swift */,
 				0F35B64B28D2F6C4005C42ED /* Main.storyboard */,
+				0FC49FAE293F29CE003251BE /* Extension */,
 				0F7AC2F5290D64AA007A4659 /* Coin */,
 				0F7AC2F4290D649B007A4659 /* Asset */,
 				0F7AC2F6290D64B4007A4659 /* Memo */,
@@ -138,6 +145,8 @@
 				0F35B65928D9668B005C42ED /* CoinListViewController.swift.swift */,
 				0F35B65B28D9A1BE005C42ED /* CoinListCell.swift */,
 				0F35B65C28D9A1BE005C42ED /* CoinListCell.xib */,
+				0FC49FB1293F3E45003251BE /* CoinListHeaderView.swift */,
+				0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */,
 				0F35B65F28DAF423005C42ED /* Coin.swift */,
 			);
 			path = Coin;
@@ -164,6 +173,14 @@
 				0FC49FA5293CCB95003251BE /* NanumSquareRoundR.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		0FC49FAE293F29CE003251BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0FC49FAF293F29F0003251BE /* UIViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		31A9C439E065AA7B73DD76FE /* Pods */ = {
@@ -249,6 +266,7 @@
 				0F35B64F28D2F6C6005C42ED /* Assets.xcassets in Resources */,
 				0F35B65E28D9A1BE005C42ED /* CoinListCell.xib in Resources */,
 				0FC49FAD293CD084003251BE /* NanumSquareRoundB.ttf in Resources */,
+				0FC49FB4293F3EA4003251BE /* CoinListHeaderView.xib in Resources */,
 				0F7AC2F3290CF6F6007A4659 /* AssetDetailListCell.xib in Resources */,
 				0F35B64D28D2F6C4005C42ED /* Main.storyboard in Resources */,
 				0FC49FA6293CCB95003251BE /* NanumSquareRoundR.ttf in Resources */,
@@ -304,12 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC49FB2293F3E45003251BE /* CoinListHeaderView.swift in Sources */,
 				0F7AC2E128FBE6FE007A4659 /* WriteMemoViewController.swift in Sources */,
 				0F7AC2E7290909B7007A4659 /* Asset.swift in Sources */,
 				0F7AC2E528FFF51F007A4659 /* MemoDetailViewController.swift in Sources */,
 				0F7AC2F2290CF6F6007A4659 /* AssetDetailListCell.swift in Sources */,
 				0F35B65A28D9668B005C42ED /* CoinListViewController.swift.swift in Sources */,
 				0F35B64628D2F6C4005C42ED /* AppDelegate.swift in Sources */,
+				0FC49FB0293F29F0003251BE /* UIViewExtension.swift in Sources */,
 				0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */,
 				0F35B66228E2DE32005C42ED /* MemoViewController.swift in Sources */,
 				0F35B65D28D9A1BE005C42ED /* CoinListCell.swift in Sources */,

@@ -79,7 +79,7 @@ class AddAssetPopUpViewController: UIViewController {
     }
     
     @IBAction func tapCancelButton(_ sender: UIButton) {
-        self.dismiss(animated: false)
+        self.dismiss(animated: true)
     }
     
     @IBAction func tapSaveButton(_ sender: UIButton) {

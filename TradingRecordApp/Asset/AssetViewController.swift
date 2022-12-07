@@ -40,6 +40,7 @@ class AssetViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.refreshTable(refresh: self.refreshCon)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -227,6 +228,11 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.assetNameLabel.text = self.totalAsset[indexPath.section][indexPath.row].categoryName
         cell.holdingAssetLabel.text = "\(self.totalAsset[indexPath.section][indexPath.row].assetsSum) 원"
+        
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOpacity = 0.8
+        cell.layer.shadowOffset = CGSize(width: -2, height: 2)
+        cell.layer.shadowRadius = 3
         
         return cell
     }

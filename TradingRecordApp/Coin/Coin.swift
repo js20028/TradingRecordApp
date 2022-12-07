@@ -17,6 +17,24 @@ struct Data: Codable {
     let KLAY: CoinInfo
     let MATIC: CoinInfo
     let SOL: CoinInfo
+//    let ETC: CoinInfo
+//    let XRP: CoinInfo
+//    let BCH: CoinInfo
+//    let DOGE: CoinInfo
+//    let QTUM: CoinInfo
+//    let BTG: CoinInfo
+//    let EOS: CoinInfo
+//    let ICX: CoinInfo
+//    let TRX: CoinInfo
+//    let ELF: CoinInfo
+//    let OMG: CoinInfo
+//    let KNC: CoinInfo
+//    let GLM: CoinInfo
+//    let ZIL: CoinInfo
+//    let WAXP: CoinInfo
+//    let POWR: CoinInfo
+//    let LRC: CoinInfo
+//    let STEEM: CoinInfo
 }
 
 struct CoinInfo: Codable {
