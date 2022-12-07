@@ -10,8 +10,8 @@ import UIKit
 class CoinListViewController: UITableViewController {
     
     var coinList: [CoinInfo] = []
-    var coinSymbolList: [String] = ["BTC", "ETH", "KLAY", "MATIC", "SOL"]
-    var coinNameList = ["비트코인", "이더리움", "클레이튼", "폴리곤", "솔라나"]
+    var coinSymbolList: [String] = ["BTC", "ETH", "KLAY", "MATIC", "SOL", "BNB", "XRP", "TRX", "BORA", "GMT", "GALA", "FITFI"]
+    var coinNameList = ["비트코인", "이더리움", "클레이튼", "폴리곤", "솔라나", "바이낸스코인", "리플", "트론", "보라", "스테픈", "갈라", "스텝앱"]
     
     let refreshCon = UIRefreshControl()
     
@@ -71,7 +71,14 @@ class CoinListViewController: UITableViewController {
             coin.data.ETH,
             coin.data.KLAY,
             coin.data.MATIC,
-            coin.data.SOL
+            coin.data.SOL,
+            coin.data.BNB,
+            coin.data.XRP,
+            coin.data.TRX,
+            coin.data.BORA,
+            coin.data.GMT,
+            coin.data.GALA,
+            coin.data.FITFI
         ]
         return coinList
     }
@@ -122,7 +129,7 @@ extension CoinListViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 30
     }
 }
 

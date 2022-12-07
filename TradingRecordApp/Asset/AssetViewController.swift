@@ -174,12 +174,16 @@ class AssetViewController: UIViewController {
                         switch detail.coinSymbol {
                         case "ETH":
                             detail.coinPrice = self.coin.data.ETH.coinPrice
+                            detail.changeRate = self.coin.data.ETH.changeRate
                         case "KLAY":
                             detail.coinPrice = self.coin.data.KLAY.coinPrice
+                            detail.changeRate = self.coin.data.KLAY.changeRate
                         case "MATIC":
                             detail.coinPrice = self.coin.data.MATIC.coinPrice
+                            detail.changeRate = self.coin.data.MATIC.changeRate
                         case "SOL":
                             detail.coinPrice = self.coin.data.SOL.coinPrice
+                            detail.changeRate = self.coin.data.SOL.changeRate
                         default:
                             break
                         }

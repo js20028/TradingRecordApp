@@ -24,12 +24,20 @@ class MemoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        self.configureContentsTextView()
     }
     
     private func configureView() {
         guard let memo = self.memo else { return }
         self.titleLabel.text = memo.title
         self.contentsTextView.text = memo.contents
+    }
+    
+    private func configureContentsTextView() {
+        let borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
+        self.contentsTextView.layer.borderColor = borderColor.cgColor
+        self.contentsTextView.layer.borderWidth = 0.5
+        self.contentsTextView.layer.cornerRadius = 5.0
     }
     
     @objc func editMemoNotification(_ notification: Notification) {

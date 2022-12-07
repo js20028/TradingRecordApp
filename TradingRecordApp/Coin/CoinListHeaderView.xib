@@ -11,15 +11,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="Dnf-p4-Mp2" customClass="CoinListHeaderView" customModule="TradingRecordApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="jeN-IM-hIv">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="mlV-ul-4PL">
-                            <rect key="frame" x="55" y="38" width="323" height="17"/>
+                            <rect key="frame" x="55" y="8" width="323" height="17"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="코인이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRX-Ga-0Up">
                                     <rect key="frame" x="0.0" y="0.0" width="138" height="17"/>
@@ -44,39 +44,12 @@
                                 <constraint firstItem="FnA-qo-FU3" firstAttribute="leading" secondItem="lCz-P5-8X8" secondAttribute="trailing" constant="49.999999999999972" id="1iE-97-jT8"/>
                             </constraints>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HDX-o9-ekK">
-                            <rect key="frame" x="9.9999999999999929" y="0.0" width="123.33333333333331" height="34.333333333333336"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6n5-tK-LUF">
-                                    <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="34.333333333333336"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="전체"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzs-Xx-68j">
-                                    <rect key="frame" x="69.666666666666671" y="0.0" width="53.666666666666671" height="34.333333333333336"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="보유"/>
-                                </button>
-                            </subviews>
-                        </stackView>
-                        <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb7-fQ-Z7A">
-                            <rect key="frame" x="0.0" y="29" width="393" height="1"/>
-                            <color key="backgroundColor" red="1" green="0.67931266256502609" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="2" id="AxU-hO-8QX"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="eb7-fQ-Z7A" firstAttribute="leading" secondItem="jeN-IM-hIv" secondAttribute="leading" id="Db0-3R-pNM"/>
-                        <constraint firstItem="HDX-o9-ekK" firstAttribute="leading" secondItem="jeN-IM-hIv" secondAttribute="leading" constant="10" id="KpE-hS-199"/>
-                        <constraint firstItem="mlV-ul-4PL" firstAttribute="leading" secondItem="jeN-IM-hIv" secondAttribute="leading" constant="55" id="KsI-ik-Nmb"/>
-                        <constraint firstItem="eb7-fQ-Z7A" firstAttribute="centerY" secondItem="jeN-IM-hIv" secondAttribute="centerY" id="fAE-C1-EFx"/>
-                        <constraint firstAttribute="bottom" secondItem="mlV-ul-4PL" secondAttribute="bottom" constant="5" id="jAA-d3-RY7"/>
-                        <constraint firstItem="HDX-o9-ekK" firstAttribute="top" secondItem="jeN-IM-hIv" secondAttribute="top" id="lbd-wS-S4K"/>
-                        <constraint firstAttribute="trailing" secondItem="mlV-ul-4PL" secondAttribute="trailing" constant="15" id="nTw-j2-Tlb"/>
-                        <constraint firstAttribute="trailing" secondItem="eb7-fQ-Z7A" secondAttribute="trailing" id="unL-eM-CKD"/>
+                        <constraint firstAttribute="bottom" secondItem="mlV-ul-4PL" secondAttribute="bottom" constant="5" id="Zjx-Oh-fQ2"/>
+                        <constraint firstItem="mlV-ul-4PL" firstAttribute="leading" secondItem="jeN-IM-hIv" secondAttribute="leading" constant="55" id="eWA-33-iUd"/>
+                        <constraint firstAttribute="trailing" secondItem="mlV-ul-4PL" secondAttribute="trailing" constant="15" id="loG-hr-iLf"/>
                     </constraints>
                 </view>
             </subviews>
