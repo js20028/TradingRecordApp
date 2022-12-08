@@ -407,7 +407,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-Iq-tUj">
-                                <rect key="frame" x="67" y="290" width="280" height="330"/>
+                                <rect key="frame" x="67" y="148" width="280" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV6-LM-SNh">
                                         <rect key="frame" x="91.5" y="24" width="97.5" height="28"/>
@@ -518,8 +518,8 @@
                         <viewLayoutGuide key="safeArea" id="5b7-51-DQh"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="eeb-Iq-tUj" firstAttribute="centerY" secondItem="5b7-51-DQh" secondAttribute="centerY" id="VEC-NC-IdE"/>
                             <constraint firstItem="eeb-Iq-tUj" firstAttribute="centerX" secondItem="5b7-51-DQh" secondAttribute="centerX" id="g55-QZ-3Gw"/>
+                            <constraint firstItem="eeb-Iq-tUj" firstAttribute="top" secondItem="5b7-51-DQh" secondAttribute="top" constant="100" id="lDN-M8-TdB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hBa-Zk-aeO"/>

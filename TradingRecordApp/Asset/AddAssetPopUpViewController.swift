@@ -28,6 +28,8 @@ class AddAssetPopUpViewController: UIViewController {
         
         self.popupView.layer.cornerRadius = 10
         
+        self.coinNameTextField.becomeFirstResponder()
+        
         
     }
     

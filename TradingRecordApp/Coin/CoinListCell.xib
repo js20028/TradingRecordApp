@@ -16,10 +16,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CoinListCell" customModule="TradingRecordApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-Ip-4rK">
@@ -47,7 +47,7 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-11.22%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3q-fC-Htp">
-                        <rect key="frame" x="235" y="16.5" width="70" height="17"/>
+                        <rect key="frame" x="221" y="16.5" width="70" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="LH8-7J-it3"/>
                         </constraints>
@@ -56,7 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26,728,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M1-Rd-GFP">
-                        <rect key="frame" x="134" y="16.5" width="81" height="17"/>
+                        <rect key="frame" x="120" y="16.5" width="81" height="17"/>
                         <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                 <outlet property="coinPriceLabel" destination="4M1-Rd-GFP" id="eyC-kW-RuL"/>
                 <outlet property="coinSymbolLabel" destination="MpW-Jg-m5U" id="g5O-aZ-Zdf"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="82.366071428571431"/>
+            <point key="canvasLocation" x="142.02898550724638" y="82.366071428571431"/>
         </tableViewCell>
     </objects>
     <resources>
