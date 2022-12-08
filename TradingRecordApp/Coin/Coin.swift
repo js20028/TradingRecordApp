@@ -19,11 +19,11 @@ struct Data: Codable {
     let SOL: CoinInfo
     let BNB: CoinInfo
     let XRP: CoinInfo
-    let BORA: CoinInfo
+//    let BORA: CoinInfo
     let TRX: CoinInfo
-    let GMT: CoinInfo
-    let GALA: CoinInfo
-    let FITFI: CoinInfo
+//    let GMT: CoinInfo
+//    let GALA: CoinInfo
+//    let FITFI: CoinInfo
 }
 
 struct CoinInfo: Codable {

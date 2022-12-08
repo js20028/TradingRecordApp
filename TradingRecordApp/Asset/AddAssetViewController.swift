@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import DropDown
 
 protocol AddAssetDelegate: AnyObject {
     func didSelectAdd(asset: Asset, isNew: Bool, index: Int)
@@ -93,6 +94,8 @@ class AddAssetViewController: UIViewController {
     
     private func matchCoinInfoDetail(coinName: String, coin: Coin) -> CoinInfo {
         switch coinName.uppercased() {
+        case "비트코인", "BTC":
+            return coin.data.BTC
         case "이더리움", "ETH":
             return coin.data.ETH
         case "클레이튼", "KLAY":
@@ -101,6 +104,12 @@ class AddAssetViewController: UIViewController {
             return coin.data.MATIC
         case "솔라나", "SOL":
             return coin.data.SOL
+        case "바이낸스코인", "BNB":
+            return coin.data.BNB
+        case "리플", "XRP":
+            return coin.data.XRP
+        case "트론", "TRX":
+            return coin.data.TRX
         default:
             return coin.data.ETH
         }
@@ -108,6 +117,8 @@ class AddAssetViewController: UIViewController {
     
     private func matchCoinSymbol(coinName: String) -> String {
         switch coinName.uppercased() {
+        case "비트코인", "BTC":
+            return "BTC"
         case "이더리움", "ETH":
             return "ETH"
         case "클레이튼", "KLAY":
@@ -116,6 +127,12 @@ class AddAssetViewController: UIViewController {
             return "MATIC"
         case "솔라나", "SOL":
             return "SOL"
+        case "바이낸스코인", "BNB":
+            return "BNB"
+        case "리플", "XRP":
+            return "XRP"
+        case "트론", "TRX":
+            return "TRX"
         default:
             return "ETH"
         }

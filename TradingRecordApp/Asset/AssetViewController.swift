@@ -172,6 +172,9 @@ class AssetViewController: UIViewController {
                     var sum = 0
                     for detail in asset.assets {
                         switch detail.coinSymbol {
+                        case "BTC":
+                            detail.coinPrice = self.coin.data.BTC.coinPrice
+                            detail.changeRate = self.coin.data.BTC.changeRate
                         case "ETH":
                             detail.coinPrice = self.coin.data.ETH.coinPrice
                             detail.changeRate = self.coin.data.ETH.changeRate
@@ -184,6 +187,15 @@ class AssetViewController: UIViewController {
                         case "SOL":
                             detail.coinPrice = self.coin.data.SOL.coinPrice
                             detail.changeRate = self.coin.data.SOL.changeRate
+                        case "BNB":
+                            detail.coinPrice = self.coin.data.BNB.coinPrice
+                            detail.changeRate = self.coin.data.BNB.changeRate
+                        case "XRP":
+                            detail.coinPrice = self.coin.data.XRP.coinPrice
+                            detail.changeRate = self.coin.data.XRP.changeRate
+                        case "TRX":
+                            detail.coinPrice = self.coin.data.TRX.coinPrice
+                            detail.changeRate = self.coin.data.TRX.changeRate
                         default:
                             break
                         }

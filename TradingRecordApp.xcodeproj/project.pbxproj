@@ -36,6 +36,7 @@
 		0FC49FB4293F3EA4003251BE /* CoinListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
+		0FF01C2029407AA7000299A9 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF01C1F29407AA7000299A9 /* UIButtonExtension.swift */; };
 		E5736BB83F6098406AD92316 /* Pods_TradingRecordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinListHeaderView.xib; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
+		0FF01C1F29407AA7000299A9 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradingRecordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7683D5B6A1D141B8CC186F /* Pods-TradingRecordApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradingRecordApp.release.xcconfig"; path = "Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp.release.xcconfig"; sourceTree = "<group>"; };
 		EC43EBB4354F80A2A886E8FF /* Pods-TradingRecordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradingRecordApp.debug.xcconfig"; path = "Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC49FAF293F29F0003251BE /* UIViewExtension.swift */,
+				0FF01C1F29407AA7000299A9 /* UIButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC49FB2293F3E45003251BE /* CoinListHeaderView.swift in Sources */,
+				0FF01C2029407AA7000299A9 /* UIButtonExtension.swift in Sources */,
 				0F7AC2E128FBE6FE007A4659 /* WriteMemoViewController.swift in Sources */,
 				0F7AC2E7290909B7007A4659 /* Asset.swift in Sources */,
 				0F7AC2E528FFF51F007A4659 /* MemoDetailViewController.swift in Sources */,

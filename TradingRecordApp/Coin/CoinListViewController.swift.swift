@@ -10,13 +10,14 @@ import UIKit
 class CoinListViewController: UITableViewController {
     
     var coinList: [CoinInfo] = []
-    var coinSymbolList: [String] = ["BTC", "ETH", "KLAY", "MATIC", "SOL", "BNB", "XRP", "TRX", "BORA", "GMT", "GALA", "FITFI"]
-    var coinNameList = ["비트코인", "이더리움", "클레이튼", "폴리곤", "솔라나", "바이낸스코인", "리플", "트론", "보라", "스테픈", "갈라", "스텝앱"]
+    var coinSymbolList: [String] = ["BTC", "ETH", "KLAY", "MATIC", "SOL", "BNB", "XRP", "TRX"]
+    var coinNameList = ["비트코인", "이더리움", "클레이튼", "폴리곤", "솔라나", "바이낸스코인", "리플", "트론"]
     
     let refreshCon = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.getCoinData()
         
         self.initRefresh()
@@ -30,7 +31,6 @@ class CoinListViewController: UITableViewController {
 //            }
 //            print("---------------------")
 //        }
-        
     }
     
     private func getCoinData() {
@@ -75,10 +75,6 @@ class CoinListViewController: UITableViewController {
             coin.data.BNB,
             coin.data.XRP,
             coin.data.TRX,
-            coin.data.BORA,
-            coin.data.GMT,
-            coin.data.GALA,
-            coin.data.FITFI
         ]
         return coinList
     }
@@ -93,7 +89,7 @@ class CoinListViewController: UITableViewController {
     
     // 새로고침 시 코인데이터를 다시 받아와 테이블뷰 갱신
     @objc func refreshTable(refresh: UIRefreshControl) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.getCoinData()
             self.tableView.reloadData()
             refresh.endRefreshing()

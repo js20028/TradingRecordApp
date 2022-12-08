@@ -140,6 +140,9 @@ class AssetDetailViewController: UIViewController {
             try! realm.write {
                 for asset in self.assetDetailList {
                     switch asset.coinSymbol {
+                    case "BTC":
+                        asset.coinPrice = self.coin.data.BTC.coinPrice
+                        asset.changeRate = self.coin.data.BTC.changeRate
                     case "ETH":
                         asset.coinPrice = self.coin.data.ETH.coinPrice
                         asset.changeRate = self.coin.data.ETH.changeRate
@@ -152,6 +155,15 @@ class AssetDetailViewController: UIViewController {
                     case "SOL":
                         asset.coinPrice = self.coin.data.SOL.coinPrice
                         asset.changeRate = self.coin.data.SOL.changeRate
+                    case "BNB":
+                        asset.coinPrice = self.coin.data.BNB.coinPrice
+                        asset.changeRate = self.coin.data.BNB.changeRate
+                    case "XRP":
+                        asset.coinPrice = self.coin.data.XRP.coinPrice
+                        asset.changeRate = self.coin.data.XRP.changeRate
+                    case "TRX":
+                        asset.coinPrice = self.coin.data.TRX.coinPrice
+                        asset.changeRate = self.coin.data.TRX.changeRate
                     default:
                         break
                     }
