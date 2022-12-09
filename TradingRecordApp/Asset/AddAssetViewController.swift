@@ -24,6 +24,10 @@ class AddAssetViewController: UIViewController {
     @IBOutlet weak var categoryNameTextField: UITextField!
     @IBOutlet weak var coinNameTextField: UITextField!
     @IBOutlet weak var coinAmountTextField: UITextField!
+    @IBOutlet weak var coinSelectButton: UIButton!
+    
+    let dropDown = DropDown()
+    let itemList = ["비트코인","이더리움","클레이튼", "폴리곤", "솔라나", "바이낸스코인", "리플", "트론", "직접입력"]
     
     weak var delegate: AddAssetDelegate?
     var categoryButtonValue: Int = 0 {
@@ -50,6 +54,9 @@ class AddAssetViewController: UIViewController {
         self.configureView()
         self.configureInputField()
         
+        self.configureDropDownUI()
+        self.setDropdown()
+        
         self.getCoinData()
         
         guard let totalAsset = totalAsset else { return }
@@ -73,6 +80,53 @@ class AddAssetViewController: UIViewController {
     
     private func validateInputField() {
         self.addButton.isEnabled = !(self.categoryNameTextField.text?.isEmpty ?? true) && !(self.coinNameTextField.text?.isEmpty ?? true) && !(self.coinAmountTextField.text?.isEmpty ?? true)
+    }
+    
+    private func configureDropDownUI() {
+        // DropDown View의 배경
+        DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
+        DropDown.appearance().selectedTextColor = UIColor.red // 선택된 아이템 텍스트 색상
+        DropDown.appearance().backgroundColor = UIColor.white // 아이템 팝업 배경 색상
+        DropDown.appearance().selectionBackgroundColor = UIColor.lightGray // 선택한 아이템 배경 색상
+        DropDown.appearance().setupCornerRadius(8)
+        dropDown.dismissMode = .automatic // 팝업을 닫을 모드 설정
+            
+        self.coinNameTextField.placeholder = "코인을 선택해주세요." // 힌트 텍스트
+        self.coinNameTextField.isEnabled = false
+        self.coinSelectButton.tintColor = UIColor.gray
+    }
+    
+    private func setDropdown() {
+        // dataSource로 ItemList를 연결
+        dropDown.dataSource = itemList
+        // anchorView를 통해 UI와 연결
+        dropDown.anchorView = self.coinNameTextField
+        
+        // View를 갖리지 않고 View아래에 Item 팝업이 붙도록 설정
+        dropDown.bottomOffset = CGPoint(x: 0, y: self.coinNameTextField.bounds.height)
+        
+        // Item 선택 시 처리
+        dropDown.selectionAction = { [weak self] (index, item) in
+            //선택한 Item을 TextField에 넣어준다.
+            if item == "직접입력" {
+                self!.coinNameTextField.isEnabled = true
+                self!.coinNameTextField.text = ""
+                self!.coinNameTextField.placeholder = ""
+                self!.coinNameTextField.becomeFirstResponder()
+                
+            } else {
+                self!.coinNameTextField.isEnabled = false
+                self!.coinNameTextField.text = item
+//                self!.coinSelectButton.image = UIImage(systemName: "arrowtriangle.up.circle.fill")
+            }
+            
+        }
+        
+        // 취소 시 처리
+//        dropDown.cancelAction = { [weak self] in
+//            //빈 화면 터치 시 DropDown이 사라지고 아이콘을 원래대로 변경
+//            self!.selectImageView.image = UIImage(systemName: "arrowtriangle.up.circle.fill")
+//        }
     }
     
     private func getCoinData() {
@@ -194,6 +248,11 @@ class AddAssetViewController: UIViewController {
             break
         }
     }
+    
+    @IBAction func tapCoinSelectButton(_ sender: UIButton) {
+        self.dropDown.show()
+    }
+    
     
     private func changeCategoryButton(value: Int) {
         self.exchangeButton.alpha = value == 0 ? 1 : 0.2
