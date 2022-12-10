@@ -87,8 +87,6 @@ class AddAssetViewController: UIViewController {
         } else {
             self.addButton.isEnabled = !(self.categoryNameTextField.text?.isEmpty ?? true) && !(self.coinNameTextField.text?.isEmpty ?? true) && !(self.coinAmountTextField.text?.isEmpty ?? true) && !(self.coinPriceTextField.text?.isEmpty ?? true)
         }
-        
-        
     }
     
     private func configureDropDownUI() {
@@ -100,7 +98,7 @@ class AddAssetViewController: UIViewController {
         DropDown.appearance().setupCornerRadius(8)
         dropDown.dismissMode = .automatic // 팝업을 닫을 모드 설정
             
-        self.coinNameTextField.placeholder = "코인을 선택해주세요." // 힌트 텍스트
+        self.coinNameTextField.placeholder = "코인을 선택하세요." // 힌트 텍스트
         self.coinNameTextField.isEnabled = false
         self.coinSelectButton.tintColor = UIColor.gray
     }

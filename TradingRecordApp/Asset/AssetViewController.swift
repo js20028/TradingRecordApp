@@ -295,6 +295,8 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
                 self?.removeCell(at: indexPath, to: tableView)
                 self?.tableView.reloadData()
             })
+            registerButton.setValue(UIColor.red, forKey: "titleTextColor")
+            
             let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
             alert.addAction(cancelButton)
             alert.addAction(registerButton)
