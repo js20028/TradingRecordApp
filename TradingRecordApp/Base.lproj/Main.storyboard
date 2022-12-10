@@ -239,13 +239,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-Tu-BTe">
-                                <rect key="frame" x="69.5" y="132" width="275.5" height="249.5"/>
+                                <rect key="frame" x="65.5" y="132" width="283.5" height="249.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wML-lq-sp7">
-                                        <rect key="frame" x="0.0" y="0.0" width="275.5" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="283.5" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7R-GU-h7I">
-                                                <rect key="frame" x="0.0" y="0.0" width="70.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="거래소">
                                                     <fontDescription key="titleFontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
@@ -255,7 +255,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-ah-TOT">
-                                                <rect key="frame" x="102.5" y="0.0" width="70.5" height="33"/>
+                                                <rect key="frame" x="105" y="0.0" width="73" height="33"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="지갑">
                                                     <fontDescription key="titleFontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
@@ -265,7 +265,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4K-NK-aBr">
-                                                <rect key="frame" x="205" y="0.0" width="70.5" height="33"/>
+                                                <rect key="frame" x="210" y="0.0" width="73.5" height="33"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="기타">
                                                     <fontDescription key="titleFontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
@@ -277,7 +277,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W2R-Oa-IZr">
-                                        <rect key="frame" x="0.0" y="47" width="275.5" height="58"/>
+                                        <rect key="frame" x="0.0" y="47" width="283.5" height="58"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거래소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-TV-rSJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="19"/>
@@ -286,14 +286,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1h9-yF-PKh">
-                                                <rect key="frame" x="0.0" y="24" width="275.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="24" width="283.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a2v-8m-9bg">
-                                        <rect key="frame" x="0.0" y="119" width="275.5" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="119" width="283.5" height="58.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종목명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOc-hA-T1a">
                                                 <rect key="frame" x="0.0" y="0.0" width="46.5" height="19"/>
@@ -302,15 +302,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zvy-rJ-Kc5">
-                                                <rect key="frame" x="0.0" y="24" width="275.5" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="24" width="283.5" height="34.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Hk-Nta">
-                                                        <rect key="frame" x="0.0" y="0.0" width="192.5" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="200.5" height="34.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-SQ-JQ2">
-                                                        <rect key="frame" x="200.5" y="0.0" width="75" height="34.5"/>
+                                                        <rect key="frame" x="208.5" y="0.0" width="75" height="34.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                         <connections>
@@ -322,7 +322,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I1K-Vi-3JX">
-                                        <rect key="frame" x="0.0" y="191.5" width="275.5" height="58"/>
+                                        <rect key="frame" x="0.0" y="191.5" width="283.5" height="58"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tn-Dx-FhS">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="19"/>
@@ -331,7 +331,29 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-3z-gh3">
-                                                <rect key="frame" x="0.0" y="24" width="275.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="24" width="283.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lXV-Zr-Tz6">
+                                        <rect key="frame" x="0.0" y="249.5" width="283.5" height="6"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGx-Ml-s0P">
+                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 종목 직접입력 시 입력한 현재가격으로 적용됩니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFy-Au-tGQ">
+                                                <rect key="frame" x="0.0" y="3" width="283.5" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-rS-kSI">
+                                                <rect key="frame" x="0.0" y="6" width="283.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
@@ -340,12 +362,19 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="a2v-8m-9bg" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="1b1-tO-bFj"/>
+                                    <constraint firstItem="SJc-rS-kSI" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="1eP-PM-e0H"/>
                                     <constraint firstItem="Tib-3z-gh3" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="OeH-gJ-yii"/>
                                     <constraint firstItem="zvy-rJ-Kc5" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="Yuh-mW-ytL"/>
+                                    <constraint firstItem="lXV-Zr-Tz6" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="bzx-xi-oZf"/>
                                     <constraint firstItem="I1K-Vi-3JX" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="iUR-jp-z1j"/>
                                     <constraint firstItem="1h9-yF-PKh" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="uHo-Rs-N4E"/>
                                     <constraint firstItem="W2R-Oa-IZr" firstAttribute="trailing" secondItem="wML-lq-sp7" secondAttribute="trailing" id="ucQ-YV-kWL"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S1B-8R-Phf"/>
@@ -368,6 +397,8 @@
                         <outlet property="categoryNameTextField" destination="1h9-yF-PKh" id="Nhj-fv-zBh"/>
                         <outlet property="coinAmountTextField" destination="Tib-3z-gh3" id="C56-y3-GJz"/>
                         <outlet property="coinNameTextField" destination="Fjw-Hk-Nta" id="x7b-X6-GMg"/>
+                        <outlet property="coinPriceStackView" destination="lXV-Zr-Tz6" id="9nQ-pM-X7q"/>
+                        <outlet property="coinPriceTextField" destination="SJc-rS-kSI" id="9uo-9e-26y"/>
                         <outlet property="coinSelectButton" destination="zZc-SQ-JQ2" id="sZt-3k-Ly5"/>
                         <outlet property="exchangeButton" destination="q7R-GU-h7I" id="GEt-QR-jmj"/>
                         <outlet property="otherButton" destination="a4K-NK-aBr" id="0kD-uS-PEC"/>

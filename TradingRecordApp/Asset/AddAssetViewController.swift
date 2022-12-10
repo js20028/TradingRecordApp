@@ -25,6 +25,8 @@ class AddAssetViewController: UIViewController {
     @IBOutlet weak var coinNameTextField: UITextField!
     @IBOutlet weak var coinAmountTextField: UITextField!
     @IBOutlet weak var coinSelectButton: UIButton!
+    @IBOutlet weak var coinPriceTextField: UITextField!
+    @IBOutlet weak var coinPriceStackView: UIStackView!
     
     let dropDown = DropDown()
     let itemList = ["비트코인","이더리움","클레이튼", "폴리곤", "솔라나", "바이낸스코인", "리플", "트론", "직접입력"]
@@ -72,6 +74,7 @@ class AddAssetViewController: UIViewController {
         self.categoryNameTextField.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
         self.coinNameTextField.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
         self.coinAmountTextField.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
+        self.coinPriceTextField.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
     }
     
     @objc private func textFieldDidChanged(_ textField: UITextField) {
@@ -79,7 +82,13 @@ class AddAssetViewController: UIViewController {
     }
     
     private func validateInputField() {
-        self.addButton.isEnabled = !(self.categoryNameTextField.text?.isEmpty ?? true) && !(self.coinNameTextField.text?.isEmpty ?? true) && !(self.coinAmountTextField.text?.isEmpty ?? true)
+        if self.coinPriceStackView.isHidden {
+            self.addButton.isEnabled = !(self.categoryNameTextField.text?.isEmpty ?? true) && !(self.coinNameTextField.text?.isEmpty ?? true) && !(self.coinAmountTextField.text?.isEmpty ?? true)
+        } else {
+            self.addButton.isEnabled = !(self.categoryNameTextField.text?.isEmpty ?? true) && !(self.coinNameTextField.text?.isEmpty ?? true) && !(self.coinAmountTextField.text?.isEmpty ?? true) && !(self.coinPriceTextField.text?.isEmpty ?? true)
+        }
+        
+        
     }
     
     private func configureDropDownUI() {
@@ -107,16 +116,21 @@ class AddAssetViewController: UIViewController {
         
         // Item 선택 시 처리
         dropDown.selectionAction = { [weak self] (index, item) in
+            
             //선택한 Item을 TextField에 넣어준다.
             if item == "직접입력" {
                 self!.coinNameTextField.isEnabled = true
-                self!.coinNameTextField.text = ""
+                self!.coinPriceStackView.isHidden = false
+                self!.coinNameTextField.text = nil
                 self!.coinNameTextField.placeholder = ""
                 self!.coinNameTextField.becomeFirstResponder()
+                self!.validateInputField()
                 
             } else {
                 self!.coinNameTextField.isEnabled = false
+                self!.coinPriceStackView.isHidden = true
                 self!.coinNameTextField.text = item
+                self!.validateInputField()
 //                self!.coinSelectButton.image = UIImage(systemName: "arrowtriangle.up.circle.fill")
             }
             
@@ -146,7 +160,7 @@ class AddAssetViewController: UIViewController {
         }.resume()
     }
     
-    private func matchCoinInfoDetail(coinName: String, coin: Coin) -> CoinInfo {
+    private func matchCoinInfoDetail(coinName: String, coin: Coin) -> CoinInfo? {
         switch coinName.uppercased() {
         case "비트코인", "BTC":
             return coin.data.BTC
@@ -165,11 +179,12 @@ class AddAssetViewController: UIViewController {
         case "트론", "TRX":
             return coin.data.TRX
         default:
-            return coin.data.ETH
+            return nil
         }
     }
     
     private func matchCoinSymbol(coinName: String) -> String {
+        
         switch coinName.uppercased() {
         case "비트코인", "BTC":
             return "BTC"
@@ -188,7 +203,7 @@ class AddAssetViewController: UIViewController {
         case "트론", "TRX":
             return "TRX"
         default:
-            return "ETH"
+            return ""
         }
     }
     
@@ -199,11 +214,13 @@ class AddAssetViewController: UIViewController {
         
         guard let totalAsset = totalAsset else { return }
         
-        let coinInfo = self.matchCoinInfoDetail(coinName: coinName, coin: self.coin)
         let coinSymbol = self.matchCoinSymbol(coinName: coinName)
+        let coinInfo = self.matchCoinInfoDetail(coinName: coinName, coin: self.coin)
+        
         
 //        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
-        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinSymbol": coinSymbol, "coinAmount": coinAmount, "coinPrice": coinInfo.coinPrice, "changeRate": coinInfo.changeRate])
+        
+        let assetDetail = AssetDetail(value: ["coinName": coinName, "coinSymbol": coinSymbol, "coinAmount": coinAmount, "coinPrice": coinInfo?.coinPrice ?? self.coinPriceTextField.text ?? "0", "changeRate": coinInfo?.changeRate ?? "0"])
         
         let findValue = self.findAssetCategory(categoryName: categoryName, categoryValue: self.categoryButtonValue)
         
