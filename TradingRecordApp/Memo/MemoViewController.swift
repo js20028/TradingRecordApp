@@ -20,6 +20,7 @@ class MemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCollectionView()
+        self.configureNavigationBar()
         self.loadMemoList()
         
         NotificationCenter.default.addObserver(
@@ -28,6 +29,15 @@ class MemoViewController: UIViewController {
             name: NSNotification.Name("editMemo"),
             object: nil
         )
+    }
+    
+    private func configureNavigationBar() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = UIColor(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 0.8)
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     private func configureCollectionView() {

@@ -40,6 +40,7 @@ class AssetViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.refreshTable(refresh: self.refreshCon)
+        self.configureNavigationBar()
 
     }
     
@@ -48,6 +49,17 @@ class AssetViewController: UIViewController {
         self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
         self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
     }
+    
+    private func configureNavigationBar() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = UIColor(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 0.8)
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.tintColor = .white
+    }
+    
+    
     
     // Realm DB 데이터 초기화 함수
     private func makeRealmData() {

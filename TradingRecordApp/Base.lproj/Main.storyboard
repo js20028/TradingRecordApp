@@ -167,7 +167,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
                                 <rect key="frame" x="0.0" y="221" width="375" height="508"/>
-                                <color key="separatorColor" systemColor="systemIndigoColor"/>
+                                <color key="separatorColor" systemColor="systemBlueColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AssetListCell" rowHeight="60" id="1f7-8c-QJf" customClass="AssetListCell" customModule="TradingRecordApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="335" height="60"/>
@@ -487,7 +487,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ajr-RH-Z4x">
-                                        <rect key="frame" x="20" y="102.66666666666666" width="260" height="102.33333333333334"/>
+                                        <rect key="frame" x="20" y="102.66666666666666" width="260" height="146"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LpJ-34-aPF">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="34.333333333333336"/>
@@ -537,17 +537,17 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="STk-6o-bKk">
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="STk-6o-bKk">
                                                 <rect key="frame" x="0.0" y="83.333333333333343" width="260" height="0.0"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly0-tm-Pet">
-                                                        <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="0.0"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tlh-VU-IYX">
-                                                        <rect key="frame" x="67.333333333333357" y="0.0" width="192.66666666666663" height="0.0"/>
+                                                        <rect key="frame" x="69" y="0.0" width="191" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
@@ -559,9 +559,61 @@
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-WS-fAV">
+                                                <rect key="frame" x="0.0" y="112.33333333333336" width="260" height="33.666666666666671"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb2-V2-Rv3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="33.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="취소"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="취소">
+                                                            <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" systemColor="systemBlueColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tapCancelButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="GKr-uX-gL0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9S-E6-Xaq">
+                                                        <rect key="frame" x="140" y="0.0" width="120" height="33.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="저장"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="저장">
+                                                            <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" systemColor="systemBlueColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tapSaveButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="OHy-eO-qY4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="LpJ-34-aPF" secondAttribute="trailing" id="8fL-kv-M4n"/>
+                                            <constraint firstItem="4sl-WS-fAV" firstAttribute="centerX" secondItem="Ajr-RH-Z4x" secondAttribute="centerX" id="Osk-fv-7fz"/>
                                             <constraint firstAttribute="trailing" secondItem="C1p-On-ZAf" secondAttribute="trailing" id="smR-sa-DjM"/>
                                             <constraint firstAttribute="trailing" secondItem="STk-6o-bKk" secondAttribute="trailing" id="y1S-70-ikk"/>
                                         </constraints>
@@ -572,35 +624,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-WS-fAV">
-                                        <rect key="frame" x="76.333333333333343" y="267.33333333333331" width="147" height="33.666666666666686"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb2-V2-Rv3">
-                                                <rect key="frame" x="0.0" y="0.0" width="56" height="33.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="취소"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="취소">
-                                                    <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="tapCancelButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="GKr-uX-gL0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9S-E6-Xaq">
-                                                <rect key="frame" x="91" y="0.0" width="56" height="33.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="저장"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="저장">
-                                                    <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="tapSaveButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="OHy-eO-qY4"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -612,8 +635,6 @@
                                     <constraint firstItem="uRj-6j-GMf" firstAttribute="centerX" secondItem="EV6-LM-SNh" secondAttribute="centerX" id="StO-Hm-psg"/>
                                     <constraint firstItem="uRj-6j-GMf" firstAttribute="top" secondItem="EV6-LM-SNh" secondAttribute="bottom" constant="10" id="fk7-BM-kod"/>
                                     <constraint firstItem="Ajr-RH-Z4x" firstAttribute="leading" secondItem="eeb-Iq-tUj" secondAttribute="leading" constant="20" id="gxw-7L-CXG"/>
-                                    <constraint firstAttribute="bottom" secondItem="4sl-WS-fAV" secondAttribute="bottom" constant="29" id="vEA-5d-qUi"/>
-                                    <constraint firstItem="4sl-WS-fAV" firstAttribute="centerX" secondItem="eeb-Iq-tUj" secondAttribute="centerX" id="w2p-Tm-rTs"/>
                                     <constraint firstItem="EV6-LM-SNh" firstAttribute="top" secondItem="eeb-Iq-tUj" secondAttribute="top" constant="24" id="xxj-ih-shw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -760,65 +781,93 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-14-TYP">
-                                <rect key="frame" x="20" y="124" width="335" height="500"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="g9l-cm-G2J"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-Ma-jRd">
-                                <rect key="frame" x="106.66666666666669" y="648" width="162" height="33.666666666666629"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7xA-yU-EhB">
+                                <rect key="frame" x="20" y="124" width="335" height="604"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-0z-9iK">
-                                        <rect key="frame" x="0.0" y="0.0" width="56" height="33.666666666666664"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="수정">
-                                            <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" systemColor="labelColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tapEditButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="2ko-zn-wUc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-Ng-VNK">
-                                        <rect key="frame" x="106" y="0.0" width="56" height="33.666666666666664"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="삭제">
-                                            <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
-                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tapDeleteButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="QNa-lC-kEP"/>
-                                        </connections>
-                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-14-TYP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="555.33333333333337"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-Ma-jRd">
+                                        <rect key="frame" x="0.0" y="570.33333333333337" width="335" height="33.666666666666629"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-0z-9iK">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="33.666666666666664"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="수정" titleAlignment="center">
+                                                    <fontDescription key="titleFontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="17"/>
+                                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapEditButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="2ko-zn-wUc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-Ng-VNK">
+                                                <rect key="frame" x="175" y="0.0" width="160" height="33.666666666666664"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="삭제" titleAlignment="center">
+                                                    <fontDescription key="titleFontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="17"/>
+                                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemRedColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapDeleteButton:" destination="MyV-NS-8W5" eventType="touchUpInside" id="QNa-lC-kEP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Bm-Ma-jRd" firstAttribute="centerX" secondItem="RBl-14-TYP" secondAttribute="centerX" id="cMq-ZL-RlY"/>
+                                    <constraint firstItem="7Bm-Ma-jRd" firstAttribute="leading" secondItem="RBl-14-TYP" secondAttribute="leading" id="jKo-Oz-4ch"/>
+                                    <constraint firstItem="RBl-14-TYP" firstAttribute="leading" secondItem="7xA-yU-EhB" secondAttribute="leadingMargin" id="nVY-av-QNK"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nDo-2o-kp7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RBl-14-TYP" firstAttribute="top" secondItem="YJv-Um-QoC" secondAttribute="bottom" constant="24" id="1au-nI-vKK"/>
                             <constraint firstItem="YJv-Um-QoC" firstAttribute="top" secondItem="nDo-2o-kp7" secondAttribute="top" constant="24" id="5V9-mf-GWI"/>
+                            <constraint firstItem="7xA-yU-EhB" firstAttribute="leading" secondItem="nDo-2o-kp7" secondAttribute="leading" constant="20" id="7Lr-6j-rsl"/>
+                            <constraint firstItem="RBl-14-TYP" firstAttribute="centerX" secondItem="nDo-2o-kp7" secondAttribute="centerX" id="DvB-sp-pnS"/>
                             <constraint firstItem="YJv-Um-QoC" firstAttribute="leading" secondItem="nDo-2o-kp7" secondAttribute="leading" constant="24" id="ETe-oC-NGU"/>
-                            <constraint firstItem="7Bm-Ma-jRd" firstAttribute="top" secondItem="RBl-14-TYP" secondAttribute="bottom" constant="24" id="N5t-Uk-q0C"/>
-                            <constraint firstItem="RBl-14-TYP" firstAttribute="leading" secondItem="nDo-2o-kp7" secondAttribute="leading" constant="20" id="ijA-qT-bI5"/>
+                            <constraint firstItem="7xA-yU-EhB" firstAttribute="top" secondItem="YJv-Um-QoC" secondAttribute="bottom" constant="24" id="e7o-wM-GKu"/>
                             <constraint firstItem="nDo-2o-kp7" firstAttribute="trailing" secondItem="YJv-Um-QoC" secondAttribute="trailing" constant="24" id="jez-aL-AVP"/>
-                            <constraint firstItem="7Bm-Ma-jRd" firstAttribute="centerX" secondItem="RBl-14-TYP" secondAttribute="centerX" id="oOU-li-9p9"/>
-                            <constraint firstItem="nDo-2o-kp7" firstAttribute="trailing" secondItem="RBl-14-TYP" secondAttribute="trailing" constant="20" id="tHj-ed-b9g"/>
+                            <constraint firstItem="nDo-2o-kp7" firstAttribute="bottom" secondItem="7xA-yU-EhB" secondAttribute="bottom" constant="50" id="lPE-CC-FDI"/>
+                            <constraint firstItem="nDo-2o-kp7" firstAttribute="trailing" secondItem="7xA-yU-EhB" secondAttribute="trailing" constant="20" id="y8s-Nj-0NH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -929,6 +978,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
