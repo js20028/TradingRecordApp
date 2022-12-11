@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vsp-ZK-PO6">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumSquareRoundB.ttf">
-            <string>NanumSquareRoundB</string>
+        <array key="NanumGothic.ttf">
+            <string>NanumGothic</string>
         </array>
-        <array key="NanumSquareRoundR.ttf">
-            <string>NanumSquareRoundR</string>
+        <array key="NanumGothicBold.ttf">
+            <string>NanumGothicBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -23,10 +23,11 @@
                 <navigationController id="8y9-A5-kuq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="XlI-D3-xmU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wI1-xt-4Cc">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -37,31 +38,36 @@
             </objects>
             <point key="canvasLocation" x="-1109" y="735"/>
         </scene>
-        <!--차트-->
+        <!--코인시세-->
         <scene sceneID="H7N-jG-ZpO">
             <objects>
                 <tableViewController id="gug-Ht-b40" customClass="CoinListViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fok-CX-kde">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinListCell" id="N48-K8-4Wd" customClass="CoinListCell" customModule="TradingRecordApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N48-K8-4Wd" id="N6E-Ii-Eju">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="gug-Ht-b40" id="NXN-X2-jkg"/>
                             <outlet property="delegate" destination="gug-Ht-b40" id="ojP-hh-Rhl"/>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="vNa-Lb-3VX"/>
-                    <navigationItem key="navigationItem" title="차트" id="c3S-Jn-w2N"/>
+                    <navigationItem key="navigationItem" title="코인시세" id="c3S-Jn-w2N"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4b-W4-Qyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,10 +79,10 @@
                 <navigationController id="nud-MT-2Fi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Cy3-0i-KAg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tUA-iu-3US">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -92,49 +98,49 @@
             <objects>
                 <viewController id="tlS-hn-j8V" customClass="AssetViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TTz-f4-SBk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r63-WE-5Re">
-                                <rect key="frame" x="0.0" y="92" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 보유자산" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H43-VZ-elj">
-                                        <rect key="frame" x="50" y="10" width="314" height="20"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                        <rect key="frame" x="50" y="10.000000000000002" width="275" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-6v-slI">
-                                        <rect key="frame" x="10" y="48" width="36.5" height="64"/>
+                                        <rect key="frame" x="10" y="47.666666666666657" width="39.666666666666664" height="63.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="원화" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFW-3X-ah2">
-                                                <rect key="frame" x="0.0" y="0.0" width="36.5" height="24.5"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="24.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="21"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달러" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-Mi-fOs">
-                                                <rect key="frame" x="0.0" y="39.5" width="36.5" height="24.5"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
+                                                <rect key="frame" x="0.0" y="39.333333333333343" width="39.666666666666664" height="24.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="21"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩123456789" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhw-TV-gAm">
-                                        <rect key="frame" x="131.5" y="48" width="151" height="29.5"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="25"/>
+                                        <rect key="frame" x="107.33333333333333" y="47.666666666666657" width="160.66666666666669" height="29"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12345.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-SM-pGB">
-                                        <rect key="frame" x="148" y="85.5" width="118.5" height="29.5"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="25"/>
+                                        <rect key="frame" x="123" y="84.666666666666657" width="129" height="29"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="H43-VZ-elj" secondAttribute="trailing" constant="50" id="DzJ-na-JFh"/>
                                     <constraint firstItem="ENG-6v-slI" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="10" id="IsO-Lk-Mmc"/>
@@ -160,26 +166,25 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
-                                <rect key="frame" x="0.0" y="222" width="414" height="591"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137254901963" blue="1" alpha="0.50279387417218546" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" systemColor="systemTealColor"/>
+                                <rect key="frame" x="0.0" y="221" width="375" height="508"/>
+                                <color key="separatorColor" systemColor="systemIndigoColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AssetListCell" rowHeight="60" id="1f7-8c-QJf" customClass="AssetListCell" customModule="TradingRecordApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="60"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1f7-8c-QJf" id="yl5-Df-rxI">
-                                            <rect key="frame" x="0.0" y="0.0" width="343.5" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="304.66666666666669" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-7Y-6oD">
-                                                    <rect key="frame" x="40" y="18.5" width="35" height="23.5"/>
-                                                    <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
+                                                    <rect key="frame" x="40" y="18.333333333333336" width="37.666666666666657" height="23.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유자산" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-gS-bCD">
-                                                    <rect key="frame" x="246" y="18.5" width="69.5" height="23.5"/>
-                                                    <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
+                                                    <rect key="frame" x="201.33333333333334" y="18.333333333333336" width="75.333333333333343" height="23.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -197,6 +202,14 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemIndigoColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aXX-jq-RPI"/>
@@ -235,40 +248,40 @@
             <objects>
                 <viewController id="p4u-1c-TkU" customClass="AddAssetViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hcQ-K9-tHW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-Tu-BTe">
-                                <rect key="frame" x="65.5" y="132" width="283.5" height="249.5"/>
+                                <rect key="frame" x="47.666666666666657" y="131.00000000000003" width="280" height="339.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wML-lq-sp7">
-                                        <rect key="frame" x="0.0" y="0.0" width="283.5" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="33.666666666666664"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7R-GU-h7I">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="거래소">
-                                                    <fontDescription key="titleFontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                    <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="7nM-6D-A5F"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-ah-TOT">
-                                                <rect key="frame" x="105" y="0.0" width="73" height="33"/>
+                                                <rect key="frame" x="104" y="0.0" width="72" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="지갑">
-                                                    <fontDescription key="titleFontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                    <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="Z47-zf-3oU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4K-NK-aBr">
-                                                <rect key="frame" x="210" y="0.0" width="73.5" height="33"/>
+                                                <rect key="frame" x="208" y="0.0" width="72" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="기타">
-                                                    <fontDescription key="titleFontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                    <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="HLj-LQ-xCc"/>
@@ -277,40 +290,40 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W2R-Oa-IZr">
-                                        <rect key="frame" x="0.0" y="47" width="283.5" height="58"/>
+                                        <rect key="frame" x="0.0" y="47.666666666666657" width="280" height="58.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거래소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-TV-rSJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="19"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="19.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1h9-yF-PKh">
-                                                <rect key="frame" x="0.0" y="24" width="283.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666686" width="280" height="34"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a2v-8m-9bg">
-                                        <rect key="frame" x="0.0" y="119" width="283.5" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="120.33333333333334" width="280" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종목명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOc-hA-T1a">
-                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="19"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="19.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zvy-rJ-Kc5">
-                                                <rect key="frame" x="0.0" y="24" width="283.5" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666661" width="280" height="34.333333333333343"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Hk-Nta">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200.5" height="34.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="34.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-SQ-JQ2">
-                                                        <rect key="frame" x="208.5" y="0.0" width="75" height="34.5"/>
+                                                        <rect key="frame" x="205" y="0.0" width="75" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                         <connections>
@@ -322,39 +335,39 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I1K-Vi-3JX">
-                                        <rect key="frame" x="0.0" y="191.5" width="283.5" height="58"/>
+                                        <rect key="frame" x="0.0" y="193.33333333333331" width="280" height="58.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tn-Dx-FhS">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="19"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="19.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-3z-gh3">
-                                                <rect key="frame" x="0.0" y="24" width="283.5" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666686" width="280" height="34"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lXV-Zr-Tz6">
-                                        <rect key="frame" x="0.0" y="249.5" width="283.5" height="6"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lXV-Zr-Tz6">
+                                        <rect key="frame" x="0.0" y="266" width="280" height="73.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGx-Ml-s0P">
-                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="19.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 종목 직접입력 시 입력한 현재가격으로 적용됩니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFy-Au-tGQ">
-                                                <rect key="frame" x="0.0" y="3" width="283.5" height="0.0"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 종목 직접입력 시 입력한 현재가격으로 적용됩니다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFy-Au-tGQ">
+                                                <rect key="frame" x="0.0" y="22.666666666666686" width="264.33333333333331" height="14"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="12"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-rS-kSI">
-                                                <rect key="frame" x="0.0" y="6" width="283.5" height="0.0"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="39.666666666666686" width="280" height="34"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
@@ -414,18 +427,18 @@
             <objects>
                 <viewController storyboardIdentifier="AssetDetailViewController" id="hfq-ly-uCl" customClass="AssetDetailViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c9E-Ns-dl3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NIo-DP-cPy">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="638"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lkb-A8-eZL" customClass="AssetDetailListCell" customModule="TradingRecordApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lkb-A8-eZL" id="7Cj-uo-PjJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -461,40 +474,40 @@
             <objects>
                 <viewController storyboardIdentifier="AddAssetPopUpViewController" id="cgx-Fp-bHq" customClass="AddAssetPopUpViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vzi-66-zDt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-Iq-tUj">
-                                <rect key="frame" x="57" y="118" width="300" height="330"/>
+                                <rect key="frame" x="37.666666666666657" y="117" width="300" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV6-LM-SNh">
-                                        <rect key="frame" x="101.5" y="24" width="97.5" height="28"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="25"/>
+                                        <rect key="frame" x="99.333333333333343" y="24" width="101" height="29"/>
+                                        <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ajr-RH-Z4x">
-                                        <rect key="frame" x="20" y="101" width="260" height="104.5"/>
+                                        <rect key="frame" x="20" y="102.66666666666666" width="260" height="102.33333333333334"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LpJ-34-aPF">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="34.333333333333336"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종목명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msc-C1-jRF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="34.5"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="34.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRy-OZ-Bk1">
-                                                        <rect key="frame" x="66.5" y="0.0" width="193.5" height="34.5"/>
+                                                        <rect key="frame" x="68" y="0.0" width="192" height="34.333333333333336"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ac0-LR-E9Z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="34.5"/>
-                                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="152" height="34.333333333333336"/>
+                                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2J-Ov-M9f">
-                                                                <rect key="frame" x="153.5" y="0.0" width="40" height="34.5"/>
+                                                                <rect key="frame" x="152" y="0.0" width="40" height="34.333333333333336"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="40" id="hRD-jF-BDF"/>
                                                                 </constraints>
@@ -509,40 +522,40 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C1p-On-ZAf">
-                                                <rect key="frame" x="0.0" y="44.5" width="260" height="34"/>
+                                                <rect key="frame" x="0.0" y="44.333333333333343" width="260" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95T-G8-6tJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="34"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="34"/>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af4-F6-mcI">
-                                                        <rect key="frame" x="67" y="0.0" width="193" height="34"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                                        <rect key="frame" x="69" y="0.0" width="191" height="34"/>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="STk-6o-bKk">
-                                                <rect key="frame" x="0.0" y="83.5" width="260" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="83.333333333333343" width="260" height="0.0"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly0-tm-Pet">
-                                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tlh-VU-IYX">
-                                                        <rect key="frame" x="67.5" y="0.0" width="192.5" height="0.0"/>
+                                                        <rect key="frame" x="67.333333333333357" y="0.0" width="192.66666666666663" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 종목 직접입력 시 입력한 현재가로 적용됩니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFu-Rt-xpa">
-                                                <rect key="frame" x="0.0" y="88.5" width="241.5" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 종목 직접입력 시 입력한 현재가로 적용됩니다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFu-Rt-xpa">
+                                                <rect key="frame" x="0.0" y="88.333333333333343" width="242" height="14"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="12"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -554,33 +567,33 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유중인 자산을 추가하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-6j-GMf">
-                                        <rect key="frame" x="53" y="62" width="194.5" height="19"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                        <rect key="frame" x="49.333333333333329" y="62.999999999999993" width="201.33333333333337" height="19.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-WS-fAV">
-                                        <rect key="frame" x="77.5" y="268" width="145" height="33"/>
+                                        <rect key="frame" x="76.333333333333343" y="267.33333333333331" width="147" height="33.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb2-V2-Rv3">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="56" height="33.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="취소"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="취소">
-                                                    <fontDescription key="titleFontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
+                                                    <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapCancelButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="GKr-uX-gL0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9S-E6-Xaq">
-                                                <rect key="frame" x="90" y="0.0" width="55" height="33"/>
+                                                <rect key="frame" x="91" y="0.0" width="56" height="33.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="저장"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="저장">
-                                                    <fontDescription key="titleFontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
+                                                    <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapSaveButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="OHy-eO-qY4"/>
@@ -608,10 +621,19 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" systemColor="systemIndigoColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" systemColor="systemGrayColor"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -643,11 +665,11 @@
             <objects>
                 <viewController id="j3t-Cp-Ebl" customClass="MemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xpo-Wy-Ohp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sYM-bm-sKd">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="638"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BNX-x0-1hJ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -665,17 +687,17 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp5-M7-kVD">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="0.65989051870748294" blue="0.10772746598639456" alpha="0.9913596854304636" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137254901963" blue="1" alpha="0.30186775662251658" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="AzO-pc-6hE"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="내용" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijk-y1-bd3">
                                                     <rect key="frame" x="12" y="45" width="156" height="143"/>
-                                                    <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -729,33 +751,33 @@
             <objects>
                 <viewController storyboardIdentifier="MemoDetailViewController" id="MyV-NS-8W5" customClass="MemoDetailViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qcs-W1-Lpr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-Um-QoC">
-                                <rect key="frame" x="24" y="72" width="366" height="29.5"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="25"/>
+                                <rect key="frame" x="24" y="71" width="327" height="29"/>
+                                <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-14-TYP">
-                                <rect key="frame" x="20" y="125.5" width="374" height="500"/>
+                                <rect key="frame" x="20" y="124" width="335" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="g9l-cm-G2J"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-Ma-jRd">
-                                <rect key="frame" x="128.5" y="649.5" width="157" height="34"/>
+                                <rect key="frame" x="106.66666666666669" y="648" width="162" height="33.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-0z-9iK">
-                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="33.666666666666664"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="수정">
-                                            <fontDescription key="titleFontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
+                                            <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -773,10 +795,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-Ng-VNK">
-                                        <rect key="frame" x="103.5" y="0.0" width="53.5" height="34"/>
+                                        <rect key="frame" x="106" y="0.0" width="56" height="33.666666666666664"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="삭제">
-                                            <fontDescription key="titleFontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
+                                            <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -813,22 +835,22 @@
             <objects>
                 <viewController storyboardIdentifier="WriteMemoViewController" id="2A2-an-QGd" customClass="WriteMemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A7Z-7W-80I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psi-yV-qw8">
-                                <rect key="frame" x="24" y="116" width="366" height="37.5"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="25"/>
+                                <rect key="frame" x="24" y="115" width="327" height="39"/>
+                                <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOq-pY-kVj">
-                                <rect key="frame" x="24" y="177.5" width="366" height="500"/>
+                                <rect key="frame" x="24" y="178" width="327" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="Nzo-1T-8OW"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -866,10 +888,10 @@
                 <navigationController id="k7S-Ed-4kO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="wxM-vx-KbF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pI3-Hl-c7W">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -908,9 +930,6 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -919,9 +938,6 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

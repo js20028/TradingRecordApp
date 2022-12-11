@@ -37,6 +37,10 @@
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
 		0FF01C2029407AA7000299A9 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF01C1F29407AA7000299A9 /* UIButtonExtension.swift */; };
+		0FF01C422944C53C000299A9 /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF01C412944C53C000299A9 /* NanumGothic.ttf */; };
+		0FF01C442944C54A000299A9 /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF01C432944C54A000299A9 /* NanumGothicBold.ttf */; };
+		0FF01C462944C559000299A9 /* NanumGothicExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF01C452944C559000299A9 /* NanumGothicExtraBold.ttf */; };
+		0FF01C482944C55F000299A9 /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FF01C472944C55F000299A9 /* NanumGothicLight.ttf */; };
 		E5736BB83F6098406AD92316 /* Pods_TradingRecordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +77,10 @@
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
 		0FF01C1F29407AA7000299A9 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		0FF01C412944C53C000299A9 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
+		0FF01C432944C54A000299A9 /* NanumGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.ttf; sourceTree = "<group>"; };
+		0FF01C452944C559000299A9 /* NanumGothicExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.ttf; sourceTree = "<group>"; };
+		0FF01C472944C55F000299A9 /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.ttf; sourceTree = "<group>"; };
 		48B2E9809F65118E4F759A0F /* Pods_TradingRecordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TradingRecordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7683D5B6A1D141B8CC186F /* Pods-TradingRecordApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradingRecordApp.release.xcconfig"; path = "Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp.release.xcconfig"; sourceTree = "<group>"; };
 		EC43EBB4354F80A2A886E8FF /* Pods-TradingRecordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TradingRecordApp.debug.xcconfig"; path = "Target Support Files/Pods-TradingRecordApp/Pods-TradingRecordApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +177,10 @@
 		0FC49FA7293CCED4003251BE /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				0FF01C472944C55F000299A9 /* NanumGothicLight.ttf */,
+				0FF01C452944C559000299A9 /* NanumGothicExtraBold.ttf */,
+				0FF01C432944C54A000299A9 /* NanumGothicBold.ttf */,
+				0FF01C412944C53C000299A9 /* NanumGothic.ttf */,
 				0FC49FAC293CD084003251BE /* NanumSquareRoundB.ttf */,
 				0FC49FAA293CD07C003251BE /* NanumSquareRoundEB.ttf */,
 				0FC49FA8293CD073003251BE /* NanumSquareRoundL.ttf */,
@@ -267,10 +279,14 @@
 				0FC49FAB293CD07C003251BE /* NanumSquareRoundEB.ttf in Resources */,
 				0F35B65228D2F6C6005C42ED /* LaunchScreen.storyboard in Resources */,
 				0F35B64F28D2F6C6005C42ED /* Assets.xcassets in Resources */,
+				0FF01C422944C53C000299A9 /* NanumGothic.ttf in Resources */,
 				0F35B65E28D9A1BE005C42ED /* CoinListCell.xib in Resources */,
 				0FC49FAD293CD084003251BE /* NanumSquareRoundB.ttf in Resources */,
+				0FF01C482944C55F000299A9 /* NanumGothicLight.ttf in Resources */,
 				0FC49FB4293F3EA4003251BE /* CoinListHeaderView.xib in Resources */,
 				0F7AC2F3290CF6F6007A4659 /* AssetDetailListCell.xib in Resources */,
+				0FF01C462944C559000299A9 /* NanumGothicExtraBold.ttf in Resources */,
+				0FF01C442944C54A000299A9 /* NanumGothicBold.ttf in Resources */,
 				0F35B64D28D2F6C4005C42ED /* Main.storyboard in Resources */,
 				0FC49FA6293CCB95003251BE /* NanumSquareRoundR.ttf in Resources */,
 			);

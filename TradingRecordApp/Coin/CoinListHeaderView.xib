@@ -7,11 +7,16 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumGothic.ttf">
+            <string>NanumGothic</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="Dnf-p4-Mp2" customClass="CoinListHeaderView" customModule="TradingRecordApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="jeN-IM-hIv">
@@ -19,23 +24,23 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="mlV-ul-4PL">
-                            <rect key="frame" x="55" y="8" width="323" height="17"/>
+                            <rect key="frame" x="55" y="8.6666666666666661" width="323" height="16.333333333333336"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="코인이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRX-Ga-0Up">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="130.66666666666666" height="16.333333333333332"/>
+                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                     <color key="textColor" systemColor="systemGrayColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCz-P5-8X8">
-                                    <rect key="frame" x="188" y="0.0" width="36.333333333333343" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="180.66666666666666" y="0.0" width="39.666666666666657" height="16.333333333333332"/>
+                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                     <color key="textColor" systemColor="systemGrayColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전일대비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnA-qo-FU3">
-                                    <rect key="frame" x="274.33333333333331" y="0.0" width="48.666666666666686" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="270.33333333333331" y="0.0" width="52.666666666666686" height="16.333333333333332"/>
+                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                     <color key="textColor" systemColor="systemGrayColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -47,22 +52,16 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="mlV-ul-4PL" secondAttribute="bottom" constant="5" id="Zjx-Oh-fQ2"/>
-                        <constraint firstItem="mlV-ul-4PL" firstAttribute="leading" secondItem="jeN-IM-hIv" secondAttribute="leading" constant="55" id="eWA-33-iUd"/>
-                        <constraint firstAttribute="trailing" secondItem="mlV-ul-4PL" secondAttribute="trailing" constant="15" id="loG-hr-iLf"/>
+                        <constraint firstItem="mlV-ul-4PL" firstAttribute="leading" secondItem="jeN-IM-hIv" secondAttribute="leading" constant="55" id="OUW-34-5E8"/>
+                        <constraint firstAttribute="bottom" secondItem="mlV-ul-4PL" secondAttribute="bottom" constant="5" id="faE-3A-pus"/>
+                        <constraint firstAttribute="trailing" secondItem="mlV-ul-4PL" secondAttribute="trailing" constant="15" id="xzo-ai-1rf"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="viD-WD-Ihq"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="jeN-IM-hIv" secondAttribute="bottom" id="P5N-cL-Qaa"/>
-                <constraint firstItem="jeN-IM-hIv" firstAttribute="top" secondItem="Dnf-p4-Mp2" secondAttribute="top" id="USU-Fg-TeT"/>
-                <constraint firstItem="jeN-IM-hIv" firstAttribute="leading" secondItem="viD-WD-Ihq" secondAttribute="leading" id="ZTS-Rj-5hB"/>
-                <constraint firstItem="viD-WD-Ihq" firstAttribute="trailing" secondItem="jeN-IM-hIv" secondAttribute="trailing" id="d4x-U5-D5W"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="216.03053435114504" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="216.03053435114504" y="-53.521126760563384"/>
         </view>
     </objects>
     <resources>

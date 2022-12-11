@@ -4,10 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NanumSquareRoundL.ttf</string>
 		<string>NanumSquareRoundR.ttf</string>
-		<string>NanumSquareRoundB.ttf</string>
-		<string>NanumSquareRoundEB.ttf</string>
+		<string>NanumGothic.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

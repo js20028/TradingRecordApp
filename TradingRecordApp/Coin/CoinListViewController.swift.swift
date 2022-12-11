@@ -23,6 +23,16 @@ class CoinListViewController: UITableViewController {
         self.initRefresh()
         
         self.registerXib()
+
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = .blue
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+
+        
+
         
 //        UIFont.familyNames.sorted().forEach { familyName in
 //            print("*** \(familyName) ***")
