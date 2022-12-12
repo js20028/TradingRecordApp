@@ -33,13 +33,14 @@ class AssetViewController: UIViewController {
         
         self.makeRealmData()
         self.loadRealmData()
+        self.refreshTable(refresh: self.refreshCon)
         
         self.initRefresh()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.refreshTable(refresh: self.refreshCon)
+        
         self.configureNavigationBar()
 
     }

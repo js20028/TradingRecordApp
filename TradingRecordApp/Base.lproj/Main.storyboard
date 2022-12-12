@@ -128,13 +128,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩123456789" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhw-TV-gAm">
-                                        <rect key="frame" x="107.33333333333333" y="47.666666666666657" width="160.66666666666669" height="29"/>
+                                        <rect key="frame" x="107.33333333333333" y="44.666666666666657" width="160.66666666666669" height="29"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12345.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-SM-pGB">
-                                        <rect key="frame" x="123" y="84.666666666666657" width="129" height="29"/>
+                                        <rect key="frame" x="123" y="81.666666666666657" width="129" height="29"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -151,11 +151,11 @@
                                     <constraint firstItem="H43-VZ-elj" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="top" constant="10" id="aj2-m4-S2X"/>
                                     <constraint firstItem="xhw-TV-gAm" firstAttribute="centerX" secondItem="H43-VZ-elj" secondAttribute="centerX" id="bD0-Nd-xmG"/>
                                     <constraint firstItem="H43-VZ-elj" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="50" id="mKp-2m-bra"/>
-                                    <constraint firstItem="xhw-TV-gAm" firstAttribute="top" secondItem="H43-VZ-elj" secondAttribute="bottom" constant="18" id="qvh-xE-6cv"/>
+                                    <constraint firstItem="xhw-TV-gAm" firstAttribute="top" secondItem="H43-VZ-elj" secondAttribute="bottom" constant="15" id="qvh-xE-6cv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
@@ -615,6 +615,7 @@
                                             <constraint firstAttribute="trailing" secondItem="LpJ-34-aPF" secondAttribute="trailing" id="8fL-kv-M4n"/>
                                             <constraint firstItem="4sl-WS-fAV" firstAttribute="centerX" secondItem="Ajr-RH-Z4x" secondAttribute="centerX" id="Osk-fv-7fz"/>
                                             <constraint firstAttribute="trailing" secondItem="C1p-On-ZAf" secondAttribute="trailing" id="smR-sa-DjM"/>
+                                            <constraint firstAttribute="trailing" secondItem="4sl-WS-fAV" secondAttribute="trailing" id="xDd-tO-dgt"/>
                                             <constraint firstAttribute="trailing" secondItem="STk-6o-bKk" secondAttribute="trailing" id="y1S-70-ikk"/>
                                         </constraints>
                                     </stackView>
@@ -961,9 +962,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8y9-A5-kuq" kind="relationship" relationship="viewControllers" id="Teu-me-1Lf"/>
                         <segue destination="nud-MT-2Fi" kind="relationship" relationship="viewControllers" id="Y0Y-to-tOo"/>
                         <segue destination="k7S-Ed-4kO" kind="relationship" relationship="viewControllers" id="CPK-k5-naT"/>
+                        <segue destination="8y9-A5-kuq" kind="relationship" relationship="viewControllers" id="xPK-fz-b2O"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DST-JO-5lg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
