@@ -49,6 +49,8 @@ class CoinListViewController: UITableViewController {
     }
     
     private func getCoinData() {
+        var run = true
+        
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
         session.dataTask(with: coinURL) { data, response, error in
@@ -68,7 +70,13 @@ class CoinListViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             
+            run = false
+            
         }.resume()
+        
+        while run {
+            
+        }
     }
     
     // xib 등록
@@ -121,7 +129,7 @@ extension CoinListViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinListCell", for: indexPath) as? CoinListCell else { return UITableViewCell() }
         
         let imageURL = URL(string: "https://coinicons-api.vercel.app/api/icon/\(self.coinSymbolList[indexPath.row].lowercased())")
-        if indexPath.row == 2 {
+        if self.coinSymbolList[indexPath.row] == "KLAY" {
             cell.coinImageView.image = UIImage(named: "KlayLogo.png")
         } else {
             cell.coinImageView.kf.setImage(with: imageURL)

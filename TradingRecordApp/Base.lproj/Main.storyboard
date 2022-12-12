@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vsp-ZK-PO6">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,7 +23,7 @@
                 <navigationController id="8y9-A5-kuq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="XlI-D3-xmU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wI1-xt-4Cc">
-                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
@@ -43,15 +43,15 @@
             <objects>
                 <tableViewController id="gug-Ht-b40" customClass="CoinListViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fok-CX-kde">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinListCell" id="N48-K8-4Wd" customClass="CoinListCell" customModule="TradingRecordApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N48-K8-4Wd" id="N6E-Ii-Eju">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -79,7 +79,7 @@
                 <navigationController id="nud-MT-2Fi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Cy3-0i-KAg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tUA-iu-3US">
-                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
@@ -98,14 +98,14 @@
             <objects>
                 <viewController id="tlS-hn-j8V" customClass="AssetViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TTz-f4-SBk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r63-WE-5Re">
-                                <rect key="frame" x="0.0" y="91" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 보유자산" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H43-VZ-elj">
-                                        <rect key="frame" x="50" y="10.000000000000002" width="275" height="19.666666666666671"/>
+                                        <rect key="frame" x="50" y="10.000000000000002" width="293" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -128,13 +128,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩123456789" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhw-TV-gAm">
-                                        <rect key="frame" x="107.33333333333333" y="44.666666666666657" width="160.66666666666669" height="29"/>
+                                        <rect key="frame" x="116.33333333333333" y="44.666666666666657" width="160.66666666666669" height="29"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12345.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-SM-pGB">
-                                        <rect key="frame" x="123" y="81.666666666666657" width="129" height="29"/>
+                                        <rect key="frame" x="132" y="81.666666666666657" width="129" height="29"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -166,14 +166,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
-                                <rect key="frame" x="0.0" y="221" width="375" height="508"/>
+                                <rect key="frame" x="0.0" y="233" width="393" height="536"/>
                                 <color key="separatorColor" systemColor="systemBlueColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AssetListCell" rowHeight="60" id="1f7-8c-QJf" customClass="AssetListCell" customModule="TradingRecordApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="60"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1f7-8c-QJf" id="yl5-Df-rxI">
-                                            <rect key="frame" x="0.0" y="0.0" width="304.66666666666669" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-7Y-6oD">
@@ -183,7 +183,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유자산" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-gS-bCD">
-                                                    <rect key="frame" x="201.33333333333334" y="18.333333333333336" width="75.333333333333343" height="23.333333333333336"/>
+                                                    <rect key="frame" x="219.33333333333334" y="18.333333333333336" width="75.333333333333343" height="23.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -248,11 +248,11 @@
             <objects>
                 <viewController id="p4u-1c-TkU" customClass="AddAssetViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hcQ-K9-tHW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-Tu-BTe">
-                                <rect key="frame" x="47.666666666666657" y="131.00000000000003" width="280" height="339.66666666666674"/>
+                                <rect key="frame" x="56.666666666666657" y="143.00000000000003" width="280" height="339.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wML-lq-sp7">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="33.666666666666664"/>
@@ -278,7 +278,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4K-NK-aBr">
-                                                <rect key="frame" x="208" y="0.0" width="72" height="33.666666666666664"/>
+                                                <rect key="frame" x="208.00000000000003" y="0.0" width="71.999999999999972" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="기타">
                                                     <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
@@ -306,7 +306,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a2v-8m-9bg">
-                                        <rect key="frame" x="0.0" y="120.33333333333334" width="280" height="59"/>
+                                        <rect key="frame" x="0.0" y="120.33333333333331" width="280" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종목명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOc-hA-T1a">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="19.666666666666668"/>
@@ -315,7 +315,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zvy-rJ-Kc5">
-                                                <rect key="frame" x="0.0" y="24.666666666666661" width="280" height="34.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666689" width="280" height="34.333333333333343"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Hk-Nta">
                                                         <rect key="frame" x="0.0" y="0.0" width="197" height="34.333333333333336"/>
@@ -323,7 +323,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-SQ-JQ2">
-                                                        <rect key="frame" x="205" y="0.0" width="75" height="34.333333333333336"/>
+                                                        <rect key="frame" x="205.00000000000003" y="0.0" width="74.999999999999972" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                         <connections>
@@ -427,18 +427,18 @@
             <objects>
                 <viewController storyboardIdentifier="AssetDetailViewController" id="hfq-ly-uCl" customClass="AssetDetailViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c9E-Ns-dl3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NIo-DP-cPy">
-                                <rect key="frame" x="0.0" y="91" width="375" height="638"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lkb-A8-eZL" customClass="AssetDetailListCell" customModule="TradingRecordApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lkb-A8-eZL" id="7Cj-uo-PjJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -474,11 +474,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddAssetPopUpViewController" id="cgx-Fp-bHq" customClass="AddAssetPopUpViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vzi-66-zDt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-Iq-tUj">
-                                <rect key="frame" x="37.666666666666657" y="117" width="300" height="330"/>
+                                <rect key="frame" x="46.666666666666657" y="129" width="300" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV6-LM-SNh">
                                         <rect key="frame" x="99.333333333333343" y="24" width="101" height="29"/>
@@ -487,7 +487,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ajr-RH-Z4x">
-                                        <rect key="frame" x="20" y="102.66666666666666" width="260" height="146"/>
+                                        <rect key="frame" x="20" y="102.66666666666666" width="260" height="145.99999999999997"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LpJ-34-aPF">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="34.333333333333336"/>
@@ -507,7 +507,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2J-Ov-M9f">
-                                                                <rect key="frame" x="152" y="0.0" width="40" height="34.333333333333336"/>
+                                                                <rect key="frame" x="152.00000000000003" y="0.0" width="40" height="34.333333333333336"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="40" id="hRD-jF-BDF"/>
                                                                 </constraints>
@@ -687,21 +687,21 @@
             <objects>
                 <viewController id="j3t-Cp-Ebl" customClass="MemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xpo-Wy-Ohp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sYM-bm-sKd">
-                                <rect key="frame" x="0.0" y="91" width="375" height="638"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BNX-x0-1hJ">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoCell" id="2VE-hP-5mW" customClass="MemoCell" customModule="TradingRecordApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                        <rect key="frame" x="0.0" y="50" width="180" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iG7-qM-lgm">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
@@ -741,6 +741,23 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reusableView" id="nEm-39-hkO">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="투자 계획, 일정 등을 메모해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02c-Xb-qGV">
+                                            <rect key="frame" x="10.000000000000014" y="15.333333333333334" width="238.33333333333337" height="19.333333333333329"/>
+                                            <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="02c-Xb-qGV" firstAttribute="centerY" secondItem="nEm-39-hkO" secondAttribute="centerY" id="3g6-HA-Sos"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="02c-Xb-qGV" secondAttribute="trailing" constant="20" symbolic="YES" id="6Ba-Uk-YRp"/>
+                                        <constraint firstItem="02c-Xb-qGV" firstAttribute="leading" secondItem="nEm-39-hkO" secondAttribute="leading" constant="10" id="JxX-H6-iuL"/>
+                                    </constraints>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FfX-Qd-bNN"/>
@@ -773,30 +790,30 @@
             <objects>
                 <viewController storyboardIdentifier="MemoDetailViewController" id="MyV-NS-8W5" customClass="MemoDetailViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qcs-W1-Lpr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-Um-QoC">
-                                <rect key="frame" x="24" y="71" width="327" height="29"/>
+                                <rect key="frame" x="24" y="83" width="345" height="29"/>
                                 <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7xA-yU-EhB">
-                                <rect key="frame" x="20" y="124" width="335" height="604"/>
+                                <rect key="frame" x="20" y="136" width="353" height="632"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-14-TYP">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="555.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="583.33333333333337"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-Ma-jRd">
-                                        <rect key="frame" x="0.0" y="570.33333333333337" width="335" height="33.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="598.33333333333337" width="353" height="33.666666666666629"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-0z-9iK">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="33.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="수정" titleAlignment="center">
                                                     <fontDescription key="titleFontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="17"/>
@@ -827,7 +844,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uH-Ng-VNK">
-                                                <rect key="frame" x="175" y="0.0" width="160" height="33.666666666666664"/>
+                                                <rect key="frame" x="184" y="0.0" width="169" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="삭제" titleAlignment="center">
                                                     <fontDescription key="titleFontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="17"/>
@@ -885,16 +902,16 @@
             <objects>
                 <viewController storyboardIdentifier="WriteMemoViewController" id="2A2-an-QGd" customClass="WriteMemoViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A7Z-7W-80I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psi-yV-qw8">
-                                <rect key="frame" x="24" y="115" width="327" height="39"/>
+                                <rect key="frame" x="24" y="127" width="345" height="39"/>
                                 <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOq-pY-kVj">
-                                <rect key="frame" x="24" y="178" width="327" height="500"/>
+                                <rect key="frame" x="24" y="190" width="345" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="Nzo-1T-8OW"/>
@@ -938,7 +955,7 @@
                 <navigationController id="k7S-Ed-4kO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="wxM-vx-KbF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pI3-Hl-c7W">
-                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="20"/>
