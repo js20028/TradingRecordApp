@@ -318,14 +318,17 @@
                                                 <rect key="frame" x="0.0" y="24.666666666666689" width="280" height="34.333333333333343"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Hk-Nta">
-                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="34.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="232" height="34.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-SQ-JQ2">
-                                                        <rect key="frame" x="205.00000000000003" y="0.0" width="74.999999999999972" height="34.333333333333336"/>
+                                                        <rect key="frame" x="240" y="0.0" width="40" height="34.333333333333336"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="PHz-HB-4Qp"/>
+                                                        </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="B"/>
                                                         <connections>
                                                             <action selector="tapCoinSelectButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="Vfc-hl-OwY"/>
                                                         </connections>
@@ -911,11 +914,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOq-pY-kVj">
-                                <rect key="frame" x="24" y="190" width="345" height="500"/>
+                                <rect key="frame" x="24" y="190" width="345" height="509"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="Nzo-1T-8OW"/>
-                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -927,8 +927,10 @@
                             <constraint firstItem="XOq-pY-kVj" firstAttribute="leading" secondItem="hnw-H4-o3h" secondAttribute="leading" constant="24" id="3YA-8l-L8R"/>
                             <constraint firstItem="hnw-H4-o3h" firstAttribute="trailing" secondItem="XOq-pY-kVj" secondAttribute="trailing" constant="24" id="5aQ-Gr-hdQ"/>
                             <constraint firstItem="hnw-H4-o3h" firstAttribute="trailing" secondItem="psi-yV-qw8" secondAttribute="trailing" constant="24" id="8mm-7Y-iqg"/>
+                            <constraint firstItem="XOq-pY-kVj" firstAttribute="centerX" secondItem="hnw-H4-o3h" secondAttribute="centerX" id="Fvx-8X-DYe"/>
                             <constraint firstItem="psi-yV-qw8" firstAttribute="top" secondItem="hnw-H4-o3h" secondAttribute="top" constant="24" id="KsZ-Pj-Fsy"/>
                             <constraint firstItem="XOq-pY-kVj" firstAttribute="top" secondItem="psi-yV-qw8" secondAttribute="bottom" constant="24" id="MKl-hV-E87"/>
+                            <constraint firstItem="hnw-H4-o3h" firstAttribute="bottom" secondItem="XOq-pY-kVj" secondAttribute="bottom" constant="70" id="fRQ-9S-i9H"/>
                             <constraint firstItem="psi-yV-qw8" firstAttribute="leading" secondItem="hnw-H4-o3h" secondAttribute="leading" constant="24" id="pAW-KC-Gsq"/>
                         </constraints>
                     </view>

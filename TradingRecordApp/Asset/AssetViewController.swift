@@ -127,30 +127,6 @@ class AssetViewController: UIViewController {
         return sum
     }
     
-//    private func matchCoinInfoTotal(assets: [[Asset]], coin: Coin) {
-//        for i in 0..<3 {
-//            for asset in assets[i] {
-//                for assetDetail in asset.assets {
-//                    switch assetDetail.coinName.uppercased() {
-//                    case "이더리움", "ETH":
-//                        assetDetail.coinPrice = coin.data.ETH.coinPrice
-//                        assetDetail.changeRate = coin.data.ETH.changeRate
-//                    case "클레이튼", "KLAY":
-//                        assetDetail.coinPrice = coin.data.KLAY.coinPrice
-//                        assetDetail.changeRate = coin.data.KLAY.changeRate
-//                    case "폴리곤", "MATIC":
-//                        assetDetail.coinPrice = coin.data.MATIC.coinPrice
-//                        assetDetail.changeRate = coin.data.MATIC.changeRate
-//                    case "솔라나", "SOL":
-//                        assetDetail.coinPrice = coin.data.SOL.coinPrice
-//                        assetDetail.changeRate = coin.data.SOL.changeRate
-//                    default:
-//                        break
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     // 당겨서 새로고침 초기화
     private func initRefresh() {
@@ -282,8 +258,7 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AssetDetailViewController") as? AssetDetailViewController else { return }
-        
-        //viewController.assetDetailList = self.totalAsset[indexPath.section][indexPath.row].assets
+    
         for assetDetail in self.totalAsset[indexPath.section][indexPath.row].assets {
             viewController.assetDetailList.append(assetDetail)
         }
@@ -292,8 +267,6 @@ extension AssetViewController: UITableViewDelegate, UITableViewDataSource {
         viewController.indexPath = indexPath
         viewController.delegate = self
         
-//        self.show(viewController, sender: nil)
-//        self.performSegue(withIdentifier: "showAssetDetail", sender: nil)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -354,7 +327,7 @@ extension AssetViewController: AddAssetDelegate {
 
 extension AssetViewController: AssetDetailDelegate {
     func sendAssetDetail(assetDetailList: [AssetDetail], indexPath: IndexPath, sum: Int) {
-        //self.totalAsset[indexPath.section][indexPath.row].assets = assetDetailList
+        
         let realm = try! Realm()
         let savedAsset = realm.objects(AssetCategory.self)
         try! realm.write {
@@ -362,7 +335,6 @@ extension AssetViewController: AssetDetailDelegate {
             for assetDetail in assetDetailList {
                 self.totalAsset[indexPath.section][indexPath.row].assets.append(assetDetail)
             }
-
 
             self.totalAsset[indexPath.section][indexPath.row].assetsSum = sum
 

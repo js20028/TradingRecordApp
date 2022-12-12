@@ -193,14 +193,11 @@ class AddAssetPopUpViewController: UIViewController {
         let coinInfo = self.matchCoinInfoDetail(coinName: coinName, coin: self.coin)
         let coinSymbol = self.matchCoinSymbol(coinName: coinName)
         
-        //--------------------------------------------------------------------------------
-        
-//        let assetDetail = AssetDetail(coinName: coinName, coinAmount: coinAmount, coinInfo: self.matchCoinInfoDetail(coinName: coinName, coin: self.coin))
         let assetDetail = AssetDetail(value: ["coinName": coinName, "coinSymbol": coinSymbol, "coinAmount": coinAmount, "coinPrice": coinInfo?.coinPrice ?? self.coinPriceTextField.text ?? "0", "changeRate": coinInfo?.changeRate ?? "0"])
         self.assetDetailList.append(assetDetail)
         
         self.delegate?.didSelectAddPopup(assetList: self.assetDetailList)
-        self.dismiss(animated: false)
+        self.dismiss(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
