@@ -165,7 +165,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-cH-I6k">
                                 <rect key="frame" x="0.0" y="233" width="393" height="536"/>
                                 <color key="separatorColor" systemColor="systemBlueColor"/>
                                 <prototypes>
@@ -211,16 +211,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-hW-UMW">
+                                <rect key="frame" x="0.0" y="333" width="393" height="336"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HZ-w6-jfC" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="302.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산을 추가하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-q9-rNi">
+                                        <rect key="frame" x="0.0" y="312.66666666666663" width="393" height="23.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aXX-jq-RPI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="52B-0W-lPo"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" constant="100" id="WBK-aS-CQy"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="YKM-Eb-lqB"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="5V1-cH-I6k" secondAttribute="trailing" id="bVC-5d-MA4"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="top" secondItem="aXX-jq-RPI" secondAttribute="top" id="dvO-6J-HdF"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="r63-WE-5Re" secondAttribute="trailing" id="mxp-3C-H7P"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="centerX" secondItem="5V1-cH-I6k" secondAttribute="centerX" id="o1Q-6e-65i"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" id="oYK-Xm-Uhc"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="5V1-cH-I6k" secondAttribute="bottom" id="pY5-DY-cV4"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="centerY" secondItem="5V1-cH-I6k" secondAttribute="centerY" id="vGE-LJ-iSO"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="x9A-lr-y0A"/>
                         </constraints>
                     </view>
@@ -233,6 +252,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lottieStackView" destination="6Tk-hW-UMW" id="L7h-57-NvK"/>
+                        <outlet property="lottieView" destination="5HZ-w6-jfC" id="X45-Au-aTG"/>
                         <outlet property="tableView" destination="5V1-cH-I6k" id="vbB-M2-Flc"/>
                         <outlet property="totalAssetDollar" destination="1A9-SM-pGB" id="uJ8-02-b6c"/>
                         <outlet property="totalAssetWon" destination="xhw-TV-gAm" id="3aV-gh-vi1"/>
@@ -241,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iR-uN-DDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834.7826086956522" y="-500.22321428571428"/>
+            <point key="canvasLocation" x="1834.3511450381679" y="-500.7042253521127"/>
         </scene>
         <!--자산 추가-->
         <scene sceneID="twW-5D-6Gj">

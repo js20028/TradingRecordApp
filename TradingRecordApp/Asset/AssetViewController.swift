@@ -7,12 +7,15 @@
 
 import UIKit
 import RealmSwift
+import Lottie
 
 class AssetViewController: UIViewController {
 
     @IBOutlet weak var totalAssetWon: UILabel!
     @IBOutlet weak var totalAssetDollar: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lottieView: AnimationView!
+    @IBOutlet weak var lottieStackView: UIStackView!
     
     var totalAsset = [[Asset](), [Asset](), [Asset]()] {
         didSet {
@@ -21,9 +24,23 @@ class AssetViewController: UIViewController {
         }
     }
     
-    var sections: [String] = ["","",""]
+    var sections: [String] = ["","",""] {
+        didSet {
+            if sections == ["","",""] {
+                self.lottieStackView.isHidden = false
+                self.tableView.isHidden = true
+                self.animationView?.play()
+            } else {
+                self.animationView?.stop()
+                self.lottieStackView.isHidden = true
+                self.tableView.isHidden = false
+            }
+        }
+    }
     var coin: Coin!
     let refreshCon = UIRefreshControl()
+    
+    var animationView: AnimationView? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +57,30 @@ class AssetViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.animationView = self.playLottieAnimationView()
         
         self.configureNavigationBar()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
         self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
+        
+        if sections == ["","",""] {
+            self.lottieStackView.isHidden = false
+            self.tableView.isHidden = true
+            self.animationView?.play()
+//            self.playLottieAnimationView()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.animationView?.stop()
     }
     
     private func configureNavigationBar() {
@@ -66,7 +98,20 @@ class AssetViewController: UIViewController {
         
     }
     
-    
+    private func playLottieAnimationView() -> AnimationView {
+        let animationView = AnimationView(name: "money")
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.addSubview(animationView)
+        animationView.frame = lottieView.bounds
+        animationView.loopMode = .playOnce
+//        animationView.play(fromFrame: 0, toFrame: 150)
+//        animationView.play(fromFrame: 0, toFrame: 130, loopMode: .playOnce) { (finished) in
+//            animationView.stop()
+//        }
+        animationView.backgroundBehavior = .pauseAndRestore
+        
+        return animationView
+    }
     
     // Realm DB 데이터 초기화 함수
     private func makeRealmData() {
@@ -100,6 +145,8 @@ class AssetViewController: UIViewController {
         if !savedAsset[2].assetList.isEmpty {
             self.sections[2] = "기타"
         }
+        
+        
         
         print(self.totalAsset)
     }
