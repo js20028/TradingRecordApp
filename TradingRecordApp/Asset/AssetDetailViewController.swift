@@ -26,7 +26,6 @@ class AssetDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let nibName = UINib(nibName: "AssetDetailListCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "AssetDetailListCell")
         self.getCoinData()

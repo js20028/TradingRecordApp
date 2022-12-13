@@ -38,6 +38,10 @@ class MemoViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         self.navigationController?.navigationBar.tintColor = .white
+        
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     private func configureCollectionView() {

@@ -161,7 +161,7 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" systemColor="systemIndigoColor"/>
+                                        <color key="value" red="0.0" green="0.5" blue="1" alpha="0.80096233443708609" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -252,45 +252,74 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-Tu-BTe">
-                                <rect key="frame" x="56.666666666666657" y="143.00000000000003" width="280" height="339.66666666666674"/>
+                                <rect key="frame" x="64.333333333333343" y="143.00000000000003" width="264.33333333333326" height="339.66666666666674"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wML-lq-sp7">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="33.666666666666664"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wML-lq-sp7">
+                                        <rect key="frame" x="0.0" y="0.0" width="264.33333333333331" height="33.666666666666664"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7R-GU-h7I">
-                                                <rect key="frame" x="0.0" y="0.0" width="72" height="33.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="거래소">
                                                     <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="7nM-6D-A5F"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-ah-TOT">
-                                                <rect key="frame" x="104" y="0.0" width="72" height="33.666666666666664"/>
+                                                <rect key="frame" x="88.000000000000028" y="0.0" width="88.333333333333343" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="지갑">
                                                     <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="Z47-zf-3oU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4K-NK-aBr">
-                                                <rect key="frame" x="208.00000000000003" y="0.0" width="71.999999999999972" height="33.666666666666664"/>
+                                                <rect key="frame" x="176.33333333333331" y="0.0" width="88" height="33.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="기타">
                                                     <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tapCategoryButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="HLj-LQ-xCc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W2R-Oa-IZr">
-                                        <rect key="frame" x="0.0" y="47.666666666666657" width="280" height="58.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="47.666666666666657" width="264.33333333333331" height="58.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거래소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-TV-rSJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="19.666666666666668"/>
@@ -299,14 +328,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1h9-yF-PKh">
-                                                <rect key="frame" x="0.0" y="24.666666666666686" width="280" height="34"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666686" width="264.33333333333331" height="34"/>
                                                 <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a2v-8m-9bg">
-                                        <rect key="frame" x="0.0" y="120.33333333333331" width="280" height="59"/>
+                                        <rect key="frame" x="0.0" y="120.33333333333331" width="264.33333333333331" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종목명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOc-hA-T1a">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="19.666666666666668"/>
@@ -315,15 +344,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zvy-rJ-Kc5">
-                                                <rect key="frame" x="0.0" y="24.666666666666689" width="280" height="34.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666689" width="264.33333333333331" height="34.333333333333343"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Hk-Nta">
-                                                        <rect key="frame" x="0.0" y="0.0" width="232" height="34.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="216.33333333333334" height="34.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-SQ-JQ2">
-                                                        <rect key="frame" x="240" y="0.0" width="40" height="34.333333333333336"/>
+                                                        <rect key="frame" x="224.33333333333337" y="0.0" width="40" height="34.333333333333336"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="PHz-HB-4Qp"/>
                                                         </constraints>
@@ -338,7 +367,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I1K-Vi-3JX">
-                                        <rect key="frame" x="0.0" y="193.33333333333331" width="280" height="58.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="193.33333333333331" width="264.33333333333331" height="58.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유수량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tn-Dx-FhS">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="19.666666666666668"/>
@@ -347,14 +376,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-3z-gh3">
-                                                <rect key="frame" x="0.0" y="24.666666666666686" width="280" height="34"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666686" width="264.33333333333331" height="34"/>
                                                 <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lXV-Zr-Tz6">
-                                        <rect key="frame" x="0.0" y="266" width="280" height="73.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="266" width="264.33333333333331" height="73.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGx-Ml-s0P">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="19.666666666666668"/>
@@ -369,7 +398,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-rS-kSI">
-                                                <rect key="frame" x="0.0" y="39.666666666666686" width="280" height="34"/>
+                                                <rect key="frame" x="0.0" y="39.666666666666686" width="264.33333333333331" height="34"/>
                                                 <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>

@@ -57,7 +57,13 @@ class AssetViewController: UIViewController {
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+        
         self.navigationController?.navigationBar.tintColor = .white
+        
     }
     
     
@@ -100,6 +106,8 @@ class AssetViewController: UIViewController {
     
     // 코인정보 가져오는 함수
     private func getCoinData() {
+        var run = true
+        
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
         session.dataTask(with: coinURL) { data, response, error in
@@ -114,7 +122,13 @@ class AssetViewController: UIViewController {
             
             self.coin = coinData!
             
+            run = false
+            
         }.resume()
+        
+        while run {
+            
+        }
     }
     
     private func makeTotalAssetSum() -> Int {
@@ -210,7 +224,10 @@ class AssetViewController: UIViewController {
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
         //self.sections.remove(at: indexPath.section)
-        self.sections[indexPath.section] = ""
+        
+        if self.totalAsset[indexPath.section].isEmpty {
+            self.sections[indexPath.section] = ""
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
