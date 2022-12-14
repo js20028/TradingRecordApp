@@ -105,9 +105,11 @@ class AssetDetailViewController: UIViewController {
     
     // 코인정보 가져오는 함수
     private func getCoinData() {
+        var run = true
+        
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
-        session.dataTask(with: coinURL) { data, response, error in
+        let task = session.dataTask(with: coinURL) { data, response, error in
             if error != nil {
                 print(error!)
                 return
@@ -119,8 +121,15 @@ class AssetDetailViewController: UIViewController {
             
             self.coin = coinData!
             
+            run = false
             
-        }.resume()
+        }
+        
+        task.resume()
+        
+        while run {
+            
+        }
     }
     
     // 당겨서 새로고침 초기화

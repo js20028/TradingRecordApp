@@ -212,14 +212,14 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-hW-UMW">
-                                <rect key="frame" x="0.0" y="333" width="393" height="336"/>
+                                <rect key="frame" x="0.0" y="303" width="393" height="396"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HZ-w6-jfC" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="302.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="362.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산을 추가하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-q9-rNi">
-                                        <rect key="frame" x="0.0" y="312.66666666666663" width="393" height="23.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="372.66666666666663" width="393" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-hW-UMW" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="52B-0W-lPo"/>
-                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" constant="100" id="WBK-aS-CQy"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" constant="70" id="WBK-aS-CQy"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="YKM-Eb-lqB"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="5V1-cH-I6k" secondAttribute="trailing" id="bVC-5d-MA4"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="top" secondItem="aXX-jq-RPI" secondAttribute="top" id="dvO-6J-HdF"/>
@@ -378,7 +378,7 @@
                                                             <constraint firstAttribute="width" constant="40" id="PHz-HB-4Qp"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="B"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
                                                         <connections>
                                                             <action selector="tapCoinSelectButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="Vfc-hl-OwY"/>
                                                         </connections>
@@ -540,7 +540,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ajr-RH-Z4x">
-                                        <rect key="frame" x="20" y="102.66666666666666" width="260" height="145.99999999999997"/>
+                                        <rect key="frame" x="20" y="102.66666666666666" width="260" height="146"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LpJ-34-aPF">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="34.333333333333336"/>
@@ -565,7 +565,7 @@
                                                                     <constraint firstAttribute="width" constant="40" id="hRD-jF-BDF"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="B"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="tapCoinSelectButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="XXr-To-dVD"/>
                                                                 </connections>
@@ -1042,6 +1042,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

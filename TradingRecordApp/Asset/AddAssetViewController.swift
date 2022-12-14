@@ -100,7 +100,6 @@ class AddAssetViewController: UIViewController {
             
         self.coinNameTextField.placeholder = "코인을 선택하세요." // 힌트 텍스트
         self.coinNameTextField.isEnabled = false
-        self.coinSelectButton.tintColor = UIColor.gray
     }
     
     private func setDropdown() {
@@ -114,6 +113,8 @@ class AddAssetViewController: UIViewController {
         
         // Item 선택 시 처리
         dropDown.selectionAction = { [weak self] (index, item) in
+            
+            self!.coinSelectButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
             
             //선택한 Item을 TextField에 넣어준다.
             if item == "직접입력" {
@@ -129,19 +130,20 @@ class AddAssetViewController: UIViewController {
                 self!.coinPriceStackView.isHidden = true
                 self!.coinNameTextField.text = item
                 self!.validateInputField()
-//                self!.coinSelectButton.image = UIImage(systemName: "arrowtriangle.up.circle.fill")
             }
             
         }
         
         // 취소 시 처리
-//        dropDown.cancelAction = { [weak self] in
-//            //빈 화면 터치 시 DropDown이 사라지고 아이콘을 원래대로 변경
-//            self!.selectImageView.image = UIImage(systemName: "arrowtriangle.up.circle.fill")
-//        }
+        dropDown.cancelAction = { [weak self] in
+            //빈 화면 터치 시 DropDown이 사라지고 아이콘을 원래대로 변경
+            self!.coinSelectButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        }
     }
     
     private func getCoinData() {
+        var run = true
+        
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
         session.dataTask(with: coinURL) { data, response, error in
@@ -155,7 +157,14 @@ class AddAssetViewController: UIViewController {
             let coinData = try? decoder.decode(Coin.self, from: data)
             
             self.coin = coinData!
+            
+            run = false
+            
         }.resume()
+        
+        while run {
+            
+        }
     }
     
     private func matchCoinInfoDetail(coinName: String, coin: Coin) -> CoinInfo? {
@@ -266,6 +275,7 @@ class AddAssetViewController: UIViewController {
     
     @IBAction func tapCoinSelectButton(_ sender: UIButton) {
         self.dropDown.show()
+        self.coinSelectButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
     }
     
     

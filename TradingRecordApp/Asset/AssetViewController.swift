@@ -20,7 +20,7 @@ class AssetViewController: UIViewController {
     var totalAsset = [[Asset](), [Asset](), [Asset]()] {
         didSet {
             self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
-            self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
+            self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1300)"
         }
     }
     
@@ -67,13 +67,12 @@ class AssetViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.totalAssetWon.text = "₩ \(self.makeTotalAssetSum())"
-        self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1340)"
+        self.totalAssetDollar.text = "$ \(self.makeTotalAssetSum() / 1300)"
         
         if sections == ["","",""] {
             self.lottieStackView.isHidden = false
             self.tableView.isHidden = true
             self.animationView?.play()
-//            self.playLottieAnimationView()
         }
     }
     
@@ -104,10 +103,6 @@ class AssetViewController: UIViewController {
         lottieView.addSubview(animationView)
         animationView.frame = lottieView.bounds
         animationView.loopMode = .playOnce
-//        animationView.play(fromFrame: 0, toFrame: 150)
-//        animationView.play(fromFrame: 0, toFrame: 130, loopMode: .playOnce) { (finished) in
-//            animationView.stop()
-//        }
         animationView.backgroundBehavior = .pauseAndRestore
         
         return animationView
@@ -157,7 +152,8 @@ class AssetViewController: UIViewController {
         
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
-        session.dataTask(with: coinURL) { data, response, error in
+        
+        let task = session.dataTask(with: coinURL) { data, response, error in
             if error != nil {
                 print(error!)
                 return
@@ -170,8 +166,9 @@ class AssetViewController: UIViewController {
             self.coin = coinData!
             
             run = false
-            
-        }.resume()
+        }
+        
+        task.resume()
         
         while run {
             

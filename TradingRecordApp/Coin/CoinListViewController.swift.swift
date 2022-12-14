@@ -53,7 +53,7 @@ class CoinListViewController: UITableViewController {
         
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
-        session.dataTask(with: coinURL) { data, response, error in
+        let task = session.dataTask(with: coinURL) { data, response, error in
             if error != nil {
                 print(error!)
                 return
@@ -71,8 +71,9 @@ class CoinListViewController: UITableViewController {
             }
             
             run = false
-            
-        }.resume()
+        }
+        
+        task.resume()
         
         while run {
             
