@@ -25,6 +25,7 @@ class MemoDetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureView()
         self.configureContentsTextView()
+        self.configureNavigationBar()
     }
     
     private func configureView() {
@@ -38,6 +39,12 @@ class MemoDetailViewController: UIViewController {
         self.contentsTextView.layer.borderColor = borderColor.cgColor
         self.contentsTextView.layer.borderWidth = 0.5
         self.contentsTextView.layer.cornerRadius = 5.0
+    }
+    
+    private func configureNavigationBar() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     @objc func editMemoNotification(_ notification: Notification) {

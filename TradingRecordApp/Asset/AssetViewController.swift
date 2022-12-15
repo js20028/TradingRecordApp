@@ -99,9 +99,15 @@ class AssetViewController: UIViewController {
     
     private func playLottieAnimationView() -> AnimationView {
         let animationView = AnimationView(name: "money")
+        
         lottieView.contentMode = .scaleAspectFit
+//        animationView.contentMode = .scaleAspectFit
+
         lottieView.addSubview(animationView)
+        
         animationView.frame = lottieView.bounds
+//        animationView.center = lottieView.center
+        
         animationView.loopMode = .playOnce
         animationView.backgroundBehavior = .pauseAndRestore
         

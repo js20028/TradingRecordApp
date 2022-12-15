@@ -142,7 +142,7 @@ class AddAssetViewController: UIViewController {
     }
     
     private func getCoinData() {
-        var run = true
+//        var run = true
         
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
@@ -158,13 +158,13 @@ class AddAssetViewController: UIViewController {
             
             self.coin = coinData!
             
-            run = false
+//            run = false
             
         }.resume()
         
-        while run {
-            
-        }
+//        while run {
+//            
+//        }
     }
     
     private func matchCoinInfoDetail(coinName: String, coin: Coin) -> CoinInfo? {

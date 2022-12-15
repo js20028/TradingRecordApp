@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -17,11 +18,14 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
+        <!--코인시세-->
         <scene sceneID="XNW-GN-eaD">
             <objects>
                 <navigationController id="8y9-A5-kuq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="XlI-D3-xmU"/>
+                    <tabBarItem key="tabBarItem" title="코인시세" id="XlI-D3-xmU">
+                        <imageReference key="image" image="wonsign.circle" catalog="system" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="wonsign.circle" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wI1-xt-4Cc">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -73,11 +77,13 @@
             </objects>
             <point key="canvasLocation" x="-286" y="735"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--자산-->
         <scene sceneID="8yO-JN-T0P">
             <objects>
                 <navigationController id="nud-MT-2Fi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Cy3-0i-KAg"/>
+                    <tabBarItem key="tabBarItem" title="자산" id="Cy3-0i-KAg">
+                        <imageReference key="image" image="creditcard" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tUA-iu-3US">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -93,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="1035" y="-500"/>
         </scene>
-        <!--내 자산-->
+        <!--자산-->
         <scene sceneID="Hpq-Ue-czI">
             <objects>
                 <viewController id="tlS-hn-j8V" customClass="AssetViewController" customModule="TradingRecordApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +113,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 보유자산" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H43-VZ-elj">
                                         <rect key="frame" x="50" y="10.000000000000002" width="293" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-6v-slI">
@@ -130,17 +136,17 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩123456789" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhw-TV-gAm">
                                         <rect key="frame" x="116.33333333333333" y="44.666666666666657" width="160.66666666666669" height="29"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12345.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-SM-pGB">
                                         <rect key="frame" x="132" y="81.666666666666657" width="129" height="29"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="H43-VZ-elj" secondAttribute="trailing" constant="50" id="DzJ-na-JFh"/>
                                     <constraint firstItem="ENG-6v-slI" firstAttribute="leading" secondItem="r63-WE-5Re" secondAttribute="leading" constant="10" id="IsO-Lk-Mmc"/>
@@ -211,15 +217,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-hW-UMW">
-                                <rect key="frame" x="0.0" y="303" width="393" height="396"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-hW-UMW">
+                                <rect key="frame" x="30" y="233" width="333" height="436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HZ-w6-jfC" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="362.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="382.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산을 추가하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-q9-rNi">
-                                        <rect key="frame" x="0.0" y="372.66666666666663" width="393" height="23.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="412.66666666666663" width="333" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
@@ -230,21 +236,21 @@
                         <viewLayoutGuide key="safeArea" id="aXX-jq-RPI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="52B-0W-lPo"/>
-                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" constant="70" id="WBK-aS-CQy"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" constant="30" id="52B-0W-lPo"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" id="WBK-aS-CQy"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="YKM-Eb-lqB"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="5V1-cH-I6k" secondAttribute="trailing" id="bVC-5d-MA4"/>
+                            <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="6Tk-hW-UMW" secondAttribute="bottom" constant="100" id="dY4-49-CQ6"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="top" secondItem="aXX-jq-RPI" secondAttribute="top" id="dvO-6J-HdF"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="r63-WE-5Re" secondAttribute="trailing" id="mxp-3C-H7P"/>
                             <constraint firstItem="6Tk-hW-UMW" firstAttribute="centerX" secondItem="5V1-cH-I6k" secondAttribute="centerX" id="o1Q-6e-65i"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" id="oYK-Xm-Uhc"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="5V1-cH-I6k" secondAttribute="bottom" id="pY5-DY-cV4"/>
-                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="centerY" secondItem="5V1-cH-I6k" secondAttribute="centerY" id="vGE-LJ-iSO"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="x9A-lr-y0A"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="pencil" catalog="system" systemItem="favorites" id="7lj-Yd-3An"/>
-                    <navigationItem key="navigationItem" title="내 자산" id="CLM-N1-zFG">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="7lj-Yd-3An"/>
+                    <navigationItem key="navigationItem" title="자산" id="CLM-N1-zFG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyf-g7-fRi">
                             <connections>
                                 <segue destination="p4u-1c-TkU" kind="show" id="fCV-FC-VjB"/>
@@ -1001,11 +1007,14 @@
             </objects>
             <point key="canvasLocation" x="2113" y="417"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--메모-->
         <scene sceneID="oG5-hS-QXU">
             <objects>
                 <navigationController id="k7S-Ed-4kO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="wxM-vx-KbF"/>
+                    <tabBarItem key="tabBarItem" title="메모" id="wxM-vx-KbF">
+                        <imageReference key="image" image="note.text" catalog="system" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="note.text" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pI3-Hl-c7W">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1041,9 +1050,14 @@
             <point key="canvasLocation" x="-458" y="-126"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="5HZ-w6-jfC"/>
+    </designables>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="creditcard" catalog="system" width="128" height="88"/>
+        <image name="note.text" catalog="system" width="128" height="107"/>
+        <image name="wonsign.circle" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

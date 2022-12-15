@@ -39,6 +39,8 @@ class CoinListViewController: UITableViewController {
 //        }
     }
     
+    
+    
     private func configureNavigationBar() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = UIColor(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 0.8)
@@ -46,10 +48,11 @@ class CoinListViewController: UITableViewController {
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         self.navigationController?.navigationBar.tintColor = .white
+        
     }
     
     private func getCoinData() {
-        var run = true
+//        var run = true
         
         guard let coinURL = URL(string: "https://api.bithumb.com/public/ticker/ALL_KRW") else { return }
         let session = URLSession(configuration: .default)
@@ -70,14 +73,14 @@ class CoinListViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             
-            run = false
+//            run = false
         }
         
         task.resume()
         
-        while run {
-            
-        }
+//        while run {
+//
+//        }
     }
     
     // xib 등록
