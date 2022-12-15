@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appearance = UITabBarItem.appearance()
         let attributes = [NSAttributedString.Key.font:UIFont(name: "NanumGothic", size: 10)]
         appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
+        UITabBar.appearance().tintColor = UIColor(displayP3Red: 10/255, green: 50/255, blue: 180/255, alpha: 1)
+
         
         return true
     }

@@ -167,7 +167,7 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.5" blue="1" alpha="0.80096233443708609" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -289,13 +289,14 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="거래소">
                                                     <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                    <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                        <color key="value" red="0.039215686274509803" green="0.19607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -307,13 +308,14 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="지갑">
                                                     <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                    <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                        <color key="value" red="0.039215686274509803" green="0.19607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -325,13 +327,14 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="기타">
                                                     <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                    <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                        <color key="value" red="0.039215686274509803" green="0.19607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -384,7 +387,9 @@
                                                             <constraint firstAttribute="width" constant="40" id="PHz-HB-4Qp"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system">
+                                                            <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="tapCoinSelectButton:" destination="p4u-1c-TkU" eventType="touchUpInside" id="Vfc-hl-OwY"/>
                                                         </connections>
@@ -571,7 +576,9 @@
                                                                     <constraint firstAttribute="width" constant="40" id="hRD-jF-BDF"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system">
+                                                                    <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="tapCoinSelectButton:" destination="cgx-Fp-bHq" eventType="touchUpInside" id="XXr-To-dVD"/>
                                                                 </connections>
@@ -628,16 +635,17 @@
                                                         <state key="normal" title="취소"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="취소">
                                                             <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                            <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
+                                                                <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" systemColor="systemBlueColor"/>
+                                                                <color key="value" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -651,16 +659,17 @@
                                                         <state key="normal" title="저장"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="저장">
                                                             <fontDescription key="titleFontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                            <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
+                                                                <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" systemColor="systemBlueColor"/>
+                                                                <color key="value" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -876,7 +885,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="수정" titleAlignment="center">
                                                     <fontDescription key="titleFontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="17"/>
-                                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                                    <color key="baseForegroundColor" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -886,7 +895,7 @@
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                        <color key="value" red="0.039215686274509803" green="0.19607843137254902" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                         <real key="value" value="0.0"/>

@@ -33,7 +33,7 @@ class MemoViewController: UIViewController {
     
     private func configureNavigationBar() {
         let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.backgroundColor = UIColor(displayP3Red: 0/255, green: 128/255, blue: 255/255, alpha: 0.8)
+        navigationBarAppearance.backgroundColor = UIColor(displayP3Red: 10/255, green: 50/255, blue: 180/255, alpha: 1)
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance

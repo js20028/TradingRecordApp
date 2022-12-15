@@ -37,13 +37,6 @@ class AssetDetailViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        //self.title = "보유 자산 상세"
-        //self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let indexPath = self.indexPath else { return }
