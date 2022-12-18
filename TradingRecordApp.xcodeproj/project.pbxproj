@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1A3EE7294F0B24008DAEAE /* CoinListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3EE6294F0B24008DAEAE /* CoinListHeaderView.xib */; };
 		0F35B64628D2F6C4005C42ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35B64528D2F6C4005C42ED /* AppDelegate.swift */; };
 		0F35B64828D2F6C4005C42ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F35B64728D2F6C4005C42ED /* SceneDelegate.swift */; };
 		0F35B64D28D2F6C4005C42ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F35B64B28D2F6C4005C42ED /* Main.storyboard */; };
@@ -35,7 +36,6 @@
 		0FC49FAD293CD084003251BE /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FC49FAC293CD084003251BE /* NanumSquareRoundB.ttf */; };
 		0FC49FB0293F29F0003251BE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC49FAF293F29F0003251BE /* UIViewExtension.swift */; };
 		0FC49FB2293F3E45003251BE /* CoinListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC49FB1293F3E45003251BE /* CoinListHeaderView.swift */; };
-		0FC49FB4293F3EA4003251BE /* CoinListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */; };
 		0FD2EA2E28ED5CB900EF4E7A /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */; };
 		0FD2EA3028EEA87D00EF4E7A /* AssetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */; };
 		0FF01C2029407AA7000299A9 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF01C1F29407AA7000299A9 /* UIButtonExtension.swift */; };
@@ -47,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1A3EE6294F0B24008DAEAE /* CoinListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinListHeaderView.xib; sourceTree = "<group>"; };
 		0F35B64228D2F6C4005C42ED /* TradingRecordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingRecordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F35B64528D2F6C4005C42ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F35B64728D2F6C4005C42ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		0FC49FAC293CD084003251BE /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
 		0FC49FAF293F29F0003251BE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		0FC49FB1293F3E45003251BE /* CoinListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListHeaderView.swift; sourceTree = "<group>"; };
-		0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinListHeaderView.xib; sourceTree = "<group>"; };
 		0FD2EA2D28ED5CB900EF4E7A /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		0FD2EA2F28EEA87D00EF4E7A /* AssetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListCell.swift; sourceTree = "<group>"; };
 		0FF01C1F29407AA7000299A9 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				0F35B65B28D9A1BE005C42ED /* CoinListCell.swift */,
 				0F35B65C28D9A1BE005C42ED /* CoinListCell.xib */,
 				0FC49FB1293F3E45003251BE /* CoinListHeaderView.swift */,
-				0FC49FB3293F3EA4003251BE /* CoinListHeaderView.xib */,
+				0F1A3EE6294F0B24008DAEAE /* CoinListHeaderView.xib */,
 				0F35B65F28DAF423005C42ED /* Coin.swift */,
 			);
 			path = Coin;
@@ -289,9 +289,9 @@
 				0F35B64F28D2F6C6005C42ED /* Assets.xcassets in Resources */,
 				0FF01C422944C53C000299A9 /* NanumGothic.ttf in Resources */,
 				0F35B65E28D9A1BE005C42ED /* CoinListCell.xib in Resources */,
+				0F1A3EE7294F0B24008DAEAE /* CoinListHeaderView.xib in Resources */,
 				0FC49FAD293CD084003251BE /* NanumSquareRoundB.ttf in Resources */,
 				0FF01C482944C55F000299A9 /* NanumGothicLight.ttf in Resources */,
-				0FC49FB4293F3EA4003251BE /* CoinListHeaderView.xib in Resources */,
 				0F7AC2F3290CF6F6007A4659 /* AssetDetailListCell.xib in Resources */,
 				0FF01C462944C559000299A9 /* NanumGothicExtraBold.ttf in Resources */,
 				0FF01C442944C54A000299A9 /* NanumGothicBold.ttf in Resources */,

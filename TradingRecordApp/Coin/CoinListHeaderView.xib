@@ -15,53 +15,43 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Dnf-p4-Mp2" customClass="CoinListHeaderView" customModule="TradingRecordApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CoinListHeaderView" customModule="TradingRecordApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="93"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="jeN-IM-hIv">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="mlV-ul-4PL">
-                            <rect key="frame" x="55" y="8.6666666666666661" width="323" height="16.333333333333336"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="코인이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRX-Ga-0Up">
-                                    <rect key="frame" x="0.0" y="0.0" width="130.66666666666666" height="16.333333333333332"/>
-                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
-                                    <color key="textColor" systemColor="systemGrayColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCz-P5-8X8">
-                                    <rect key="frame" x="180.66666666666666" y="0.0" width="39.666666666666657" height="16.333333333333332"/>
-                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
-                                    <color key="textColor" systemColor="systemGrayColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전일대비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnA-qo-FU3">
-                                    <rect key="frame" x="270.33333333333331" y="0.0" width="52.666666666666686" height="16.333333333333332"/>
-                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="14"/>
-                                    <color key="textColor" systemColor="systemGrayColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="FnA-qo-FU3" firstAttribute="leading" secondItem="lCz-P5-8X8" secondAttribute="trailing" constant="49.999999999999972" id="1iE-97-jT8"/>
-                            </constraints>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstItem="mlV-ul-4PL" firstAttribute="leading" secondItem="jeN-IM-hIv" secondAttribute="leading" constant="55" id="OUW-34-5E8"/>
-                        <constraint firstAttribute="bottom" secondItem="mlV-ul-4PL" secondAttribute="bottom" constant="5" id="faE-3A-pus"/>
-                        <constraint firstAttribute="trailing" secondItem="mlV-ul-4PL" secondAttribute="trailing" constant="15" id="xzo-ai-1rf"/>
-                    </constraints>
-                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전일대비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pV-fg-dIR">
+                    <rect key="frame" x="349" y="51.666666666666664" width="49" height="14.999999999999993"/>
+                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="13"/>
+                    <color key="textColor" systemColor="systemGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-0r-ch3">
+                    <rect key="frame" x="272.33333333333331" y="51.666666666666664" width="36.666666666666686" height="14.999999999999993"/>
+                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="13"/>
+                    <color key="textColor" systemColor="systemGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코인이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH0-qP-7b2">
+                    <rect key="frame" x="55" y="51.666666666666664" width="49" height="14.999999999999993"/>
+                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="13"/>
+                    <color key="textColor" systemColor="systemGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="viD-WD-Ihq"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5sD-0r-ch3" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="BRG-pb-mYs"/>
+                <constraint firstItem="0pV-fg-dIR" firstAttribute="leading" secondItem="5sD-0r-ch3" secondAttribute="trailing" constant="40" id="E1g-d2-MXm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0pV-fg-dIR" secondAttribute="trailing" constant="15" id="TtV-Xh-5ne"/>
+                <constraint firstItem="pH0-qP-7b2" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="bWw-8J-ODc"/>
+                <constraint firstItem="pH0-qP-7b2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="55" id="mCJ-fq-lyg"/>
+                <constraint firstItem="0pV-fg-dIR" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="y8l-yN-SNG"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="216.03053435114504" y="-53.521126760563384"/>
+            <point key="canvasLocation" x="-29.770992366412212" y="62.323943661971832"/>
         </view>
     </objects>
     <resources>
