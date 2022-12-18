@@ -183,21 +183,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-7Y-6oD">
-                                                    <rect key="frame" x="40" y="18.333333333333336" width="37.666666666666657" height="23.333333333333336"/>
+                                                    <rect key="frame" x="19.999999999999996" y="18.333333333333336" width="37.666666666666657" height="23.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유자산" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-gS-bCD">
-                                                    <rect key="frame" x="219.33333333333334" y="18.333333333333336" width="75.333333333333343" height="23.333333333333336"/>
+                                                    <rect key="frame" x="229.33333333333334" y="18.333333333333336" width="75.333333333333343" height="23.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="6b8-gS-bCD" secondAttribute="trailing" constant="20" id="Dma-Vz-IEt"/>
-                                                <constraint firstItem="aWr-7Y-6oD" firstAttribute="leading" secondItem="yl5-Df-rxI" secondAttribute="leadingMargin" constant="20" id="DqH-q3-aih"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6b8-gS-bCD" secondAttribute="trailing" constant="10" id="Dma-Vz-IEt"/>
+                                                <constraint firstItem="aWr-7Y-6oD" firstAttribute="leading" secondItem="yl5-Df-rxI" secondAttribute="leadingMargin" id="DqH-q3-aih"/>
                                                 <constraint firstItem="6b8-gS-bCD" firstAttribute="centerY" secondItem="yl5-Df-rxI" secondAttribute="centerY" id="mWb-UR-7Xm"/>
                                                 <constraint firstItem="aWr-7Y-6oD" firstAttribute="centerY" secondItem="yl5-Df-rxI" secondAttribute="centerY" id="r0m-ii-8bG"/>
                                             </constraints>
@@ -218,7 +218,7 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-hW-UMW">
-                                <rect key="frame" x="0.0" y="283" width="393" height="386"/>
+                                <rect key="frame" x="0.0" y="283" width="393" height="436"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="자산을 추가하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-q9-rNi">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="23.333333333333332"/>
@@ -227,7 +227,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HZ-w6-jfC" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="23.333333333333314" width="393" height="362.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="23.333333333333314" width="393" height="412.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -244,7 +244,7 @@
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="r63-WE-5Re" secondAttribute="trailing" id="mxp-3C-H7P"/>
                             <constraint firstItem="6Tk-hW-UMW" firstAttribute="centerX" secondItem="aXX-jq-RPI" secondAttribute="centerX" id="o1Q-6e-65i"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" id="oYK-Xm-Uhc"/>
-                            <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="6Tk-hW-UMW" secondAttribute="bottom" constant="100" id="p8M-Nl-Yrv"/>
+                            <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="6Tk-hW-UMW" secondAttribute="bottom" constant="50" id="p8M-Nl-Yrv"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="5V1-cH-I6k" secondAttribute="bottom" id="pY5-DY-cV4"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="x9A-lr-y0A"/>
                         </constraints>
