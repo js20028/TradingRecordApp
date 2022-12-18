@@ -53,6 +53,16 @@ class AddAssetPopUpViewController: UIViewController {
     }
     
     @objc private func textFieldDidChanged(_ textField: UITextField) {
+        // decimal 키보드일때 "." 의 중복 방지
+        if textField.keyboardType.rawValue == 8 {
+            if textField.text == "." {
+                textField.text = "0."
+            }
+            if textField.text?.filter({ ($0) == "." }).count == 2 {
+                textField.text?.removeLast()
+            }
+        }
+        
         self.validateInputField()
     }
     

@@ -88,9 +88,9 @@ class AssetDetailViewController: UIViewController {
         guard let indexPathFromVC = self.indexPath else { return }
         let realm = try! Realm()
         let savedAsset = realm.objects(AssetCategory.self)
-        try! realm.write {
-            realm.delete(savedAsset[indexPathFromVC.section].assetList[indexPathFromVC.row].assets[indexPath.row])
-        }
+//        try! realm.write {
+//            realm.delete(savedAsset[indexPathFromVC.section].assetList[indexPathFromVC.row].assets[indexPath.row])
+//        }
         
         self.assetDetailList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)

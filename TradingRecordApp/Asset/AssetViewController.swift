@@ -119,7 +119,7 @@ class AssetViewController: UIViewController {
     private func makeRealmData() {
         let realm = try! Realm()
         let savedAsset = realm.objects(AssetCategory.self)
-        //print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
 
         while savedAsset.count < 3 {
             try! realm.write {
@@ -150,7 +150,7 @@ class AssetViewController: UIViewController {
         
         
         
-        print(self.totalAsset)
+//        print(self.totalAsset)
     }
     
     // 코인정보 가져오는 함수

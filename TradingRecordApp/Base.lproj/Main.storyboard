@@ -217,34 +217,34 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-hW-UMW">
-                                <rect key="frame" x="30" y="233" width="333" height="436"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-hW-UMW">
+                                <rect key="frame" x="0.0" y="283" width="393" height="386"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HZ-w6-jfC" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="382.66666666666669"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자산을 추가하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-q9-rNi">
-                                        <rect key="frame" x="0.0" y="412.66666666666663" width="333" height="23.333333333333314"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="자산을 추가하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-q9-rNi">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="23.333333333333332"/>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5HZ-w6-jfC" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="23.333333333333314" width="393" height="362.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aXX-jq-RPI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" constant="30" id="52B-0W-lPo"/>
-                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" id="WBK-aS-CQy"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="52B-0W-lPo"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" constant="50" id="WBK-aS-CQy"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="YKM-Eb-lqB"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="5V1-cH-I6k" secondAttribute="trailing" id="bVC-5d-MA4"/>
-                            <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="6Tk-hW-UMW" secondAttribute="bottom" constant="100" id="dY4-49-CQ6"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="top" secondItem="aXX-jq-RPI" secondAttribute="top" id="dvO-6J-HdF"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="trailing" secondItem="r63-WE-5Re" secondAttribute="trailing" id="mxp-3C-H7P"/>
-                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="centerX" secondItem="5V1-cH-I6k" secondAttribute="centerX" id="o1Q-6e-65i"/>
+                            <constraint firstItem="6Tk-hW-UMW" firstAttribute="centerX" secondItem="aXX-jq-RPI" secondAttribute="centerX" id="o1Q-6e-65i"/>
                             <constraint firstItem="5V1-cH-I6k" firstAttribute="top" secondItem="r63-WE-5Re" secondAttribute="bottom" id="oYK-Xm-Uhc"/>
+                            <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="6Tk-hW-UMW" secondAttribute="bottom" constant="100" id="p8M-Nl-Yrv"/>
                             <constraint firstItem="aXX-jq-RPI" firstAttribute="bottom" secondItem="5V1-cH-I6k" secondAttribute="bottom" id="pY5-DY-cV4"/>
                             <constraint firstItem="r63-WE-5Re" firstAttribute="leading" secondItem="aXX-jq-RPI" secondAttribute="leading" id="x9A-lr-y0A"/>
                         </constraints>
