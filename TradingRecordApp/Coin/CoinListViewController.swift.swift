@@ -26,21 +26,8 @@ class CoinListViewController: UITableViewController {
         self.registerXib()
 
         self.configureNavigationBar()
-
-        
-
-        
-//        UIFont.familyNames.sorted().forEach { familyName in
-//            print("*** \(familyName) ***")
-//            UIFont.fontNames(forFamilyName: familyName).forEach { fontName in
-//                print("\(fontName)")
-//            }
-//            print("---------------------")
-//        }
     }
-    
-    
-    
+
     private func configureNavigationBar() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = UIColor(displayP3Red: 10/255, green: 50/255, blue: 180/255, alpha: 1)

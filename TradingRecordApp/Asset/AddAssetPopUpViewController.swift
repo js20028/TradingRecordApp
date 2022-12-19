@@ -75,6 +75,8 @@ class AddAssetPopUpViewController: UIViewController {
     }
     
     private func configureDropDownUI() {
+        self.coinSelectButton.setTitle("", for: .normal)
+        
         // DropDown View의 배경
         DropDown.appearance().textColor = UIColor.black // 아이템 텍스트 색상
         DropDown.appearance().selectedTextColor = UIColor.red // 선택된 아이템 텍스트 색상

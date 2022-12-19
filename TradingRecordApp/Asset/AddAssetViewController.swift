@@ -68,6 +68,7 @@ class AddAssetViewController: UIViewController {
     
     private func configureView() {
         self.changeCategoryButton(value: self.categoryButtonValue)
+        self.coinSelectButton.setTitle("", for: .normal)
     }
     
     private func configureInputField() {
