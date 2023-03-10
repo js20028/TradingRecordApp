@@ -23,12 +23,16 @@
 ### 3. 앱 소개
 
 - Splash 화면
-<img width="250" src=""/>
+<img width="250" src="https://user-images.githubusercontent.com/68904961/224220891-905ca96b-2da9-4122-ac0f-69b33c2951ec.gif"/>
 
 <br>
 
-- 메인 화면
+- 메인 화면 -> 자산 추가
+<img width="250" src=""/>
+<br>
 
+- 자산 상세 -> 직접 추가
+<img width="250" src=""/>
 <br>
 
 - 결과창, 상세 결과창
