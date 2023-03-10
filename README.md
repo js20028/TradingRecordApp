@@ -28,11 +28,11 @@
 <br>
 
 - 메인 화면 -> 자산 추가
-<img width="250" src=""/>
+<img width="250" src="https://user-images.githubusercontent.com/68904961/224220921-e8df79d6-3926-4155-9b22-75430e3b310d.gif"/>
 <br>
 
 - 자산 상세 -> 직접 추가
-<img width="250" src=""/>
+<img width="250" src="https://user-images.githubusercontent.com/68904961/224220931-85b1615c-6940-4dcd-b5f2-2d38ba7d26e2.gif"/>
 <br>
 
 - 결과창, 상세 결과창
