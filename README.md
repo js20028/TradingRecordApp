@@ -35,15 +35,12 @@
 <img width="250" src="https://user-images.githubusercontent.com/68904961/224220931-85b1615c-6940-4dcd-b5f2-2d38ba7d26e2.gif"/>
 <br>
 
-- 결과창, 상세 결과창
+- 메모, 메모상세, 실시간 코인 시세
 <p>
-
+<img width="250" src="https://user-images.githubusercontent.com/68904961/224221728-12518933-165e-43ba-8e2a-bf92a381bf19.png"/>
+<img width="250" src="https://user-images.githubusercontent.com/68904961/224221732-80183c4d-cb1f-4dc0-b36a-57334ceb3569.png"/>  
+<img width="250" src="https://user-images.githubusercontent.com/68904961/224221734-324bedb6-e29e-416a-bf1a-db48668411f5.png"/>  
 </p>
 
 <br>
-
-- 전체 알러지, 나의 알러지 
-<p>
-
-</p>
 
