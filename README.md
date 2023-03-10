@@ -1,12 +1,12 @@
 # 코앱 - 암호화폐, NFT 투자자를 위한 자산관리 앱
 
 <p>
-<img width="170" src="https://user-images.githubusercontent.com/68904961/224222330-709e4619-340c-4b37-b7a7-34815f792653.png"/>
-<img width="170" src="https://user-images.githubusercontent.com/68904961/224222334-3dbd92c7-fd16-495c-9292-20ed08e81f33.png"/>  
-<img width="170" src="https://user-images.githubusercontent.com/68904961/224222338-2daf7039-0c70-4ad5-949a-d153cf689cde.png"/>
-<img width="170" src="https://user-images.githubusercontent.com/68904961/224222340-48491bbd-81b4-4b4e-97b6-27200dbe8f42.png"/>  
-<img width="170" src="https://user-images.githubusercontent.com/68904961/224222343-a4529f2f-c488-4996-905a-2ba86d2c5488.png"/>  
-<img width="170" src="https://user-images.githubusercontent.com/68904961/224222345-78b3b0cf-59c6-4038-9ade-d51e8cf90889.png"/>  
+<img width="160" src="https://user-images.githubusercontent.com/68904961/224222330-709e4619-340c-4b37-b7a7-34815f792653.png"/>
+<img width="160" src="https://user-images.githubusercontent.com/68904961/224222334-3dbd92c7-fd16-495c-9292-20ed08e81f33.png"/>  
+<img width="160" src="https://user-images.githubusercontent.com/68904961/224222338-2daf7039-0c70-4ad5-949a-d153cf689cde.png"/>
+<img width="160" src="https://user-images.githubusercontent.com/68904961/224222340-48491bbd-81b4-4b4e-97b6-27200dbe8f42.png"/>  
+<img width="160" src="https://user-images.githubusercontent.com/68904961/224222343-a4529f2f-c488-4996-905a-2ba86d2c5488.png"/>  
+<img width="160" src="https://user-images.githubusercontent.com/68904961/224222345-78b3b0cf-59c6-4038-9ade-d51e8cf90889.png"/>  
 </p>
 
 > 개발자 : 곽재선
