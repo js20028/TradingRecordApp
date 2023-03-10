@@ -6,7 +6,7 @@
 <img width="250" src="https://user-images.githubusercontent.com/68904961/224221734-324bedb6-e29e-416a-bf1a-db48668411f5.png"/>  
 </p>
 
-> 곽재선
+> 개발자 : 곽재선
 > 
 
 > 프로젝트 기간 : 2023.01.26 ~ 2023.03.02
