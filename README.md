@@ -25,7 +25,6 @@
 ### 2. 라이브러리
 
 - Realm DB
-- Toast-Swift
 - DropDown
 - lottie-ios
 - Kingfisher
